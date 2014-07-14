@@ -1,0 +1,99 @@
+function gen_simu_variables_txt(simu_vars_none, simu_vars_in, simu_vars_out, simu_vars_struct)
+
+    filename = 'simu_variables.txt';
+    pathname = '../../StandaloneC/src/project/varState/';
+    fname = fullfile(pathname,filename);
+
+    fid = fopen(fname,'w');
+    fprintf(fid,[...
+                '%% Definition of the simulation variables and I/O ports (available in MBSdata->user_IO)\r\n'...
+                '%% For each line: varname , type , size\r\n'...
+                '%%\r\n'...
+                '%% 4 types of simulation variables:\r\n'...
+                '%%       . NONE   : normal variables\r\n'...
+                '%%       . IN     : user inputs coming from the Matlab environment\r\n'...
+                '%%       . OUT    : user outputs to analyse results in Matlab\r\n'...
+                '%%       . STRUCT : structures\r\n'...
+                '%%\r\n'...
+                '%% their corresponding type fields:\r\n'...
+                '%%       . NONE   : internal variable (type: int/double)\r\n'...
+                '%%       . IN     : input (type: int/double)\r\n'...
+                '%%       . OUT    : output (type: int/double)\r\n'...
+                '%%       . STRUCT : structure variable (type: structure name without '' or "")\r\n'...
+                '%%\r\n'...
+                '%%   - varname = name of the variable (without '''' or "")\r\n'...
+                '%%\r\n'...
+                '%%   - size: number of elements in the vector\r\n'...
+                '%%       1    :  simple variable\r\n'...
+                '%%       n    :  vector of n (n>1) elements\r\n'...
+                '%%       [m n]:  tabular of 2 entries with a size m*n \r\n'...
+                '%%       0    :  forbidden\r\n'...
+                '%%       <1   :  pointer -> fabs(x) = number of stars\r\n'...
+                '%%          indexes start at 1 -> different from ''control_variables'' \r\n'...
+                '%%\r\n'...
+                '%% Lines starting with %% or // are not taken into account (comments)\r\n'...
+                '%% Write the corresponding variables under # NONE, # IN, # OUT, # STRUCT\r\n'...
+                '%% Do modify the lines # NONE, # IN, # OUT, # STRUCT or add another line starting with #\r\n'...
+                '%% Keep at least one space between different variables, do not use other signs (, . :)\r\n'...
+                '%%\r\n\r\n']);
+           
+            
+    fprintf(fid,'# NONE\r\n');
+    
+    size_1 = size(simu_vars_none, 1);
+    
+    for i = 1:size_1
+        if size(simu_vars_none{2*size_1+i},2) == 1
+            fprintf(fid,'%s   %s   %d\r\n', simu_vars_none{i}, simu_vars_none{size_1+i}, simu_vars_none{2*size_1+i});   
+        elseif size(simu_vars_none{2*size_1+i},2) == 2
+            two_var = simu_vars_none{2*size_1+i};
+            fprintf(fid,'%s   %s   [%d %d]\r\n', simu_vars_none{i}, simu_vars_none{size_1+i}, two_var(1), two_var(2));            
+        end
+    end
+    
+    fprintf(fid,'\r\n# IN\r\n');
+    
+    size_1 = size(simu_vars_in, 1);
+    
+    for i = 1:size_1
+        if size(simu_vars_in{2*size_1+i},2) == 1
+            fprintf(fid,'%s   %s   %d\r\n', simu_vars_in{i}, simu_vars_in{size_1+i}, simu_vars_in{2*size_1+i});   
+        elseif size(simu_vars_in{2*size_1+i},2) == 2
+            two_var = simu_vars_in{2*size_1+i};
+            fprintf(fid,'%s   %s   [%d %d]\r\n', simu_vars_in{i}, simu_vars_in{size_1+i}, two_var(1), two_var(2));            
+        end
+    end
+    
+    fprintf(fid,'\r\n# OUT\r\n');
+    
+    size_1 = size(simu_vars_out, 1);
+    
+    for i = 1:size_1
+        if size(simu_vars_out{2*size_1+i},2) == 1
+            fprintf(fid,'%s   %s   %d\r\n', simu_vars_out{i}, simu_vars_out{size_1+i}, simu_vars_out{2*size_1+i});   
+        elseif size(simu_vars_out{2*size_1+i},2) == 2
+            two_var = simu_vars_out{2*size_1+i};
+            fprintf(fid,'%s   %s   [%d %d]\r\n', simu_vars_out{i}, simu_vars_out{size_1+i}, two_var(1), two_var(2));            
+        end
+    end
+    
+    fprintf(fid,'\r\n# STRUCT\r\n');
+    
+    size_1 = size(simu_vars_struct, 1);
+    
+    for i = 1:size_1
+        if size(simu_vars_struct{2*size_1+i},2) == 1
+            fprintf(fid,'%s   %s   %d\r\n', simu_vars_struct{i}, simu_vars_struct{size_1+i}, simu_vars_struct{2*size_1+i});   
+        elseif size(simu_vars_struct{2*size_1+i},2) == 2
+            two_var = simu_vars_struct{2*size_1+i};
+            fprintf(fid,'%s   %s   [%d %d]\r\n', simu_vars_struct{i}, simu_vars_struct{size_1+i}, two_var(1), two_var(2));            
+        end
+    end
+    
+    fprintf(fid,'\r\n');
+        
+    fclose(fid);
+
+    fprintf('simu_variables.txt created\r\n');
+
+end

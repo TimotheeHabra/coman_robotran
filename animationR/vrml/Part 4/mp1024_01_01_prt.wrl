@@ -1,0 +1,1987 @@
+#VRML V2.0 utf8
+
+PROTO Header_Info [
+field SFString vendor "Parametric Technology Corporation"
+field SFString product "Pro/ENGINEER"
+field SFString version ""
+field SFString sceneFile ""]
+{WorldInfo {}}
+
+PROTO Node_Info [
+field SFString node_type ""
+field SFString node_name ""]
+{WorldInfo {}}
+
+PROTO Geom_Type [
+field SFString geom_type_s "T_Empty"
+field SFInt32 trg_qual 1]
+{WorldInfo {}}
+
+PROTO Member_Info [
+field SFString member_name ""
+field SFInt32 member_id 0
+field SFString proe_name ""
+field SFString proe_type_s  ""
+field SFString expl_status_s "Vrml_Exp_Unknown"
+field MFFloat drag_trf [] ]
+{WorldInfo {}}
+
+PROTO Model_Info [
+field SFInt32 proe_id 1048582
+field SFString proe_type_s "Proe_Part"
+field SFString proe_name "MP1024_01_01"
+field SFInt32 maj_rev -5
+field SFInt32 min_rev  -5
+field SFInt32 rev_num 598
+field SFInt32 rev_num_cosm 2
+field SFString inst_type_s "Inst_Type_Main"
+field SFString generic_name "generic_name"
+field SFFloat s_factor 39.3701
+]
+{WorldInfo {}}
+
+Header_Info{
+vendor "Parametric Technology Corporation"
+product "Creo Parametric"
+version "2"
+}
+
+DEF V_Model Anchor {
+  url ""
+  description "mp1024_01_01.prt"
+children [
+Node_Info {
+node_type "V_Model"
+node_name "mp1024_01_01.prt"
+}
+DEF Default Viewpoint {
+description "Default"
+position -0.064109 -0.0115829 0.0206907
+orientation -0.0887207 -0.933544 0.347311 1.42504
+fieldOfView 1.56959
+}
+
+Model_Info {
+proe_id 1048582
+proe_type_s "Proe_Part"
+proe_name "MP1024_01_01"
+maj_rev -5
+min_rev  -5
+rev_num 598
+rev_num_cosm 2
+inst_type_s "Inst_Type_Main"
+generic_name ""
+s_factor 39.3701
+}
+
+DEF Rep_0 Group {
+ children [
+Node_Info {
+node_type "Rep"
+node_name "Rep_0"
+}
+DEF Geom_0 Group {
+children [
+Node_Info {
+node_type "Geom"
+node_name "Geom_0"
+}
+Geom_Type {
+geom_type_s "T_Polygons"
+trg_qual 9
+}
+
+DEF Poly_Geom_Data Group {
+children [
+Node_Info {
+node_type "Poly_Geom_Data"
+node_name ""
+}
+DEF myShape_461 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_461"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord DEF FaceC Coordinate {
+point  [
+-0.026 -0.012 0,
+-0.026 -0.014 0,
+-0.01 -0.014 0,
+-0.01 -0.012 0,
+-0.026 0.004 0.009,
+-0.026 0.012 0.009,
+-0.026 0.012 0,
+-0.026 0.014 0,
+-0.026 0.014 0.011,
+-0.026 -0.014 0.011,
+-0.026 -0.012 0.009,
+-0.026 -0.004 0.009,
+-0.026 -0.004 0.0055,
+-0.026 0.004 0.0055,
+-0.0113137 -0.004 0.009,
+0 -0.012 0.009,
+0.00188207 -0.01185138 0.009,
+0.00372621 -0.01140672 0.009,
+0.00547687 -0.01067716 0.009,
+0.00709068 -0.00968092 0.009,
+0.0085278 -0.0084424 0.009,
+0.00974679 -0.007 0.009,
+0.01212435 -0.007 0.009,
+0.01315335 -0.00479418 0.009,
+0.01378682 -0.00243334 0.009,
+0.014 -3.7e-07 0.009,
+0.01378696 0.00243259 0.009,
+0.01315358 0.00479356 0.009,
+0.01212435 0.007 0.009,
+0.00974679 0.007 0.009,
+0.00852821 0.00844199 0.009,
+0.0070913 0.00968047 0.009,
+0.0054775 0.01067684 0.009,
+0.00372693 0.01140649 0.009,
+0.00188264 0.0118513 0.009,
+0 0.012 0.009,
+-0.0113137 0.004 0.009,
+-0.01182617 0.00203423 0.009,
+-0.0119999 3.9e-07 0.009,
+-0.01182628 -0.00203362 0.009,
+-0.006 0.006 0.009,
+0.006 0.006 0.009,
+0.006 -0.006 0.009,
+-0.006 -0.006 0.009,
+-0.0113137 0.004 0.0055,
+-0.01182628 0.00203362 0.0055,
+-0.0119999 -3.9e-07 0.0055,
+-0.01182617 -0.00203423 0.0055,
+-0.0113137 -0.004 0.0055,
+0 0.012 0.003,
+-0.01 0.012 0.003,
+-0.01 0.012 0,
+-0.01 0.014 0,
+-0.01 0.014 0.003,
+0 0.014 0.003,
+0 0.014 0.011,
+0.00272 0.01373294 0.011,
+0.00535035 0.0129372 0.011,
+0.00777146 0.01164488 0.011,
+0.00989525 0.00990352 0.011,
+0.01163833 0.00778126 0.011,
+0.01293275 0.00536109 0.011,
+0.01373056 0.0027327 0.011,
+0.01399998 5.6e-07 0.011,
+0.01373078 -0.00273158 0.011,
+0.01293318 -0.00536004 0.011,
+0.01163896 -0.00778032 0.011,
+0.00989606 -0.00990272 0.011,
+0.00777241 -0.01164424 0.011,
+0.00535141 -0.01293676 0.011,
+0.00272097 -0.01373275 0.011,
+0 -0.014 0.011,
+0.00275 0.004 0.011,
+0.00284368 0.0035259 0.011,
+0.0031142 0.00311803 0.011,
+0.00352027 0.00284587 0.011,
+0.0039997 0.00275 0.011,
+0.00447918 0.00284564 0.011,
+0.00488538 0.00311762 0.011,
+0.0051561 0.00352539 0.011,
+0.00525 0.004 0.011,
+0.00515631 0.00447409 0.011,
+0.00488579 0.00488196 0.011,
+0.00447972 0.00515412 0.011,
+0.00400029 0.00525 0.011,
+0.00352081 0.00515435 0.011,
+0.0031146 0.00488237 0.011,
+0.00284389 0.0044746 0.011,
+-0.00525 0.004 0.011,
+-0.00515631 0.0035259 0.011,
+-0.00488579 0.00311803 0.011,
+-0.00447972 0.00284587 0.011,
+-0.00400029 0.00275 0.011,
+-0.00352081 0.00284564 0.011,
+-0.0031146 0.00311762 0.011,
+-0.00284389 0.00352539 0.011,
+-0.00275 0.004 0.011,
+-0.00284368 0.00447409 0.011,
+-0.0031142 0.00488196 0.011,
+-0.00352027 0.00515412 0.011,
+-0.0039997 0.00525 0.011,
+-0.00447918 0.00515435 0.011,
+-0.00488538 0.00488237 0.011,
+-0.0051561 0.0044746 0.011,
+0.00275 -0.004 0.011,
+0.00284368 -0.00447409 0.011,
+0.0031142 -0.00488196 0.011,
+0.00352027 -0.00515412 0.011,
+0.0039997 -0.00525 0.011,
+0.00447918 -0.00515435 0.011,
+0.00488538 -0.00488237 0.011,
+0.0051561 -0.0044746 0.011,
+0.00525 -0.004 0.011,
+0.00515631 -0.0035259 0.011,
+0.00488579 -0.00311803 0.011,
+0.00447972 -0.00284587 0.011,
+0.00400029 -0.00275 0.011,
+0.00352081 -0.00284564 0.011,
+0.0031146 -0.00311762 0.011,
+0.00284389 -0.00352539 0.011,
+-0.00525 -0.004 0.011,
+-0.00515631 -0.00447409 0.011,
+-0.00488579 -0.00488196 0.011,
+-0.00447972 -0.00515412 0.011,
+-0.00400029 -0.00525 0.011,
+-0.00352081 -0.00515435 0.011,
+-0.0031146 -0.00488237 0.011,
+-0.00284389 -0.0044746 0.011,
+-0.00275 -0.004 0.011,
+-0.00284368 -0.0035259 0.011,
+-0.0031142 -0.00311803 0.011,
+-0.00352027 -0.00284587 0.011,
+-0.0039997 -0.00275 0.011,
+-0.00447918 -0.00284564 0.011,
+-0.00488538 -0.00311762 0.011,
+-0.0051561 -0.00352539 0.011,
+0 -0.014 0.003,
+-0.01 -0.014 0.003,
+-0.01 -0.012 0.003,
+0 -0.012 0.003,
+0.00188264 -0.0118513 0.003,
+0.00372693 -0.01140649 0.003,
+0.0054775 -0.01067684 0.003,
+0.0070913 -0.00968047 0.003,
+0.00852821 -0.00844199 0.003,
+0.00974679 -0.007 0.003,
+0.01212435 -0.007 0.003,
+0.01212435 0.007 0.003,
+0.01072814 -0.00899454 0.003,
+0.00900016 -0.01072356 0.003,
+0.00699966 -0.01212454 0.003,
+0.00478606 -0.01315641 0.003,
+0.00242477 -0.01378823 0.003,
+0.00242543 0.01378812 0.003,
+0.00478679 0.01315615 0.003,
+0.00700032 0.01212416 0.003,
+0.00900075 0.01072306 0.003,
+0.01072856 0.00899404 0.003,
+0.00974679 0.007 0.003,
+0.0085278 0.0084424 0.003,
+0.00709068 0.00968092 0.003,
+0.00547687 0.01067716 0.003,
+0.00372621 0.01140672 0.003,
+0.00188207 0.01185138 0.003,
+0.00525 0.004 0.007,
+0.0051561 0.0044746 0.007,
+0.00488538 0.00488237 0.007,
+0.00447918 0.00515435 0.007,
+0.0039997 0.00525 0.007,
+0.00352027 0.00515412 0.007,
+0.0031142 0.00488196 0.007,
+0.00284368 0.00447409 0.007,
+0.00275 0.004 0.007,
+0.00284389 0.00352539 0.007,
+0.0031146 0.00311762 0.007,
+0.00352081 0.00284564 0.007,
+0.00400029 0.00275 0.007,
+0.00447972 0.00284587 0.007,
+0.00488579 0.00311803 0.007,
+0.00515631 0.0035259 0.007,
+-0.006 0.006 0.007,
+-0.006 -0.006 0.007,
+0.006 -0.006 0.007,
+0.006 0.006 0.007,
+-0.00275 0.004 0.007,
+-0.00284368 0.0035259 0.007,
+-0.0031142 0.00311803 0.007,
+-0.00352027 0.00284587 0.007,
+-0.0039997 0.00275 0.007,
+-0.00447918 0.00284564 0.007,
+-0.00488538 0.00311762 0.007,
+-0.0051561 0.00352539 0.007,
+-0.00525 0.004 0.007,
+-0.00515631 0.00447409 0.007,
+-0.00488579 0.00488196 0.007,
+-0.00447972 0.00515412 0.007,
+-0.00400029 0.00525 0.007,
+-0.00352081 0.00515435 0.007,
+-0.0031146 0.00488237 0.007,
+-0.00284389 0.0044746 0.007,
+0.00525 -0.004 0.007,
+0.00515631 -0.00447409 0.007,
+0.00488579 -0.00488196 0.007,
+0.00447972 -0.00515412 0.007,
+0.00400029 -0.00525 0.007,
+0.00352081 -0.00515435 0.007,
+0.0031146 -0.00488237 0.007,
+0.00284389 -0.0044746 0.007,
+0.00275 -0.004 0.007,
+0.00284368 -0.0035259 0.007,
+0.0031142 -0.00311803 0.007,
+0.00352027 -0.00284587 0.007,
+0.0039997 -0.00275 0.007,
+0.00447918 -0.00284564 0.007,
+0.00488538 -0.00311762 0.007,
+0.0051561 -0.00352539 0.007,
+-0.00275 -0.004 0.007,
+-0.00284368 -0.00447409 0.007,
+-0.0031142 -0.00488196 0.007,
+-0.00352027 -0.00515412 0.007,
+-0.0039997 -0.00525 0.007,
+-0.00447918 -0.00515435 0.007,
+-0.00488538 -0.00488237 0.007,
+-0.0051561 -0.0044746 0.007,
+-0.00525 -0.004 0.007,
+-0.00515631 -0.0035259 0.007,
+-0.00488579 -0.00311803 0.007,
+-0.00447972 -0.00284587 0.007,
+-0.00400029 -0.00275 0.007,
+-0.00352081 -0.00284564 0.007,
+-0.0031146 -0.00311762 0.007,
+-0.00284389 -0.00352539 0.007,
+]}
+normal DEF FaceN Normal {
+vector  [
+0 0 -1,
+-1 0 0,
+0.942 -0.333 0,
+0.985 -0.169 0,
+1 0 0,
+0.985 0.169 0,
+0.942 0.333 0,
+0 1 0,
+0 -1 0,
+0 0 1,
+-0.156 0.987 0,
+-0.31 0.95 0,
+-0.456 0.889 0,
+-0.59 0.806 0,
+-0.71 0.703 0,
+-0.812 0.583 0,
+0.866 0.5 0,
+0.939 0.342 0,
+0.984 0.173 0,
+0.984 -0.173 0,
+0.939 -0.342 0,
+0.866 -0.5 0,
+0.766 -0.642 0,
+0.642 -0.765 0,
+0.499 -0.866 0,
+0.341 -0.939 0,
+0.173 -0.984 0,
+0.194 -0.98 0,
+0.382 -0.924 0,
+0.555 -0.831 0,
+0.706 -0.707 0,
+0.831 -0.555 0,
+0.923 -0.382 0,
+0.98 -0.195 0,
+0.98 0.195 0,
+0.923 0.382 0,
+0.831 0.555 0,
+0.706 0.707 0,
+0.555 0.831 0,
+0.382 0.924 0,
+0.194 0.98 0,
+0.173 0.984 0,
+0.341 0.939 0,
+0.5 0.866 0,
+0.642 0.765 0,
+0.766 0.642 0,
+-0.156 -0.987 0,
+-0.31 -0.95 0,
+-0.456 -0.889 0,
+-0.59 -0.806 0,
+-0.71 -0.703 0,
+-0.812 -0.583 0,
+0.925 -0.379 0,
+0.708 -0.705 0,
+0.383 -0.923 0,
+-0.383 -0.923 0,
+-0.708 -0.705 0,
+-0.925 -0.379 0,
+-0.925 0.379 0,
+-0.708 0.705 0,
+-0.383 0.923 0,
+0.383 0.923 0,
+0.708 0.705 0,
+0.925 0.379 0,
+]}
+normalPerVertex TRUE
+coordIndex [
+2, 1, 3, -1,0, 3, 1, -1,
+]
+normalIndex [
+0, 0, 0, -1,0, 0, 0, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_463 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_463"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.777778
+diffuseColor 0.432 0.432 0.432
+specularColor 0.75 0.75 0.75
+shininess 0.3
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+0, 1, 10, -1,13, 12, 4, -1,8, 6, 5, -1,
+8, 5, 4, -1,4, 12, 11, -1,8, 4, 11, -1,
+8, 11, 10, -1,10, 1, 9, -1,9, 8, 10, -1,
+7, 6, 8, -1,
+]
+normalIndex [
+1, 1, 1, -1,1, 1, 1, -1,1, 1, 1, -1,
+1, 1, 1, -1,1, 1, 1, -1,1, 1, 1, -1,
+1, 1, 1, -1,1, 1, 1, -1,1, 1, 1, -1,
+1, 1, 1, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_464 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_464"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+38, 37, 39, -1,39, 37, 36, -1,14, 39, 36, -1,
+11, 14, 10, -1,40, 14, 36, -1,35, 40, 36, -1,
+35, 36, 4, -1,5, 35, 4, -1,14, 40, 43, -1,
+10, 14, 43, -1,15, 10, 43, -1,40, 35, 34, -1,
+40, 34, 33, -1,40, 33, 32, -1,41, 40, 32, -1,
+42, 18, 17, -1,42, 17, 16, -1,42, 16, 15, -1,
+43, 42, 15, -1,19, 18, 42, -1,31, 19, 42, -1,
+31, 42, 41, -1,32, 31, 41, -1,20, 19, 31, -1,
+31, 30, 20, -1,20, 30, 29, -1,21, 20, 29, -1,
+29, 28, 21, -1,22, 21, 28, -1,27, 23, 22, -1,
+28, 27, 22, -1,24, 23, 27, -1,27, 26, 24, -1,
+25, 24, 26, -1,
+]
+normalIndex [
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_483 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_483"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+36, 37, 44, -1,45, 44, 37, -1,37, 38, 45, -1,
+46, 45, 38, -1,38, 39, 46, -1,47, 46, 39, -1,
+39, 14, 47, -1,48, 47, 14, -1,
+]
+normalIndex [
+2, 3, 2, -1,3, 2, 3, -1,3, 4, 3, -1,
+4, 3, 4, -1,4, 5, 4, -1,5, 4, 5, -1,
+5, 6, 5, -1,6, 5, 6, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_486 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_486"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+4, 36, 13, -1,44, 13, 36, -1,
+]
+normalIndex [
+7, 7, 7, -1,7, 7, 7, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_487 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_487"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+12, 46, 47, -1,48, 12, 47, -1,45, 46, 12, -1,
+44, 45, 12, -1,13, 44, 12, -1,
+]
+normalIndex [
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_488 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_488"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+14, 11, 48, -1,12, 48, 11, -1,
+]
+normalIndex [
+8, 8, 8, -1,8, 8, 8, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_489 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_489"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+5, 51, 50, -1,5, 50, 49, -1,35, 5, 49, -1,
+6, 51, 5, -1,
+]
+normalIndex [
+8, 8, 8, -1,8, 8, 8, -1,8, 8, 8, -1,
+8, 8, 8, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_462 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_462"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+51, 6, 52, -1,7, 52, 6, -1,
+]
+normalIndex [
+0, 0, 0, -1,0, 0, 0, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_479 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_479"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.777778
+diffuseColor 0.432 0.432 0.432
+specularColor 0.75 0.75 0.75
+shininess 0.3
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+52, 7, 53, -1,55, 53, 7, -1,8, 55, 7, -1,
+54, 53, 55, -1,
+]
+normalIndex [
+7, 7, 7, -1,7, 7, 7, -1,7, 7, 7, -1,
+7, 7, 7, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_471 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_471"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.777778
+diffuseColor 0.432 0.432 0.432
+specularColor 0.75 0.75 0.75
+shininess 0.3
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+135, 89, 88, -1,120, 135, 88, -1,90, 89, 135, -1,
+135, 134, 90, -1,91, 90, 134, -1,134, 133, 91, -1,
+92, 91, 133, -1,133, 132, 92, -1,93, 92, 132, -1,
+132, 131, 93, -1,94, 93, 131, -1,131, 130, 94, -1,
+95, 94, 130, -1,130, 129, 95, -1,95, 129, 128, -1,
+96, 95, 128, -1,71, 96, 128, -1,71, 128, 127, -1,
+71, 127, 126, -1,71, 126, 125, -1,71, 125, 124, -1,
+71, 124, 123, -1,71, 123, 122, -1,71, 122, 121, -1,
+121, 120, 8, -1,71, 121, 8, -1,9, 71, 8, -1,
+8, 120, 88, -1,8, 88, 103, -1,8, 103, 102, -1,
+8, 102, 101, -1,8, 101, 100, -1,8, 100, 99, -1,
+96, 71, 55, -1,97, 96, 55, -1,98, 97, 55, -1,
+99, 98, 55, -1,55, 8, 99, -1,70, 56, 55, -1,
+71, 70, 55, -1,119, 73, 72, -1,104, 119, 72, -1,
+74, 73, 119, -1,119, 118, 74, -1,75, 74, 118, -1,
+118, 117, 75, -1,76, 75, 117, -1,117, 116, 76, -1,
+77, 76, 116, -1,116, 115, 77, -1,78, 77, 115, -1,
+115, 114, 78, -1,79, 78, 114, -1,114, 113, 79, -1,
+79, 113, 112, -1,80, 79, 112, -1,56, 70, 104, -1,
+56, 104, 72, -1,56, 72, 87, -1,56, 87, 86, -1,
+56, 86, 85, -1,56, 85, 84, -1,56, 84, 83, -1,
+56, 83, 82, -1,56, 82, 81, -1,81, 80, 57, -1,
+57, 56, 81, -1,69, 57, 80, -1,69, 80, 112, -1,
+69, 112, 111, -1,69, 111, 110, -1,69, 110, 109, -1,
+69, 109, 108, -1,69, 108, 107, -1,69, 107, 106, -1,
+69, 106, 105, -1,105, 104, 70, -1,70, 69, 105, -1,
+58, 57, 69, -1,69, 68, 58, -1,59, 58, 68, -1,
+68, 67, 59, -1,60, 59, 67, -1,67, 66, 60, -1,
+61, 60, 66, -1,66, 65, 61, -1,62, 61, 65, -1,
+65, 64, 62, -1,63, 62, 64, -1,
+]
+normalIndex [
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,9, 9, 9, -1,
+9, 9, 9, -1,9, 9, 9, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_492 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_492"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.777778
+diffuseColor 0.432 0.432 0.432
+specularColor 0.75 0.75 0.75
+shininess 0.3
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+9, 2, 137, -1,9, 137, 136, -1,71, 9, 136, -1,
+1, 2, 9, -1,
+]
+normalIndex [
+8, 8, 8, -1,8, 8, 8, -1,8, 8, 8, -1,
+8, 8, 8, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_480 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_480"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+137, 2, 138, -1,3, 138, 2, -1,
+]
+normalIndex [
+4, 4, 4, -1,4, 4, 4, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_482 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_482"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+3, 0, 138, -1,15, 138, 0, -1,10, 15, 0, -1,
+139, 138, 15, -1,
+]
+normalIndex [
+7, 7, 7, -1,7, 7, 7, -1,7, 7, 7, -1,
+7, 7, 7, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_485 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_485"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+15, 16, 139, -1,140, 139, 16, -1,16, 17, 140, -1,
+141, 140, 17, -1,17, 18, 141, -1,142, 141, 18, -1,
+18, 19, 142, -1,143, 142, 19, -1,19, 20, 143, -1,
+144, 143, 20, -1,20, 21, 144, -1,145, 144, 21, -1,
+
+]
+normalIndex [
+7, 10, 7, -1,10, 7, 10, -1,10, 11, 10, -1,
+11, 10, 11, -1,11, 12, 11, -1,12, 11, 12, -1,
+12, 13, 12, -1,13, 12, 13, -1,13, 14, 13, -1,
+14, 13, 14, -1,14, 15, 14, -1,15, 14, 15, -1,
+
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_495 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_495"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+22, 146, 21, -1,145, 21, 146, -1,
+]
+normalIndex [
+7, 7, 7, -1,7, 7, 7, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_493 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_493"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.777778
+diffuseColor 0.432 0.432 0.432
+specularColor 0.75 0.75 0.75
+shininess 0.3
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+56, 153, 54, -1,55, 56, 54, -1,154, 153, 56, -1,
+56, 57, 154, -1,155, 154, 57, -1,57, 58, 155, -1,
+156, 155, 58, -1,58, 59, 156, -1,157, 156, 59, -1,
+59, 60, 157, -1,157, 60, 28, -1,147, 157, 28, -1,
+60, 61, 28, -1,27, 28, 61, -1,61, 62, 27, -1,
+26, 27, 62, -1,62, 63, 26, -1,25, 26, 63, -1,
+64, 24, 25, -1,63, 64, 25, -1,23, 24, 64, -1,
+64, 65, 23, -1,22, 23, 65, -1,66, 146, 22, -1,
+65, 66, 22, -1,148, 146, 66, -1,66, 67, 148, -1,
+149, 148, 67, -1,67, 68, 149, -1,150, 149, 68, -1,
+68, 69, 150, -1,151, 150, 69, -1,69, 70, 151, -1,
+152, 151, 70, -1,70, 71, 152, -1,136, 152, 71, -1,
+
+]
+normalIndex [
+40, 41, 7, -1,7, 40, 7, -1,42, 41, 40, -1,
+40, 39, 42, -1,43, 42, 39, -1,39, 38, 43, -1,
+44, 43, 38, -1,38, 37, 44, -1,45, 44, 37, -1,
+37, 36, 45, -1,45, 36, 16, -1,16, 45, 16, -1,
+36, 35, 16, -1,17, 16, 35, -1,35, 34, 17, -1,
+18, 17, 34, -1,34, 4, 18, -1,4, 18, 4, -1,
+33, 19, 4, -1,4, 33, 4, -1,20, 19, 33, -1,
+33, 32, 20, -1,21, 20, 32, -1,31, 21, 21, -1,
+32, 31, 21, -1,22, 21, 31, -1,31, 30, 22, -1,
+23, 22, 30, -1,30, 29, 23, -1,24, 23, 29, -1,
+29, 28, 24, -1,25, 24, 28, -1,28, 27, 25, -1,
+26, 25, 27, -1,27, 8, 26, -1,8, 26, 8, -1,
+
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_494 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_494"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+29, 158, 28, -1,147, 28, 158, -1,
+]
+normalIndex [
+8, 8, 8, -1,8, 8, 8, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_484 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_484"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+29, 30, 158, -1,159, 158, 30, -1,30, 31, 159, -1,
+160, 159, 31, -1,31, 32, 160, -1,161, 160, 32, -1,
+32, 33, 161, -1,162, 161, 33, -1,33, 34, 162, -1,
+163, 162, 34, -1,34, 35, 163, -1,49, 163, 35, -1,
+
+]
+normalIndex [
+51, 50, 51, -1,50, 51, 50, -1,50, 49, 50, -1,
+49, 50, 49, -1,49, 48, 49, -1,48, 49, 48, -1,
+48, 47, 48, -1,47, 48, 47, -1,47, 46, 47, -1,
+46, 47, 46, -1,46, 8, 46, -1,8, 46, 8, -1,
+
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_491 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_491"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+53, 54, 50, -1,49, 50, 54, -1,153, 163, 49, -1,
+54, 153, 49, -1,162, 163, 153, -1,153, 154, 162, -1,
+161, 162, 154, -1,154, 155, 161, -1,160, 161, 155, -1,
+156, 159, 160, -1,155, 156, 160, -1,158, 159, 156, -1,
+156, 157, 158, -1,147, 158, 157, -1,
+]
+normalIndex [
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_481 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_481"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+50, 51, 53, -1,52, 53, 51, -1,
+]
+normalIndex [
+4, 4, 4, -1,4, 4, 4, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_490 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_490"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+138, 139, 137, -1,136, 137, 139, -1,139, 140, 136, -1,
+152, 136, 140, -1,140, 141, 152, -1,151, 152, 141, -1,
+141, 142, 151, -1,150, 151, 142, -1,142, 143, 150, -1,
+150, 143, 144, -1,149, 150, 144, -1,144, 145, 149, -1,
+148, 149, 145, -1,145, 146, 148, -1,
+]
+normalIndex [
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_470 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_470"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+80, 81, 164, -1,165, 164, 81, -1,81, 82, 165, -1,
+166, 165, 82, -1,82, 83, 166, -1,167, 166, 83, -1,
+83, 84, 167, -1,168, 167, 84, -1,84, 85, 168, -1,
+169, 168, 85, -1,85, 86, 169, -1,170, 169, 86, -1,
+86, 87, 170, -1,171, 170, 87, -1,87, 72, 171, -1,
+172, 171, 72, -1,
+]
+normalIndex [
+1, 57, 1, -1,57, 1, 57, -1,57, 56, 57, -1,
+56, 57, 56, -1,56, 55, 56, -1,55, 56, 55, -1,
+55, 8, 55, -1,8, 55, 8, -1,8, 54, 8, -1,
+54, 8, 54, -1,54, 53, 54, -1,53, 54, 53, -1,
+53, 52, 53, -1,52, 53, 52, -1,52, 4, 52, -1,
+4, 52, 4, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_472 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_472"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+72, 73, 172, -1,173, 172, 73, -1,73, 74, 173, -1,
+174, 173, 74, -1,74, 75, 174, -1,175, 174, 75, -1,
+75, 76, 175, -1,176, 175, 76, -1,76, 77, 176, -1,
+177, 176, 77, -1,77, 78, 177, -1,178, 177, 78, -1,
+78, 79, 178, -1,179, 178, 79, -1,79, 80, 179, -1,
+164, 179, 80, -1,
+]
+normalIndex [
+4, 63, 4, -1,63, 4, 63, -1,63, 62, 63, -1,
+62, 63, 62, -1,62, 61, 62, -1,61, 62, 61, -1,
+61, 7, 61, -1,7, 61, 7, -1,7, 60, 7, -1,
+60, 7, 60, -1,60, 59, 60, -1,59, 60, 59, -1,
+59, 58, 59, -1,58, 59, 58, -1,58, 1, 58, -1,
+1, 58, 1, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_469 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_469"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+191, 225, 224, -1,192, 191, 224, -1,226, 225, 191, -1,
+191, 190, 226, -1,227, 226, 190, -1,190, 189, 227, -1,
+228, 227, 189, -1,189, 188, 228, -1,229, 228, 188, -1,
+188, 187, 229, -1,230, 229, 187, -1,187, 186, 230, -1,
+231, 230, 186, -1,186, 185, 231, -1,231, 185, 184, -1,
+216, 231, 184, -1,173, 209, 208, -1,172, 173, 208, -1,
+210, 209, 173, -1,173, 174, 210, -1,211, 210, 174, -1,
+174, 175, 211, -1,212, 211, 175, -1,175, 176, 212, -1,
+213, 212, 176, -1,176, 177, 213, -1,214, 213, 177, -1,
+177, 178, 214, -1,215, 214, 178, -1,178, 179, 215, -1,
+215, 179, 164, -1,200, 215, 164, -1,183, 200, 164, -1,
+183, 164, 165, -1,183, 165, 166, -1,183, 166, 167, -1,
+183, 167, 168, -1,183, 168, 169, -1,171, 172, 216, -1,
+171, 216, 184, -1,170, 171, 184, -1,169, 170, 184, -1,
+183, 169, 184, -1,183, 184, 199, -1,183, 199, 198, -1,
+183, 198, 197, -1,183, 197, 196, -1,192, 181, 180, -1,
+193, 192, 180, -1,194, 193, 180, -1,195, 194, 180, -1,
+196, 195, 180, -1,180, 183, 196, -1,181, 192, 224, -1,
+181, 224, 223, -1,181, 223, 222, -1,181, 222, 221, -1,
+181, 221, 220, -1,181, 220, 219, -1,217, 216, 172, -1,
+217, 172, 208, -1,218, 217, 208, -1,219, 218, 208, -1,
+181, 219, 208, -1,181, 208, 207, -1,181, 207, 206, -1,
+181, 206, 205, -1,181, 205, 204, -1,200, 183, 182, -1,
+201, 200, 182, -1,202, 201, 182, -1,203, 202, 182, -1,
+204, 203, 182, -1,182, 181, 204, -1,
+]
+normalIndex [
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,0, 0, 0, -1,
+0, 0, 0, -1,0, 0, 0, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_465 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_465"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+183, 180, 41, -1,40, 41, 180, -1,
+]
+normalIndex [
+7, 7, 7, -1,7, 7, 7, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_468 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_468"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+182, 183, 42, -1,41, 42, 183, -1,
+]
+normalIndex [
+4, 4, 4, -1,4, 4, 4, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_467 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_467"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+181, 182, 43, -1,42, 43, 182, -1,
+]
+normalIndex [
+8, 8, 8, -1,8, 8, 8, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_466 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_466"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+180, 181, 40, -1,43, 40, 181, -1,
+]
+normalIndex [
+1, 1, 1, -1,1, 1, 1, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_473 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_473"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+96, 97, 184, -1,199, 184, 97, -1,97, 98, 199, -1,
+198, 199, 98, -1,98, 99, 198, -1,197, 198, 99, -1,
+99, 100, 197, -1,196, 197, 100, -1,100, 101, 196, -1,
+195, 196, 101, -1,101, 102, 195, -1,194, 195, 102, -1,
+102, 103, 194, -1,193, 194, 103, -1,103, 88, 193, -1,
+192, 193, 88, -1,
+]
+normalIndex [
+1, 57, 1, -1,57, 1, 57, -1,57, 56, 57, -1,
+56, 57, 56, -1,56, 55, 56, -1,55, 56, 55, -1,
+55, 8, 55, -1,8, 55, 8, -1,8, 54, 8, -1,
+54, 8, 54, -1,54, 53, 54, -1,53, 54, 53, -1,
+53, 52, 53, -1,52, 53, 52, -1,52, 4, 52, -1,
+4, 52, 4, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_474 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_474"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+88, 89, 192, -1,191, 192, 89, -1,89, 90, 191, -1,
+190, 191, 90, -1,90, 91, 190, -1,189, 190, 91, -1,
+91, 92, 189, -1,188, 189, 92, -1,92, 93, 188, -1,
+187, 188, 93, -1,93, 94, 187, -1,186, 187, 94, -1,
+94, 95, 186, -1,185, 186, 95, -1,95, 96, 185, -1,
+184, 185, 96, -1,
+]
+normalIndex [
+4, 63, 4, -1,63, 4, 63, -1,63, 62, 63, -1,
+62, 63, 62, -1,62, 61, 62, -1,61, 62, 61, -1,
+61, 7, 61, -1,7, 61, 7, -1,7, 60, 7, -1,
+60, 7, 60, -1,60, 59, 60, -1,59, 60, 59, -1,
+59, 58, 59, -1,58, 59, 58, -1,58, 1, 58, -1,
+1, 58, 1, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_475 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_475"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+112, 113, 200, -1,215, 200, 113, -1,113, 114, 215, -1,
+214, 215, 114, -1,114, 115, 214, -1,213, 214, 115, -1,
+115, 116, 213, -1,212, 213, 116, -1,116, 117, 212, -1,
+211, 212, 117, -1,117, 118, 211, -1,210, 211, 118, -1,
+118, 119, 210, -1,209, 210, 119, -1,119, 104, 209, -1,
+208, 209, 104, -1,
+]
+normalIndex [
+1, 57, 1, -1,57, 1, 57, -1,57, 56, 57, -1,
+56, 57, 56, -1,56, 55, 56, -1,55, 56, 55, -1,
+55, 8, 55, -1,8, 55, 8, -1,8, 54, 8, -1,
+54, 8, 54, -1,54, 53, 54, -1,53, 54, 53, -1,
+53, 52, 53, -1,52, 53, 52, -1,52, 4, 52, -1,
+4, 52, 4, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_476 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_476"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+104, 105, 208, -1,207, 208, 105, -1,105, 106, 207, -1,
+206, 207, 106, -1,106, 107, 206, -1,205, 206, 107, -1,
+107, 108, 205, -1,204, 205, 108, -1,108, 109, 204, -1,
+203, 204, 109, -1,109, 110, 203, -1,202, 203, 110, -1,
+110, 111, 202, -1,201, 202, 111, -1,111, 112, 201, -1,
+200, 201, 112, -1,
+]
+normalIndex [
+4, 63, 4, -1,63, 4, 63, -1,63, 62, 63, -1,
+62, 63, 62, -1,62, 61, 62, -1,61, 62, 61, -1,
+61, 7, 61, -1,7, 61, 7, -1,7, 60, 7, -1,
+60, 7, 60, -1,60, 59, 60, -1,59, 60, 59, -1,
+59, 58, 59, -1,58, 59, 58, -1,58, 1, 58, -1,
+1, 58, 1, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_477 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_477"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+128, 129, 216, -1,231, 216, 129, -1,129, 130, 231, -1,
+230, 231, 130, -1,130, 131, 230, -1,229, 230, 131, -1,
+131, 132, 229, -1,228, 229, 132, -1,132, 133, 228, -1,
+227, 228, 133, -1,133, 134, 227, -1,226, 227, 134, -1,
+134, 135, 226, -1,225, 226, 135, -1,135, 120, 225, -1,
+224, 225, 120, -1,
+]
+normalIndex [
+1, 57, 1, -1,57, 1, 57, -1,57, 56, 57, -1,
+56, 57, 56, -1,56, 55, 56, -1,55, 56, 55, -1,
+55, 8, 55, -1,8, 55, 8, -1,8, 54, 8, -1,
+54, 8, 54, -1,54, 53, 54, -1,53, 54, 53, -1,
+53, 52, 53, -1,52, 53, 52, -1,52, 4, 52, -1,
+4, 52, 4, -1,
+]
+}
+
+}
+
+]
+}
+
+DEF myShape_478 Group {
+children [
+Node_Info {
+node_type "Poly_Surface"
+node_name "Poly_Surf_478"
+}
+Shape {
+appearance Appearance {
+material Material {
+ambientIntensity 0.352941
+diffuseColor 0.816 0.816 0.816
+specularColor 0.3 0.3 0.3
+shininess 0.35
+}
+}
+geometry IndexedFaceSet {
+ccw  TRUE
+solid  TRUE
+convex TRUE
+coord USE FaceC 
+
+normal USE FaceN 
+
+normalPerVertex TRUE
+coordIndex [
+120, 121, 224, -1,223, 224, 121, -1,121, 122, 223, -1,
+222, 223, 122, -1,122, 123, 222, -1,221, 222, 123, -1,
+123, 124, 221, -1,220, 221, 124, -1,124, 125, 220, -1,
+219, 220, 125, -1,125, 126, 219, -1,218, 219, 126, -1,
+126, 127, 218, -1,217, 218, 127, -1,127, 128, 217, -1,
+216, 217, 128, -1,
+]
+normalIndex [
+4, 63, 4, -1,63, 4, 63, -1,63, 62, 63, -1,
+62, 63, 62, -1,62, 61, 62, -1,61, 62, 61, -1,
+61, 7, 61, -1,7, 61, 7, -1,7, 60, 7, -1,
+60, 7, 60, -1,60, 59, 60, -1,59, 60, 59, -1,
+59, 58, 59, -1,58, 59, 58, -1,58, 1, 58, -1,
+1, 58, 1, -1,
+]
+}
+
+}
+
+]
+}
+
+]
+}
+
+ ]
+}
+]
+}
+
+]
+}
+

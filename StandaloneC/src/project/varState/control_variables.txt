@@ -1,0 +1,100 @@
+% Definition of the control state variables 
+%      (available in MBSdata->user_IO->cvs if you add the line 'cvs   ControllerStruct   1' in simu_variables.txt)
+%
+% For each line: varname , type , size
+%
+%  - varname: name of the variable (without ' or "")
+%
+%  - type: int / double / name of the structure
+%
+%  - size: number of elements in the vector
+%       1    :  simple variable
+%       n    :  vector of n (n>1) elements
+%       [m n]:  tabular of 2 entries with a size m*n 
+%       0    :  forbidden
+%       <1   :  pointer -> fabs(x) = number of stars
+% indexes start at 0 -> different from 'simu_variables'
+%
+% You can use recursive structures. 
+% In this case, you must define sub-structures before their parent structure.
+%
+% Lines starting with % or // are not taken into account (comments)
+% Write the name of each controller as '# ControllerName' (without the '')
+% Write the corresponding variables under the '# ControllerName'
+% Do not add another line starting with #
+% Keep at least one space between different variables, do not use other signs (, . :)
+%
+
+%% ---- CONTROLLER INPUTS ---- %%
+
+# ControllerInputs
+
+% time [s]
+t   double   1
+
+% CoMan joints (position - velocity - torque) 
+% [rad], [rad/s], [rad/s^2] -> for each of the 29 joints (worst case: with the long arms)
+q    double   29
+qd   double   29
+Qq   double   29
+
+% Forces under the feet [N] -> [x ; y ; z]
+F_Rfoot   double   3
+F_Lfoot   double   3 
+
+% Torques under the feet [Nm] -> [x ; y ; z]
+T_Rfoot   double   3
+T_Lfoot   double   3
+
+% IMU: absolute orientations [rad] -> rotation matrix
+IMU_Orientation   double   9
+
+% IMU: absolute velocities [rad/s]
+IMU_Angular_Rate   double   3
+
+
+
+%% ---- CONTROLLER OUTPUTS ---- %%
+
+# ControllerOutputs
+
+% references (position - velocity - torque) [rad], [rad/s], [Nm]
+q_ref    double   29 % positions references
+qd_ref   double   29 % velocities references
+Qq_ref   double   29 % torques references
+
+% imp_ctrl_index: choice between controller types:
+%   1: q_ref  tracking
+%   2: qd_ref tracking
+%   3: Qq_ref tracking    
+imp_ctrl_index   int   29
+
+
+
+%% ---- MAIN CONTROLLER ---- %%
+
+# ControllerStruct
+
+% Inputs structure 
+Inputs   ControllerInputs    1
+
+% Outputs structure
+Outputs   ControllerOutputs   1
+
+
+%% -- Control Variables -- %%
+
+% debug available on the real robot
+out   double   20
+
+% position reference for the right arm [rad]
+q_ref_r_sh_sag   double   1 % shoulder sagittal (pitch)
+q_ref_r_sh_lat   double   1 % shoulder lateral (roll)
+q_ref_r_sh_yaw   double   1 % shoulder yaw
+q_ref_r_elb      double   1 % elbow
+
+% position reference for the left arm [rad]
+q_ref_l_sh_sag   double   1 % shoulder sagittal (pitch)
+q_ref_l_sh_lat   double   1 % shoulder lateral (roll)
+q_ref_l_sh_yaw   double   1 % shoulder yaw
+q_ref_l_elb      double   1 % elbow

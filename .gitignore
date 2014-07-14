@@ -1,0 +1,31 @@
+
+# Desktop Services Store
+
+.DS_Store
+._.DS_Store
+._*
+*~
+
+# model (automatically copy-pasted)
+
+dataR/coman_robotran.mbs
+
+StandaloneC/src/project/Model_standalone.mbsdata
+
+symbolicR
+
+
+# files automatically generated
+
+StandaloneC/src/project/varState/update_check/simu_check.txt
+StandaloneC/src/project/varState/update_check/ctrl_check.txt
+
+
+# build folder
+
+StandaloneC/build/
+
+
+# Documentation outputs
+
+Documentation/output/

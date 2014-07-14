@@ -1,0 +1,173 @@
+% Definition of the simulation variables and I/O ports (available in MBSdata->user_IO)
+% For each line: varname , type , size
+%
+% 4 types of simulation variables:
+%       . NONE   : normal variables
+%       . IN     : user inputs coming from the Matlab environment
+%       . OUT    : user outputs to analyse results in Matlab
+%       . STRUCT : structures
+%
+% their corresponding type fields:
+%       . NONE   : internal variable (type: int/double)
+%       . IN     : input (type: int/double)
+%       . OUT    : output (type: int/double)
+%       . STRUCT : structure variable (type: structure name without ' or "")
+%
+%   - varname = name of the variable (without '' or "")
+%
+%   - size: number of elements in the vector
+%       1    :  simple variable
+%       n    :  vector of n (n>1) elements
+%       [m n]:  tabular of 2 entries with a size m*n 
+%       0    :  forbidden
+%       <1   :  pointer -> fabs(x) = number of stars
+%          indexes start at 1 -> different from 'control_variables' 
+%
+% Lines starting with % or // are not taken into account (comments)
+% Write the corresponding variables under # NONE, # IN, # OUT, # STRUCT
+% Do modify the lines # NONE, # IN, # OUT, # STRUCT or add another line starting with #
+% Keep at least one space between different variables, do not use other signs (, . :)
+%
+
+
+%% ---- NONE ---- %%
+
+# NONE 
+
+% voltage of the 29 motors (worst case: with the long arms)
+Voltage   double   29
+
+% Voltage converted to torques
+Control   double   29 
+
+% Actuators model
+Actuator_KKs       double   35
+Actuator_DDs       double   35
+Actuator_Jdrives   double   1
+Actuator_Ddrives   double   1 
+Actuator_VTgain    double   1
+actuated2real      int      29
+
+% Joint limits
+joint_limits_min   double   35
+joint_limits_max   double   35
+
+% waist height
+waist_relative_ground   double   1
+ 
+% Ground contact model (GCM)
+GRF_r             double   3
+GRF_l             double   3
+GRM_r             double   3
+GRM_l             double   3
+GRF_r_dist        double   3
+GRF_l_dist        double   3
+GRM_r_dist        double   3
+GRM_l_dist        double   3
+mu_grf            double   1
+F_left_leg        double   1
+F_right_leg       double   1
+
+Msize_GCM         int      1
+Msize_GCM_prox    int      1
+Msize_GCM_dist    int      1
+
+rn_left_x         double   200
+rn_left_y         double   200
+rn_left_z         double   200
+rn_right_x        double   200
+rn_right_y        double   200
+rn_right_z        double   200
+temp_grfx_left    double   200
+temp_grfy_left    double   200
+temp_grfx_right   double   200
+temp_grfy_right   double   200
+flag_grfx_left    int      200
+flag_grfy_left    int      200
+flag_grfx_right   int      200
+flag_grfy_right   int      200
+
+rn_left_prox_x         double   150
+rn_left_prox_y         double   150
+rn_left_prox_z         double   150
+rn_right_prox_x        double   150
+rn_right_prox_y        double   150
+rn_right_prox_z        double   150
+temp_grfx_left_prox    double   150
+temp_grfy_left_prox    double   150
+temp_grfx_right_prox   double   150
+temp_grfy_right_prox   double   150
+flag_grfx_left_prox    int      150
+flag_grfy_left_prox    int      150
+flag_grfx_right_prox   int      150
+flag_grfy_right_prox   int      150
+
+rn_left_dist_x         double   60
+rn_left_dist_y         double   60
+rn_left_dist_z         double   60
+rn_right_dist_x        double   60
+rn_right_dist_y        double   60
+rn_right_dist_z        double   60
+temp_grfx_left_dist    double   60
+temp_grfy_left_dist    double   60
+temp_grfx_right_dist   double   60
+temp_grfy_right_dist   double   60
+flag_grfx_left_dist    int      60
+flag_grfy_left_dist    int      60
+flag_grfx_right_dist   int      60
+flag_grfy_right_dist   int      60
+
+% Impedance controler
+last_tsim_int_tau   double   1
+last_err_tau        double   29
+last_int_err_tau    double   29
+
+% real absolute orientation and derivative (not available with the IMU)
+real_theta_3_waist   double   1
+real_omega_3_waist   double   1
+
+% last time controller called
+last_t_ctrl   double   1
+
+% keyboard variables
+keyboard_command_1   int   1
+keyboard_command_2   int   1
+
+
+%% ---- IN ---- %%
+
+# IN
+
+
+
+%% ---- OUT ---- %%
+
+# OUT
+
+% torques [Nm]
+Qq_out     double   29
+
+% time [s]
+tsim_out   double   1
+
+% position references [rad]
+q_ref      double   29
+
+% velocities references [rad/s]
+qd_ref     double   29
+
+% torques references [Nm]
+Qq_ref     double   29
+
+% impedance controller flags 
+imp_ctrl_index   int   29
+
+% outputs
+out   double   10
+
+
+%% ---- STRUCT ---- %%
+
+# STRUCT
+
+cvs   ControllerStruct   1
