@@ -36,7 +36,7 @@ void break_gestion_plot_save(Screen_sdl *screen_sdl, Simu_real_time *real_time, 
 
 		// program is sleeping during 25 ms
 		// decrease CPU usage during break if user is not interacting
-		if (t_usec(init_t_sec, init_t_usec) - real_time->start_break_usec > TIME_NO_INTERACTION_BREAK)
+		if (t_usec(init_t_sec, init_t_usec) - real_time->last_action_break_usec > TIME_NO_INTERACTION_BREAK)
 		{
 			SDL_Delay(TIME_SDL_DELAY);
 		}	

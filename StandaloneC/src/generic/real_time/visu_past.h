@@ -11,8 +11,7 @@
 
 #include "save_vectors.h"
 #include "real_time.h"
-
-#define PERIOD_T_VISU_PAST 0.05
+#include "plot_sdl.h"
 
 double* get_q_past_vector(MBSdataStruct *MBSdata, Save_vectors *save_vectors, double t);
 void update_t_visu_past(MBSdataStruct *MBSdata, Simu_real_time *real_time, int flag_forward);

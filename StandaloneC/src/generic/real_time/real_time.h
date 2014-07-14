@@ -22,7 +22,7 @@
  // real-time
 #define DEFAULT_DELAT_T_USEC 1e5
 #define REAL_TIME_SPEED_PERIOD_USEC 25e4
-#define TIME_NO_INTERACTION_BREAK 3e6
+#define TIME_NO_INTERACTION_BREAK 5e6
 #define TIME_SDL_DELAY 25
 #define TIME_PRESS_KEY_DELAY 1e5
 #define TIME_MOUSE_DELAY 5e4
@@ -66,8 +66,9 @@ typedef struct Simu_real_time
     int mouse_cur_y;
     int mouse_wheel_flag;
     int start_mouse_usec;
-    int start_break_usec;
-    int last_keyboard_event_usec;
+    int last_action_break_usec;
+    int next_user_keyboard_event_usec;
+    int next_generic_keyboard_event_usec;
     int last_mouse_event_usec;
     int mouse_left_pressed;
     int mouse_right_pressed;

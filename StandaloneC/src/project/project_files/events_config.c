@@ -48,6 +48,8 @@ void events_sdl(Screen_sdl *screen_sdl, Simu_real_time *real_time, MBSdataStruct
 
 	SDL_Event event;
 
+	const Uint8 *keystates;
+
 	UserIOStruct     *uvs;
     ControllerStruct *cvs;
 
@@ -58,7 +60,76 @@ void events_sdl(Screen_sdl *screen_sdl, Simu_real_time *real_time, MBSdataStruct
     uvs = MBSdata->user_IO;
     cvs = uvs->cvs;
 
+    
     // -- Handles the events -- //
+
+    // SDL events refresh
+	SDL_PumpEvents();
+
+
+	keystates = SDL_GetKeyboardState(NULL);
+
+	if (cur_t_usec >= real_time->next_user_keyboard_event_usec) 
+	{
+
+		// ----- MODIFICATIONS HERE (KEYBOARD INPUTS) ----- //
+
+	    /*
+	     * Use keystates['key code'] (see https://wiki.libsdl.org/SDL_Scancode)
+	     * to detect when the corresponding key is pressed and add your own functions
+	     * according to the key pressed.
+	     *
+	     * Call 'wait_key(real_time, cur_t_usec, time);' in the statement where you replace 'time'
+	     * by a time in seconds if you want to wait before detecting a new user command.
+	     *
+	     * example:
+		 *      if (keystates[SDL_SCANCODE_UP]) 
+		 *      {
+		 *          MBSdata->user_IO->my_command++;
+		 *          wait_key(real_time, cur_t_usec, 0.1);
+		 *      }
+		 *      else if (keystates[SDL_SCANCODE_DOWN]) 
+		 *      {
+		 *          MBSdata->user_IO->my_command++;
+		 *          wait_key(real_time, cur_t_usec, 0.1);
+		 *      }
+		 */
+
+		// Up arrow: keyboard command 1 increase
+		if (keystates[SDL_SCANCODE_UP]) 
+		{
+		    uvs->keyboard_command_1++;
+
+		    wait_key(real_time, cur_t_usec, 0.1);
+		}
+
+		// Down arrow: keyboard command 1 decrease
+		else if (keystates[SDL_SCANCODE_DOWN]) 
+		{
+		    uvs->keyboard_command_1--;
+
+		    wait_key(real_time, cur_t_usec, 0.1);
+		}
+
+		// Right arrow: keyboard command 2 increase
+		else if (keystates[SDL_SCANCODE_RIGHT]) 
+		{
+		    uvs->keyboard_command_2++;
+
+		    wait_key(real_time, cur_t_usec, 0.1);
+		}
+
+		// Left arrow: keyboard command 2 decrease
+		else if (keystates[SDL_SCANCODE_LEFT]) 
+		{
+		    uvs->keyboard_command_2--;
+
+		    wait_key(real_time, cur_t_usec, 0.1);
+		}
+
+		// --------------- AVOID MODIFYING --------------- //
+	}
+
 
 
     // ----- MODIFICATIONS HERE (JOYSTICK AXES) ----- //
@@ -164,224 +235,6 @@ void events_sdl(Screen_sdl *screen_sdl, Simu_real_time *real_time, MBSdataStruct
 
 				break;
 
-
-			// keyboard button pressed
-			case SDL_KEYDOWN:
-
-				// ID of the key -> uncomment the following line to know the corresponding keyboard ID key
-				// printf("Key pressed: %d\n",event.key.keysym.sym);
-
-
-				// handles keyboard events
-				if (cur_t_usec - real_time->last_keyboard_event_usec > TIME_PRESS_KEY_DELAY)
-				{
-					real_time->last_keyboard_event_usec = cur_t_usec;
-
-			        switch (event.key.keysym.sym)
-			        {
-			        	// ----- MODIFICATIONS HERE (KEYBOARD KEYS) ----- //
-
-			        	/*
-						 * To configure the actions related to the pression of a key on the keyboard, check that the line 
-						 * 'printf("Key pressed: %d\n",event.key.keysym.sym);' (above) is uncommented.
-						 * Then, when you press a key on the keyboard, the corresponding ID should be printed 
-						 * in the Terminal (Unix) or in the Console (Windows).
-						 * 
-						 * Use this switch case to define the corresponding code executed when this button is pressed.
-						 * You have access to MBSdata, so you should be able to impact nearly any part of the simulation.
-						 *
-						 * example:
-						 *     case 0:
-						 *         MBSdata->user_IO->my_action = 1;
-						 *         break;
-						 *
-						 * Beware: some key IDs are already sued by the curves plotted in real-time (see below).
-						 */
-
-
-			        	// interact (key: q)
-			        	case 113:
-			        		uvs->keyboard_command_1++;
-			        		break;
-
-			        	// interact (key: a)
-			        	case 97:
-			        		uvs->keyboard_command_1--;
-			        		break;
-
-			        	// interact (key: w)
-			        	case 119:
-			        		uvs->keyboard_command_2++;
-			        		break;
-
-			        	// interact (key: s)
-			        	case 115:
-			        		uvs->keyboard_command_2--;
-			        		break;
-
-			        	// --------------- AVOID MODIFYING --------------- //
-
-			        	// break (key : p)
-			        	case 112: 
-				        	if (!real_time->simu_break)
-				        	{
-				        		real_time->simu_break = 1; // break flag
-				        		real_time->start_break_usec = cur_t_usec;
-				        	}
-				        	else
-				        	{
-				        		real_time->simu_break = 0;
-				        	}		        		
-			        		break;
-
-			        	// quit the simulation (key: m)
-			        	case 109:
-			        		real_time->simu_quit  = 1; // flag to quit the simulation
-			        		real_time->simu_break = 0;
-			        		real_time->last_break = 0;
-			        		break;
-
-			        	// decrease the simulation speed (key: l)
-			        	case 108:
-			        		real_time->simu_speed_flag--;	
-			        		screen_sdl->break_plot_flag = 1;        		
-			        		break;
-
-			        	// increase the simulation speed (key: o)
-			        	case 111: 
-			        		real_time->simu_speed_flag++;	
-			        		screen_sdl->break_plot_flag = 1;        		
-			        		break;
-
-			        	// activate / deactivate the signals auto-scaling (key: k)
-			        	case 107:
-				        	if (screen_sdl->signal_auto_scaling)
-				        	{
-				        		screen_sdl->signal_auto_scaling = 0;
-				        	}
-				        	else
-				        	{
-				        		screen_sdl->signal_auto_scaling = 1;
-				        	}
-				        	screen_sdl->break_plot_flag = 1;
-			        		break;
-
-			        	// activate / deactivate the y axis auto-scaling (key: i)
-			        	case 105:
-				        	if (screen_sdl->plot_auto_scaling)
-				        	{
-				        		screen_sdl->plot_auto_scaling = 0;
-				        	}
-				        	else
-				        	{
-				        		screen_sdl->plot_auto_scaling = 1;
-				        	}
-				        	screen_sdl->break_plot_flag = 1;
-			        		break;
-			        	
-			        	// broaden x or y axis (key: u)
-			        	case 117: 
-			        		if (screen_sdl->hor_plot_scaling)
-			        		{
-			        			screen_sdl->increase_plot_x_diff_flag = 1;		        			
-			        		}
-			        		else
-			        		{
-			        			screen_sdl->increase_plot_y_diff_flag = 1;
-			        			screen_sdl->plot_auto_scaling         = 0;
-			        		}	
-			        		screen_sdl->break_plot_flag = 1;	        		
-			        		break;
-
-			        	// shrink x or y axis (key: j)
-			        	case 106:        		
-			        		if (screen_sdl->hor_plot_scaling)
-			        		{
-			        			screen_sdl->decrease_plot_x_diff_flag = 1;		        			
-			        		}
-			        		else
-			        		{
-			        			screen_sdl->decrease_plot_y_diff_flag = 1;
-			        			screen_sdl->plot_auto_scaling         = 0;
-			        		}	
-			        		screen_sdl->break_plot_flag = 1;	        		
-			        		break;
-
-			        	// shift x or y axis: up or right (key: y)
-			        	case 121:      		
-			        		if (screen_sdl->hor_plot_scaling)
-			        		{
-			        			screen_sdl->right_plot_y_flag = 1;		        			
-			        		}
-			        		else
-			        		{
-			        			screen_sdl->up_plot_y_flag    = 1;
-			        			screen_sdl->plot_auto_scaling = 0;
-			        		}	
-			        		screen_sdl->break_plot_flag = 1;	        		
-			        		break;
-
-			        	// shift x or y axis: bottom or left (key: h)
-			        	case 104:
-			        		if (screen_sdl->hor_plot_scaling)
-			        		{
-			        			screen_sdl->left_plot_y_flag = 1;		        			
-			        		}
-			        		else
-			        		{
-			        			screen_sdl->bottom_plot_y_flag = 1;
-			        			screen_sdl->plot_auto_scaling  = 0;
-			        		}	
-			        		screen_sdl->break_plot_flag = 1;	        		
-			        		break;
-
-			        	// switch from y axis to x axis auto-scaling and vice-versa (key: n)
-			        	case 110:		        		
-				        	if (real_time->simu_break)
-				        	{
-				        		if (screen_sdl->hor_plot_scaling)
-					        	{
-					        		screen_sdl->hor_plot_scaling = 0;
-					        	}
-					        	else
-					        	{
-					        		screen_sdl->hor_plot_scaling = 1;
-					        	}
-				        	}
-				        	else
-				        	{
-				        		screen_sdl->hor_plot_scaling = 0;
-				        	}
-				        	screen_sdl->break_plot_flag = 1;
-				        	break;
-
-				        // change viewpoint for JNI (key: v)
-				        case 118:
-				        	real_time->change_viewpoint = 1;
-				        	break;
-
-				        // go forward in simulation visualization (key: t)
-			        	case 116:
-			        		#ifdef JNI
-			        		real_time->visu_past_flag = 1;
-			        		update_t_visu_past(MBSdata, real_time, 1);
-			        		#endif
-			        		break;
-
-			        	// go backward in simulation visualization (key: g)
-			        	case 103:
-			        		#ifdef JNI
-			        		real_time->visu_past_flag = 1;
-			        		update_t_visu_past(MBSdata, real_time, 0);
-			        		#endif
-			        		break;
-				        	
-			        	default:
-			        		break;
-			        }					
-				}
-				break;
-
 			// top corner button pressed 
 			case SDL_QUIT:
 				real_time->simu_quit  = 1;
@@ -403,11 +256,13 @@ void events_sdl(Screen_sdl *screen_sdl, Simu_real_time *real_time, MBSdataStruct
 						if (event.wheel.y > 0)
 						{
 							mouse_sdl(screen_sdl, real_time, MBSdata->tsim, 1);
+							real_time->last_action_break_usec = cur_t_usec;
 						}
 						// mouse wheel down
 						else if (event.wheel.y < 0)
 						{
 							mouse_sdl(screen_sdl, real_time, MBSdata->tsim, -1);
+							real_time->last_action_break_usec = cur_t_usec;
 						}
 					}
 				}
@@ -418,8 +273,206 @@ void events_sdl(Screen_sdl *screen_sdl, Simu_real_time *real_time, MBSdataStruct
 		}
 	}
 
-	// mouse events
-	SDL_PumpEvents();
+
+	// generic keyboard inputs
+	if (cur_t_usec >= real_time->next_generic_keyboard_event_usec) 
+	{
+		// key: P (pause)
+		if (keystates[SDL_SCANCODE_P])
+		{
+			if (!real_time->simu_break)
+        	{
+        		real_time->simu_break = 1; // break flag
+        		real_time->last_action_break_usec = cur_t_usec;
+        	}
+        	else
+        	{
+        		real_time->simu_break = 0;
+        	}
+
+        	wait_key_generic(real_time, cur_t_usec, 0.2);
+		} 
+
+		// key M: quit the simulation
+		else if (keystates[SDL_SCANCODE_M])
+		{
+			real_time->simu_quit  = 1; // flag to quit the simulation
+			real_time->simu_break = 0;
+			real_time->last_break = 0;
+		}
+
+		// key L: decrease the simulation speed
+		else if (keystates[SDL_SCANCODE_L])
+		{
+			real_time->simu_speed_flag--;	
+			screen_sdl->break_plot_flag = 1;       
+
+			wait_key_generic(real_time, cur_t_usec, 0.2);
+		}
+
+		// key O: increase the simulation speed
+		else if (keystates[SDL_SCANCODE_O])
+		{
+			real_time->simu_speed_flag++;	
+			screen_sdl->break_plot_flag = 1;			
+			
+			wait_key_generic(real_time, cur_t_usec, 0.2);
+		}
+
+		// key K: activate / deactivate the signals auto-scaling
+		else if (keystates[SDL_SCANCODE_K])
+		{
+			if (screen_sdl->signal_auto_scaling)
+			{
+				screen_sdl->signal_auto_scaling = 0;
+			}
+			else
+			{
+				screen_sdl->signal_auto_scaling = 1;
+			}
+			screen_sdl->break_plot_flag = 1;			
+			
+			wait_key_generic(real_time, cur_t_usec, 0.2);
+		}
+
+		// key I: activate / deactivate the y axis auto-scaling
+		else if (keystates[SDL_SCANCODE_I])
+		{
+			if (screen_sdl->plot_auto_scaling)
+			{
+				screen_sdl->plot_auto_scaling = 0;
+			}
+			else
+			{
+				screen_sdl->plot_auto_scaling = 1;
+			}
+			screen_sdl->break_plot_flag = 1;			
+			
+			wait_key_generic(real_time, cur_t_usec, 0.2);
+		}
+
+		// key U: broaden x or y axis
+		else if (keystates[SDL_SCANCODE_U])
+		{
+			if (screen_sdl->hor_plot_scaling)
+			{
+				screen_sdl->increase_plot_x_diff_flag = 1;		        			
+			}
+			else
+			{
+				screen_sdl->increase_plot_y_diff_flag = 1;
+				screen_sdl->plot_auto_scaling         = 0;
+			}	
+			screen_sdl->break_plot_flag = 1;
+				
+			
+			wait_key_generic(real_time, cur_t_usec, 0.2);
+		}
+
+		// key J: shrink x or y axis
+		else if (keystates[SDL_SCANCODE_J])
+		{
+			if (screen_sdl->hor_plot_scaling)
+			{
+				screen_sdl->decrease_plot_x_diff_flag = 1;		        			
+			}
+			else
+			{
+				screen_sdl->decrease_plot_y_diff_flag = 1;
+				screen_sdl->plot_auto_scaling         = 0;
+			}	
+			screen_sdl->break_plot_flag = 1;			
+			
+			wait_key_generic(real_time, cur_t_usec, 0.2);
+		}
+
+		// key Y: shift x or y axis: up or right
+		else if (keystates[SDL_SCANCODE_Y])
+		{
+			if (screen_sdl->hor_plot_scaling)
+			{
+				screen_sdl->right_plot_y_flag = 1;		        			
+			}
+			else
+			{
+				screen_sdl->up_plot_y_flag    = 1;
+				screen_sdl->plot_auto_scaling = 0;
+			}	
+			screen_sdl->break_plot_flag = 1;			
+			
+			wait_key_generic(real_time, cur_t_usec, 0.2);
+		}
+
+		// key H: shift x or y axis: bottom or left
+		else if (keystates[SDL_SCANCODE_H])
+		{
+			if (screen_sdl->hor_plot_scaling)
+			{
+				screen_sdl->left_plot_y_flag = 1;		        			
+			}
+			else
+			{
+				screen_sdl->bottom_plot_y_flag = 1;
+				screen_sdl->plot_auto_scaling  = 0;
+			}	
+			screen_sdl->break_plot_flag = 1;			
+			
+			wait_key_generic(real_time, cur_t_usec, 0.2);
+		}
+
+		// key N: switch from y axis to x axis auto-scaling and vice-versa
+		else if (keystates[SDL_SCANCODE_N])
+		{
+			if (real_time->simu_break)
+			{
+				if (screen_sdl->hor_plot_scaling)
+		    	{
+		    		screen_sdl->hor_plot_scaling = 0;
+		    	}
+		    	else
+		    	{
+		    		screen_sdl->hor_plot_scaling = 1;
+		    	}
+			}
+			else
+			{
+				screen_sdl->hor_plot_scaling = 0;
+			}
+			screen_sdl->break_plot_flag = 1;			
+			
+			wait_key_generic(real_time, cur_t_usec, 0.2);
+		}
+
+		// key V: change viewpoint for JNI
+		else if (keystates[SDL_SCANCODE_V])
+		{
+			real_time->change_viewpoint = 1;			
+			
+			wait_key_generic(real_time, cur_t_usec, 0.2);
+		}
+
+		// key T: go forward in simulation visualization
+		else if (keystates[SDL_SCANCODE_T])
+		{
+			#ifdef JNI
+			real_time->visu_past_flag = 1;
+			update_t_visu_past(MBSdata, real_time, 1);
+			#endif			
+			
+			wait_key_generic(real_time, cur_t_usec, PERIOD_BACK_IN_VISU);
+		}
+
+		// key G: go backward in simulation visualization
+		else if (keystates[SDL_SCANCODE_G])
+		{
+			#ifdef JNI
+			real_time->visu_past_flag = 1;
+			update_t_visu_past(MBSdata, real_time, 0);
+			#endif			
+			
+			wait_key_generic(real_time, cur_t_usec, PERIOD_BACK_IN_VISU);
+		}
+	}
 
 	// mouse position
     SDL_GetMouseState(&(real_time->mouse_cur_x), &(real_time->mouse_cur_y));
@@ -436,7 +489,8 @@ void events_sdl(Screen_sdl *screen_sdl, Simu_real_time *real_time, MBSdataStruct
 	        real_time->mouse_init_y = real_time->mouse_cur_y;	
 
 	        real_time->start_mouse_usec = cur_t_usec;	        
-    	}	    
+    	}	 
+    	real_time->last_action_break_usec = cur_t_usec;   
 	}
 	else
 	{
@@ -471,7 +525,8 @@ void events_sdl(Screen_sdl *screen_sdl, Simu_real_time *real_time, MBSdataStruct
 
 	        screen_sdl->change_mouse_wheel_flag = 1;
 	        plot_screen_sdl(screen_sdl, real_time, MBSdata->tsim, 1);
-		}	    
+		}	
+		real_time->last_action_break_usec = cur_t_usec;    
 	}
 	else
 	{
@@ -500,6 +555,7 @@ void events_sdl(Screen_sdl *screen_sdl, Simu_real_time *real_time, MBSdataStruct
 				// mouse wheel up
 				mouse_sdl(screen_sdl, real_time, MBSdata->tsim, 1);
 			}
+			real_time->last_action_break_usec = cur_t_usec;
 		}
 	} 
 	else if (SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(5))
@@ -514,6 +570,7 @@ void events_sdl(Screen_sdl *screen_sdl, Simu_real_time *real_time, MBSdataStruct
 				// mouse wheel down
 				mouse_sdl(screen_sdl, real_time, MBSdata->tsim, -1);
 			}
+			real_time->last_action_break_usec = cur_t_usec;
 		}
 	} 
 
@@ -529,7 +586,10 @@ void events_sdl(Screen_sdl *screen_sdl, Simu_real_time *real_time, MBSdataStruct
         mouse_sdl(screen_sdl, real_time, MBSdata->tsim, 0);
 
         real_time->start_mouse_usec = cur_t_usec;
+
+        real_time->last_action_break_usec = cur_t_usec;
 	}
+
 }
 
 double get_Joystick_axis(int joystickID, int axisID, Screen_sdl *screen_sdl)

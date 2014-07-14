@@ -138,6 +138,9 @@
 #define WHEEL_MOUSE_FACTOR 0.9 // [-]
 #define TIME_RELEASE_MOUSE_PLOT (1e6 / FQC_MOUSE)  // [us]
 
+// back in visualization period
+#define PERIOD_BACK_IN_VISU 0.03 // [s]
+
 
 // -- Colors enumeration -- //
 
@@ -244,6 +247,8 @@ void get_screen_sdl_functions(double *y_vec, MBSdataStruct *MBSdata);
 // SDL inputs (keyboard...)
 void events_sdl(Screen_sdl *screen_sdl, Simu_real_time *real_time, MBSdataStruct *MBSdata, int cur_t_usec);
 double get_Joystick_axis(int joystickID, int axisID, Screen_sdl *screen_sdl);
+void wait_key(Simu_real_time *real_time, int cur_t_usec, double tsim);
+void wait_key_generic(Simu_real_time *real_time, int cur_t_usec, double tsim);
 
 // SDL
 Screen_sdl* init_screen_sdl(int init_t_sec, int init_t_usec, int nb_steps, double fqc_screen, int color_vec[NB_CURVES_MAX], 

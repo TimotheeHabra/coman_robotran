@@ -69,11 +69,11 @@ void update_t_visu_past(MBSdataStruct *MBSdata, Simu_real_time *real_time, int f
 	// new 't_visu_part'
 	if (flag_forward)
 	{
-		real_time->t_visu_past += simu_speed_factor * PERIOD_T_VISU_PAST;
+		real_time->t_visu_past += simu_speed_factor * PERIOD_BACK_IN_VISU;
 	}	
 	else
 	{
-		real_time->t_visu_past -= simu_speed_factor * PERIOD_T_VISU_PAST;
+		real_time->t_visu_past -= simu_speed_factor * PERIOD_BACK_IN_VISU;
 	}
 
 	// bounds

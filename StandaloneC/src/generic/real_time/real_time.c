@@ -157,19 +157,20 @@ Simu_real_time* init_simu_real_time(int nb_constraints, double *fqc_tab, int cur
 
 	#if defined (SDL) & defined (REAL_TIME)
     
-    real_time->mouse_init_x             = 0;
-    real_time->mouse_init_y             = 0;
-    real_time->mouse_delta_x            = 0;
-    real_time->mouse_delta_y            = 0;
-    real_time->mouse_cur_x              = 0;
-    real_time->mouse_cur_y              = 0;
-    real_time->mouse_wheel_flag         = 0;
-    real_time->start_mouse_usec         = 0;
-    real_time->start_break_usec         = 0;
-    real_time->last_keyboard_event_usec = 0;
-    real_time->last_mouse_event_usec    = 0;
-    real_time->mouse_left_pressed       = 0;
-    real_time->mouse_right_pressed      = 0;
+    real_time->mouse_init_x                     = 0;
+    real_time->mouse_init_y                     = 0;
+    real_time->mouse_delta_x                    = 0;
+    real_time->mouse_delta_y                    = 0;
+    real_time->mouse_cur_x                      = 0;
+    real_time->mouse_cur_y                      = 0;
+    real_time->mouse_wheel_flag                 = 0;
+    real_time->start_mouse_usec                 = 0;
+    real_time->last_action_break_usec                 = 0;
+    real_time->next_user_keyboard_event_usec    = 0;
+    real_time->next_generic_keyboard_event_usec = 0;
+    real_time->last_mouse_event_usec            = 0;
+    real_time->mouse_left_pressed               = 0;
+    real_time->mouse_right_pressed              = 0;
 
     #endif
 
@@ -334,7 +335,10 @@ void break_gestion(Screen_sdl *screen_sdl, Simu_real_time *real_time, MBSdataStr
 	// variables declaration
 	int start_break_t_usec;
 	int delta_break_u_sec;
+
+	#ifndef POST_PROCESS_VISU
 	int cur_t_usec;
+	#endif
 
 	#if defined(JNI) & defined (REAL_TIME)
 	double *q_past;
@@ -350,9 +354,12 @@ void break_gestion(Screen_sdl *screen_sdl, Simu_real_time *real_time, MBSdataStr
 
 	while (real_time->simu_break == 1)
 	{
+		#ifndef POST_PROCESS_VISU
 		// handle events
 		cur_t_usec = t_usec(init_t_sec, init_t_usec);
+
 		events_sdl(screen_sdl, real_time, MBSdata, cur_t_usec);
+		#endif
 
 		// break plot
 		if (screen_sdl->break_plot_flag)
@@ -381,7 +388,7 @@ void break_gestion(Screen_sdl *screen_sdl, Simu_real_time *real_time, MBSdataStr
 		#if defined(SDL) & defined (REAL_TIME)
 
 		// decrease CPU usage during break if user is not interacting
-		if (t_usec(init_t_sec, init_t_usec) - real_time->start_break_usec > TIME_NO_INTERACTION_BREAK)
+		if (t_usec(init_t_sec, init_t_usec) - real_time->last_action_break_usec > TIME_NO_INTERACTION_BREAK)
 		{
 			SDL_Delay(TIME_SDL_DELAY);
 		}	
@@ -406,12 +413,14 @@ void events_simu(Screen_sdl *screen_sdl, Simu_real_time *real_time, MBSdataStruc
 void events_simu(Screen_sdl *screen_sdl, Simu_real_time *real_time, MBSdataStruct *MBSdata, Save_vectors *save_vectors, int *simu_go, int *speed_last_t_usec, int init_t_sec, int init_t_usec, double tsim)
 #endif
 {
+	#ifndef POST_PROCESS_VISU
 	int cur_t_usec;
 
 	cur_t_usec = t_usec(init_t_sec, init_t_usec);
 
 	// -- handle events -- //
 	events_sdl(screen_sdl, real_time, MBSdata, cur_t_usec);
+	#endif
 
 	// quit the simulation if needed
 	if (real_time->simu_quit == 1)

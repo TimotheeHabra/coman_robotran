@@ -30,6 +30,7 @@ add_definitions( -DREAL_TIME )
 add_definitions( -DSTANDALONE )
 add_definitions( -DCMEX )
 add_definitions( -DLOAD_XML )
+add_definitions( -DPOST_PROCESS_VISU )
 
 # flag for Unix systems (used in some source files)
 if (UNIX)
@@ -44,8 +45,7 @@ function(list_gen_source_files HEADER_FILES)
         "${PROJECT_SOURCE_DIR}/../../generic/sdl/plot_sdl.c"
         "${PROJECT_SOURCE_DIR}/../../generic/useful/useful_functions.c" 
         "${PROJECT_SOURCE_DIR}/../../generic/real_time/time_functions.c"
-        "${PROJECT_SOURCE_DIR}/../../generic/real_time/real_time.c" 
-        "${PROJECT_SOURCE_DIR}/../../project/project_files/events_config.c")
+        "${PROJECT_SOURCE_DIR}/../../generic/real_time/real_time.c")
     set(SOURCE_FILES ${SOURCE_FILES_TMP} PARENT_SCOPE)
 endfunction()
 

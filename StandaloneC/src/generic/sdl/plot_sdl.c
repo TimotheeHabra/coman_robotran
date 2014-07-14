@@ -48,7 +48,7 @@ Screen_sdl* init_screen_sdl(int init_t_sec, int init_t_usec, int nb_steps, doubl
 	if (screen_sdl->nb_joysticks >= 1)
 	{
 		#ifdef PRINT_REPORT
-		printf("\nNumber of joysticks detected: %d\n\n", screen_sdl->nb_joysticks);
+		printf("Number of joysticks detected: %d\n\n", screen_sdl->nb_joysticks);
 		#endif
 
 		screen_sdl->joysticks = (SDL_Joystick**) malloc(screen_sdl->nb_joysticks*sizeof(SDL_Joystick*));
@@ -2458,6 +2458,20 @@ void plot_screen_sdl(Screen_sdl *screen_sdl, Simu_real_time *real_time, double t
 
 	// -- Apply the plot -- //
 	SDL_RenderPresent(ren);
+}
+
+// wait time before next user key
+void wait_key(Simu_real_time *real_time, int cur_t_usec, double tsim)
+{
+	real_time->next_user_keyboard_event_usec = cur_t_usec + ((int) (tsim * 1e6));
+	real_time->last_action_break_usec = cur_t_usec;
+}
+
+// wait time before next generic key
+void wait_key_generic(Simu_real_time *real_time, int cur_t_usec, double tsim)
+{
+	real_time->next_generic_keyboard_event_usec = cur_t_usec + ((int) (tsim * 1e6));
+	real_time->last_action_break_usec = cur_t_usec;
 }
 
 #endif
