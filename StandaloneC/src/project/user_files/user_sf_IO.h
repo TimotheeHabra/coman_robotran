@@ -1,37 +1,23 @@
 /*===========================================================================*
-  *
-  *  user_sf_IO.h
-  *	
-  *  Project:	coman_robotran
-  * 
-  *  Generation date: 14-Jul-2014 15:01:28
-  * 
-  *  (c) Universite catholique de Louvain
-  *      D�partement de M�canique 
-  *      Unit� de Production M�canique et Machines 
-  *      2, Place du Levant 
-  *      1348 Louvain-la-Neuve 
-  *  http://www.robotran.be// 
-  *  
- /*===========================================================================*/
+ *
+ *  user_sf_IO.h
+ * 
+ *  Generation date: Mon Jul 14 19:07:57 2014
+
+ * 
+ *  (c) Universite catholique de Louvain
+ *      Departement de Mecanique 
+ *      Unite de Production Mecanique et Machines 
+ *      2, Place du Levant 
+ *      1348 Louvain-la-Neuve 
+ *  http://www.robotran.be// 
+ *  
+/*===========================================================================*/
 
 #ifndef UsersfIO_h
 #define UsersfIO_h
 /*--------------------*/
  
-#ifdef ACCELRED 
-#define S_FUNCTION_NAME  mbs_sf_accelred_coman_robotran 
-#elif defined DIRDYNARED 
-#define S_FUNCTION_NAME  mbs_sf_dirdynared_coman_robotran 
-#elif defined INVDYNARED 
-#define S_FUNCTION_NAME  mbs_sf_invdynared_coman_robotran 
-#elif defined SENSORKIN 
-#define S_FUNCTION_NAME  mbs_sf_sensorkin_coman_robotran 
-#endif 
- 
-#define SF_N_USER_INPUT 0 
-#define SF_N_USER_OUTPUT 8 
-
 #include "userDef.h"
 #include "ControllersStruct.h"
  
@@ -119,8 +105,10 @@ typedef struct UserIOStruct
     double Qq_ref[29+1];
     int imp_ctrl_index[29+1];
     double out[10+1];
-    int stop_simu;
     struct ControllerStruct *cvs;
+
+    // stop simulation //
+    int stop_simu;
 
     #ifdef SIMBODY
     SimbodyStruct *simbodyStruct;
