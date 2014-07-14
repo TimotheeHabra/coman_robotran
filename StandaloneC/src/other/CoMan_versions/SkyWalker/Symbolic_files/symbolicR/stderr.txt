@@ -1,0 +1,5 @@
+
+##############################################################
+#	file0.gen 30/04/2014 10:12:21    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)

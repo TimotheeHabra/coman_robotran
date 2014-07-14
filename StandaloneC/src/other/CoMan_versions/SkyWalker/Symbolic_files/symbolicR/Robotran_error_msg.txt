@@ -1,0 +1,4 @@
+Robotran runtime error
+GenLoopsEqs error : 
+the number of constraint equations is not equal to 
+the number of dependent variables

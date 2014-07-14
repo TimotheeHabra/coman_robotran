@@ -1,0 +1,18 @@
+
+##############################################################
+#	file0.gen 30/04/2014 10:12:21    messages
+##############################################################
+ ------------------------------- 
+  ROBOTRAN - Symbolic Generator 
+  Version 6.6 (build : february 22, 2008) 
+  Pr. Paul FISETTE - 1990..1994 
+  Dr. Tony POSTIAU - 2000..2004 
+ ------------------------------- 
+Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file0.gen
+Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+F10 : Direct Dynamics (Explicit formulation) : RNEA + CP
+Generation of the constraints equations 
+nombre de contraintes �lmimin�es : 0
+GenLoopsEqs error : 
+the number of constraint equations is not equal to 
+the number of dependent variables

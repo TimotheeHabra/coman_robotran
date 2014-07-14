@@ -1,0 +1,90 @@
+
+##############################################################
+#	file9b.gen 01/03/2014 17:55:56    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)
+
+##############################################################
+#	file3.gen 01/03/2014 17:55:56    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)
+
+##############################################################
+#	file7.gen 01/03/2014 17:55:57    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)
+
+##############################################################
+#	file4.gen 01/03/2014 17:55:57    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)
+
+##############################################################
+#	file1b.gen 01/03/2014 17:55:58    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)
+
+##############################################################
+#	file10.gen 01/03/2014 17:55:58    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)
+
+##############################################################
+#	file0.gen 01/03/2014 17:55:58    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)
+
+##############################################################
+#	file6.gen 01/03/2014 17:55:58    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)
+
+##############################################################
+#	file11.gen 01/03/2014 17:55:58    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)
+
+##############################################################
+#	file9.gen 01/03/2014 17:55:59    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)
+
+##############################################################
+#	file15.gen 01/03/2014 17:55:59    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)
+
+##############################################################
+#	file5.gen 01/03/2014 17:55:59    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)
+
+##############################################################
+#	file2.gen 01/03/2014 17:55:59    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)
+
+##############################################################
+#	file12.gen 01/03/2014 17:55:59    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)
+
+##############################################################
+#	file8.gen 01/03/2014 17:55:59    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)
+
+##############################################################
+#	file1.gen 01/03/2014 17:56:00    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)
+
+##############################################################
+#	file13.gen 01/03/2014 17:56:00    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)
+
+##############################################################
+#	file14.gen 01/03/2014 17:56:00    errors
+##############################################################
+/usr/local/robotran/bin/robotran: /usr/lib/libxml2.so.2: no version information available (required by /usr/local/robotran/bin/robotran)
