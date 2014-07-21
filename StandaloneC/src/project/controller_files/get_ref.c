@@ -34,16 +34,16 @@ void get_ref(ControllerStruct *cvs)
     }
 
     // right arm
-    q_ref[R_SH_SAG_DOF] = cvs->q_ref_r_sh_sag;
-    q_ref[R_SH_LAT_DOF] = cvs->q_ref_r_sh_lat;
-    q_ref[R_SH_YAW_DOF] = cvs->q_ref_r_sh_yaw;
-    q_ref[R_ELB_DOF]    = cvs->q_ref_r_elb;
+    q_ref[RIGHT_SHOULDER_PITCH] = cvs->q_ref_r_sh_sag;
+    q_ref[RIGHT_SHOULDER_ROLL]  = cvs->q_ref_r_sh_lat;
+    q_ref[RIGHT_SHOULDER_YAW]   = cvs->q_ref_r_sh_yaw;
+    q_ref[RIGHT_ELBOW_PITCH]    = cvs->q_ref_r_elb;
 
     // left arm
-    q_ref[L_SH_SAG_DOF] = cvs->q_ref_l_sh_sag;
-    q_ref[L_SH_LAT_DOF] = cvs->q_ref_l_sh_lat;
-    q_ref[L_SH_YAW_DOF] = cvs->q_ref_l_sh_yaw;
-    q_ref[L_ELB_DOF]    = cvs->q_ref_l_elb;
+    q_ref[LEFT_SHOULDER_PITCH] = cvs->q_ref_l_sh_sag;
+    q_ref[LEFT_SHOULDER_ROLL]  = cvs->q_ref_l_sh_lat;
+    q_ref[LEFT_SHOULDER_YAW]   = cvs->q_ref_l_sh_yaw;
+    q_ref[LEFT_ELBOW_PITCH]    = cvs->q_ref_l_elb;
 
 
     // ---- Velocity reference ---- //

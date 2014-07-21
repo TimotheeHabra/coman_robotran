@@ -35,48 +35,51 @@ enum{R_LEG, L_LEG};
 // -- Motors numbering -- //
 
 
+// waist
+#define TORSO_YAW   0
+#define TORSO_PITCH 1
+#define TORSO_ROLL  2
+
+// hips pitch
+#define RIGHT_HIP_PITCH 3
+#define LEFT_HIP_PITCH  4
+
 // right leg
-#define R_HIP_SAG_DOF 3
-#define R_HIP_LAT_DOF 5
-#define R_HIP_YAW_DOF 6
-#define R_KNEE_SAG_DOF 7
-#define R_ANK_LAT_DOF 9
-#define R_ANK_SAG_DOF 8
+#define RIGHT_HIP_ROLL   5
+#define RIGHT_HIP_YAW    6
+#define RIGHT_KNEE_PITCH 7
+#define RIGHT_FOOT_PITCH 8
+#define RIGHT_FOOT_ROLL  9
 
 // left leg
-#define L_HIP_SAG_DOF 4
-#define L_HIP_LAT_DOF 10
-#define L_HIP_YAW_DOF 11
-#define L_KNEE_SAG_DOF 12
-#define L_ANK_LAT_DOF 14
-#define L_ANK_SAG_DOF 13
-
-// waist
-#define WAIST_LAT_DOF 2
-#define WAIST_SAG_DOF 1
-#define WAIST_YAW_DOF 0
+#define LEFT_HIP_ROLL   10
+#define LEFT_HIP_YAW    11
+#define LEFT_KNEE_PITCH 12
+#define LEFT_FOOT_PITCH 13
+#define LEFT_FOOT_ROLL  14
 
 // right arm
-#define R_SH_SAG_DOF 15
-#define R_SH_LAT_DOF 16
-#define R_SH_YAW_DOF 17
-#define R_ELB_DOF 18
+#define RIGHT_SHOULDER_PITCH 15
+#define RIGHT_SHOULDER_ROLL  16
+#define RIGHT_SHOULDER_YAW   17
+#define RIGHT_ELBOW_PITCH    18
 
 // left arm
-#define L_SH_SAG_DOF 19
-#define L_SH_LAT_DOF 20
-#define L_SH_YAW_DOF 21
-#define L_ELB_DOF 22
+#define LEFT_SHOULDER_PITCH 19
+#define LEFT_SHOULDER_ROLL  20
+#define LEFT_SHOULDER_YAW   21
+#define LEFT_ELBOW_PITCH    22
 
 #ifdef LONG_ARMS
-#define R_FORE_ARM_PLATE_DOF 23
-#define R_WRJ1_DOF 24
-#define R_WRJ2_DOF 25
+#define RIGHT_FORE_ARM_PLATE 23
+#define RIGHT_WRJ1 24
+#define RIGHT_WRJ2 25
 
-#define L_FORE_ARM_PLATE_DOF 26
-#define L_WRJ1_DOF 27
-#define L_WRJ2_DOF 28
+#define LEFT_FORE_ARM_PLATE 26
+#define LEFT_WRJ1 27
+#define LEFT_WRJ2 28
 #endif
+
 
 // number of joints
 #ifdef LONG_ARMS
