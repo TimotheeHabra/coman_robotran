@@ -2,7 +2,7 @@
  *
  *  user_sf_IO.c
  * 
- *  Generation date: Mon Jul 14 19:07:57 2014
+ *  Generation date: Mon Jul 21 17:32:31 2014
 
  * 
  *  (c) Universite catholique de Louvain
@@ -66,6 +66,12 @@ UserIOStruct * initUserIO(MBSdataStruct *s)
     for (i=1;i<=29;i++)
     {
         uvs->actuated2real[i] = 0;
+    }
+
+    // real2actuated //
+    for (i=1;i<=29;i++)
+    {
+        uvs->real2actuated[i] = 0;
     }
 
     // joint_limits_min //

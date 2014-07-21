@@ -38,6 +38,11 @@ q    double   29
 qd   double   29
 Qq   double   29
 
+% CoMan motors (position - velocity) 
+% [rad], [rad/s] -> for each of the 29 joints (worst case: with the long arms)
+q_mot    double   29
+qd_mot   double   29
+
 % Forces under the feet [N] -> [x ; y ; z]
 F_Rfoot   double   3
 F_Lfoot   double   3 
@@ -51,6 +56,9 @@ IMU_Orientation   double   9
 
 % IMU: absolute velocities [rad/s]
 IMU_Angular_Rate   double   3
+
+% IMU: absolute accelerations [rad/s]
+IMU_Acceleration   double   3
 
 
 

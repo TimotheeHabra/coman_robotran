@@ -2,7 +2,7 @@
 // Nicolas Van der Noot
 //
 // Creation : 19-Sep-2013
-// Last update : Mon Jul 14 19:07:57 2014
+// Last update : Mon Jul 21 17:32:31 2014
 //---------------------------
 
 #ifndef ControllerStruct_h
@@ -18,12 +18,15 @@ typedef struct ControllerInputs
     double q[29];
     double qd[29];
     double Qq[29];
+    double q_mot[29];
+    double qd_mot[29];
     double F_Rfoot[3];
     double F_Lfoot[3];
     double T_Rfoot[3];
     double T_Lfoot[3];
     double IMU_Orientation[9];
     double IMU_Angular_Rate[3];
+    double IMU_Acceleration[3];
 
 } ControllerInputs;
 

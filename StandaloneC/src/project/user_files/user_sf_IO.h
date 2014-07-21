@@ -2,7 +2,7 @@
  *
  *  user_sf_IO.h
  * 
- *  Generation date: Mon Jul 14 19:07:57 2014
+ *  Generation date: Mon Jul 21 17:32:31 2014
 
  * 
  *  (c) Universite catholique de Louvain
@@ -31,6 +31,7 @@ typedef struct UserIOStruct
     double Actuator_Ddrives;
     double Actuator_VTgain;
     int actuated2real[29+1];
+    int real2actuated[29+1];
     double joint_limits_min[35+1];
     double joint_limits_max[35+1];
     double waist_relative_ground;

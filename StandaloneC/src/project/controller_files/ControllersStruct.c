@@ -2,7 +2,7 @@
 // Nicolas Van der Noot
 //
 // Creation : 24-Jan-2014
-// Last update : Mon Jul 14 19:07:57 2014
+// Last update : Mon Jul 21 17:32:31 2014
 //---------------------------
 
 #include <stdlib.h>
@@ -38,6 +38,16 @@ ControllerInputs * init_ControllerInputs(void)
         cvs->Qq[i] = 0.0;
     }
 
+    for (i=0;i<29;i++)
+    {
+        cvs->q_mot[i] = 0.0;
+    }
+
+    for (i=0;i<29;i++)
+    {
+        cvs->qd_mot[i] = 0.0;
+    }
+
     for (i=0;i<3;i++)
     {
         cvs->F_Rfoot[i] = 0.0;
@@ -66,6 +76,11 @@ ControllerInputs * init_ControllerInputs(void)
     for (i=0;i<3;i++)
     {
         cvs->IMU_Angular_Rate[i] = 0.0;
+    }
+
+    for (i=0;i<3;i++)
+    {
+        cvs->IMU_Acceleration[i] = 0.0;
     }
 
     return cvs;

@@ -19,7 +19,7 @@ void controller_inputs(MBSdataStruct *MBSdata)
 
 	MBSsensorStruct S_MidWaist;
 
-	int i;
+	int i, i_mot;
 
 	double R_11, R_21;
     
@@ -99,13 +99,20 @@ void controller_inputs(MBSdataStruct *MBSdata)
     // -- Joint positions, velocities and torques -- //
     
     for(i=0; i<COMAN_NB_JOINT_ACTUATED; i++)
-	{
+    {
         robotran_id = robotran_id_table[i];
+
+        i_mot = uvs->real2actuated[robotran_id];
+
+        // motors (position - velocity) -> before the springs
+        ivs->q_mot[i]  = MBSdata->ux[i_mot];  // position [rad]
+        ivs->qd_mot[i] = MBSdata->uxd[i_mot]; // velocity [rad/s]
         
-		ivs->q[i]  = MBSdata->q[robotran_id];   // position [rad]
-		ivs->qd[i] = MBSdata->qd[robotran_id];  // velocity [rad/s]
-		ivs->Qq[i] = MBSdata->Qq[robotran_id];  // torque   [Nm]
-	}
+        // absolute joints (position - velocity - torques) -> after the springs
+        ivs->q[i]  = MBSdata->q[robotran_id];   // position [rad]
+        ivs->qd[i] = MBSdata->qd[robotran_id];  // velocity [rad/s]
+        ivs->Qq[i] = MBSdata->Qq[robotran_id];  // torque   [Nm]
+    }
     
     // -- IMU -- //
     
@@ -124,9 +131,12 @@ void controller_inputs(MBSdataStruct *MBSdata)
     ivs->IMU_Orientation[7] = S_MidWaist.R[3][2];
     ivs->IMU_Orientation[8] = S_MidWaist.R[3][3];
     
-    ivs->IMU_Angular_Rate[0] = S_MidWaist.OM[1];
-    ivs->IMU_Angular_Rate[1] = S_MidWaist.OM[2];
-    ivs->IMU_Angular_Rate[2] = S_MidWaist.OM[3];
+    // IMU absolute velocity and acceleration
+    for (i=0; i<3; i++)
+    {
+        ivs->IMU_Angular_Rate[i] = S_MidWaist.OM[i+1];  // angulare rate -> velocity [rad/s]
+        ivs->IMU_Acceleration[i] = S_MidWaist.OMP[i+1]; // acceleration [rad/s^2]
+    }
     
     free_sensor(&S_MidWaist);
     

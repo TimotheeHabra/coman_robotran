@@ -183,7 +183,32 @@ void init_actuator_model(MBSdataStruct *MBSdata)
 	uvs->actuated2real[L_SH_SAG_CTRL_MOT]   = L_SH_SAG;
 	uvs->actuated2real[L_SH_LAT_CTRL_MOT]   = L_SH_LAT;
 	uvs->actuated2real[L_SH_YAW_CTRL_MOT]   = L_SH_YAW;
-	uvs->actuated2real[L_ELB_CTRL_MOT]      = L_ELB;
+	uvs->actuated2real[L_ELB_CTRL_MOT]      = L_ELB; 
+
+	uvs->real2actuated[R_HIP_SAG]  = R_HIP_SAG_CTRL_MOT;
+	uvs->real2actuated[R_HIP_LAT]  = R_HIP_LAT_CTRL_MOT;
+	uvs->real2actuated[R_HIP_YAW]  = R_HIP_YAW_CTRL_MOT;
+	uvs->real2actuated[R_KNEE_SAG] = R_KNEE_SAG_CTRL_MOT;
+	uvs->real2actuated[R_ANK_LAT]  = R_ANK_LAT_CTRL_MOT;
+	uvs->real2actuated[R_ANK_SAG]  = R_ANK_SAG_CTRL_MOT;
+	uvs->real2actuated[L_HIP_SAG]  = L_HIP_SAG_CTRL_MOT;
+	uvs->real2actuated[L_HIP_LAT]  = L_HIP_LAT_CTRL_MOT;
+	uvs->real2actuated[L_HIP_YAW]  = L_HIP_YAW_CTRL_MOT;
+	uvs->real2actuated[L_KNEE_SAG] = L_KNEE_SAG_CTRL_MOT;
+	uvs->real2actuated[L_ANK_LAT]  = L_ANK_LAT_CTRL_MOT;
+	uvs->real2actuated[L_ANK_SAG]  = L_ANK_SAG_CTRL_MOT;
+	uvs->real2actuated[WAIST_LAT]  = WAIST_LAT_CTRL_MOT;
+	uvs->real2actuated[WAIST_SAG]  = WAIST_SAG_CTRL_MOT;
+	uvs->real2actuated[WAIST_YAW]  = WAIST_YAW_CTRL_MOT;
+	uvs->real2actuated[R_SH_SAG]   = R_SH_SAG_CTRL_MOT;
+	uvs->real2actuated[R_SH_LAT]   = R_SH_LAT_CTRL_MOT;
+	uvs->real2actuated[R_SH_YAW]   = R_SH_YAW_CTRL_MOT;
+	uvs->real2actuated[R_ELB]      = R_ELB_CTRL_MOT;
+	uvs->real2actuated[L_SH_SAG]   = L_SH_SAG_CTRL_MOT;
+	uvs->real2actuated[L_SH_LAT]   = L_SH_LAT_CTRL_MOT;
+	uvs->real2actuated[L_SH_YAW]   = L_SH_YAW_CTRL_MOT;
+	uvs->real2actuated[L_ELB]      = L_ELB_CTRL_MOT;
+
 
 	#ifdef LONG_ARMS
 	uvs->actuated2real[R_FORE_ARM_PLATE_CTRL_MOT] = R_FORE_ARM_PLATE;
@@ -192,6 +217,13 @@ void init_actuator_model(MBSdataStruct *MBSdata)
 	uvs->actuated2real[L_FORE_ARM_PLATE_CTRL_MOT] = L_FORE_ARM_PLATE;
 	uvs->actuated2real[L_WRJ1_CTRL_MOT]           = L_WRJ1;
 	uvs->actuated2real[L_WRJ2_CTRL_MOT]           = L_WRJ2;
+
+	uvs->real2actuated[R_FORE_ARM_PLATE] = R_FORE_ARM_PLATE_CTRL_MOT;
+	uvs->real2actuated[R_WRJ1]           = R_WRJ1_CTRL_MOT;
+	uvs->real2actuated[R_WRJ2]           = R_WRJ2_CTRL_MOT;
+	uvs->real2actuated[L_FORE_ARM_PLATE] = L_FORE_ARM_PLATE_CTRL_MOT;
+	uvs->real2actuated[L_WRJ1]           = L_WRJ1_CTRL_MOT;
+	uvs->real2actuated[L_WRJ2]           = L_WRJ2_CTRL_MOT;
 	#endif
     
     // --- Joint limits ---
