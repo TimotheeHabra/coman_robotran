@@ -30,7 +30,7 @@ void get_screen_sdl_functions(double *y_vec, MBSdataStruct *MBSdata)
     // ------ ASSIGN VALUES FOR THE CURVES ------ //
 
    /*
-    * Starts from y_vec[0], up to y_vec[nb_curves]
+    * Starts from y_vec[0], up to y_vec[nb_curves-1]
     * -> Assigns the variable to plot
     * (nb_curves is defined below in the 'configure_screen_sdl' function)
     *
@@ -88,13 +88,13 @@ Screen_sdl* configure_screen_sdl(int init_t_sec, int init_t_usec)
     /*
      * Labels of the curves
      *
-     * Starts from label_curves[0], up to label_curves[nb_legend_curves]
+     * Starts from label_curves[0], up to label_curves[nb_legend_curves-1]
      * -> Assigns the names of the variable to plot
      *
      * example:
-     *   y_vec[0] = "q1";
-     *   y_vec[1] = "q2";
-     *   y_vec[2] = "q3";
+     *   label_curves[0] = "q1";
+     *   label_curves[1] = "q2";
+     *   label_curves[2] = "q3";
      *
      * Beware: " " is accpeted, "" is prohibited !
      */
