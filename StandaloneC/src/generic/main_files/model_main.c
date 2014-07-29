@@ -9,18 +9,14 @@
 
 #include "main_simulation.h"
 
-#ifdef OPTI
-#include "opti_def.h"
-#include "simu_def.h"
-#endif
-
-
 /*
  * Main function
  */
-#ifndef OPTI
-
+#ifdef CXX
+int C_main(int argc, char const *argv[])
+#else
 int main(int argc, char const *argv[])
+#endif
 {    
     // variables declaration
     InputSimu *inputSimu;
@@ -43,7 +39,6 @@ int main(int argc, char const *argv[])
 	
 	return 0;
 }
-#endif
 
 /*
  * Main loop
@@ -56,11 +51,6 @@ OutputSimu* model_eval(InputSimu *inputSimu)
     
     // initialization
 	loop_arguments = init_simulation();
-
-    // optimization init
-    #ifdef OPTI
-	opti_init(inputSimu, loop_arguments->MBSdata);
-    #endif
 
     // loop
     outputSimu = loop_simulation(loop_arguments);

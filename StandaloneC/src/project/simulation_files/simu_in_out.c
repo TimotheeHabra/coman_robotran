@@ -6,10 +6,6 @@
 
 #include "simu_in_out.h"
 
-#ifdef OPTI
-#include "opti_def.h"
-#endif
-
  /*
  * File used to let the user define the inputs and the outputs of a Standalone simulation.
  * This file and the 'simu_in_out.h' ones must be filled according to the user need.
