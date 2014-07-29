@@ -38,6 +38,7 @@ The folder of your project MUST be located in the Robotran project folder (defin
 32-bit and 64-bit versions (look at this [link](http://www.mathworks.nl/support/solutions/en/data/1-ECUGQX/)).
 * For 2012 Matlab versions (or later), you can use only _Microsoft Windows SDK 7.1_.
 * If Matlab crashes during the execution, you might have to look at the file _MBsysLab/mbs_simulink/mbs_sourceC/nrutil.c_ installed by Robotran on your computer. There is a big '\#if defined(STDC) || defined(ANSI) || defined(NRANSI) /* ANSI */   \#else /* ANSI */   \#endif /* ANSI */'. Your compiler might be in the wrong part of this conditional statement (usually in the '\#else', while it should be in the '\#if defined...'). You can try to remove this big '\#if def \#else \#endif', keeping only the first part of this big conditional compilation.
+* Matlab 64-bit only recognizes one free compiler on Windows: Windows SDK 7.1 (for more information, consult this [link](http://perso.uclouvain.be/allan.barrea/opencv/opencv.html#installation-of-visual-c-2010-express-and-windows-sdk-7-1)).
 
 
 ### Mac OS hints ###
@@ -68,6 +69,7 @@ Here is an overview of the different files and folders used by the Simulink simu
 	* __src/project/user_files__ : same purpose as the _userfctR_ folder used by Matlab projects.
 	* __src/project/simulation_files__ : files used to let the user add new custom C files and to deal with the interface of a potential controller.
 	* __src/project/controller_files__ : files used to design a controller in C. This controller is totally independent from the simulation environment.
+	* __src/project/interface_controller__ : files used to handle the interface between the simulation (simulation_files) and the controller (controller_files). 
 
 When designing a controller for a robot, it is very important to correctly separate all the files designed by the user between the _user_files_, the _controller_files_ and the _simulation_files_ folders. 
 * All files located in __controller_files__ can be transferred to the real robot without any modification. Consequently, it is important to only use information actually available on the real robot in these files.
@@ -123,11 +125,9 @@ With Simulink, the fields available in _UserIOStruct_ are the ones implemented i
 * Configure the files located in the __simulation_files__ folder. You can add new files according to your need.
 	* __simu_def.h__ is the main header used for these files. You can modify it and add your own new headers. You can also add new C files in the _simulation_files_ folder.
 	* __simulink_outputs.c__ is used to get the signals from the simulation environment in the Matlab workspace via the Simulink block (useless for the _Standalone_ version).
-	* __simu_controller_loop.c__ is the main loop of the folder _simulation_files_. It is also used to call the controller main loop and to manage its inputs and outputs. You can add new functions to this loop if needed.
-	* __controller_inputs.c__ is used to set the inputs of the controller. This file can be used to simulate the sensors available on the real robot.
-	* __controller_outputs.c__ is used to extract the outputs of the controller, modifying the simulation environment according to these outputs. For instance, it can transform the outputs of the controller into voltages feeding different motors implemented in the simulation environment.
-	* __controller_inputs.c__ and _controller_outputs.c_ are the two files responsible for making a clear interface between the controller and its environment (included the robot to control). Consequently, these two files must be re-written if you transfer the controller designed in simulation to a real robot (to adapt these interface files).
+	* __simu_controller_loop.c__ is the main loop of the folder _simulation_files_. It is also used to call the controller main loop. You can add new functions to this loop if needed.
 	* __simu_in_out.c__ and __simu_in_out.h__ are two files only used by the _Standalone_ version. The user can define the input structure (called _InputSimu_) prototype in _simu_in_out.h_, providing all the input fields available in the simulator (for instance, parameters to optimize). Then, the function _create_InputSimu_ (in _simu_in_out.c_) must be filled to initialize this structure before launching the simulation (the function _free_InputSimu_ must also be filled to free _InputSimu_ at the end of the simulation). In these two files, the user can also configure in a similar way the output structure _OutputSimu_ to get some outputs from the simulation (for instance, the fitness value at the end of an optimization process).
+	* __stop_simu.c__ is used to stop the simulation if a particular event (configured by the user) happens.
 	* __Simbody__ is a folder used to define the contacts to compute with [Simbody](https://simtk.org/home/simbody/). The Simbody features can only be used with the [Standalone version](StandaloneC/README.md), it is useless for a _Simulink_ project. For more information, consult the [README.md](StandaloneC/src/project/simulation_files/Simbody/README.md) located in StandaloneC/src/project/simulation_files/Simbody.
 
 * Configure the files located in the __controller_files__ folder. You can add new files according to your need.
@@ -137,6 +137,13 @@ With Simulink, the fields available in _UserIOStruct_ are the ones implemented i
 	* __controller_loop.c__ is the main loop of the controller. Add as many functions as needed in this loop. You can also add new C files in the _controller_files_ folder. The _controller_loop_ function must be called in your real robot main loop.
 	* If you do not need a controller, leave this folder (controller_files) as it was initially configured.
 	* This folder is used to design a controller which is totally independent from the simulation environment. Consequently, do not add information which is not available on the real robot if you want to use the same files you developped in the _controller_files_ folder for the real robot.
+
+* Configure the files located in the __interface_controller__ folder. You can add new files according to your need.
+	* __controller_interface.h__ is the main header for this interface.
+	* __controller_interface.c__ is the file used to handle the initialization, the loop calls and the shutdown of the controller.
+	* __controller_inputs.c__ is used to set the inputs of the controller. This file can be used to simulate the sensors available on the real robot.
+	* __controller_outputs.c__ is used to extract the outputs of the controller, modifying the simulation environment according to these outputs. For instance, it can transform the outputs of the controller into voltages feeding different motors implemented in the simulation environment.
+	* _controller_inputs.c_ and _controller_outputs.c_ are the two files responsible for making a clear interface between the controller and its environment (included the robot to control). Consequently, these two files must be re-written if you transfer the controller designed in simulation to a real robot (to adapt these interface files).
 
 
 ### Compiling the code ###
@@ -193,13 +200,15 @@ Just launch the script __call_simulink.m__. At the end, you should get the .anim
 
 Controller design is organised such that the files developed for the controller can easily be transferred to the real robot.
 
-* If you designed a controller in simulation in the __controller_files__ folder, you only need the files located in this folder. Add them to your real robot controller. 
-* On top of that, you must define a structure instance of _ControllerStruct_ (depending on the controller name you wrote in _simu_variables.m_ or _simu_variables.txt_), e.g. _ControllerStruct *cvs;_.
-* In the initialization part of your project, add these lines: 
-	* _cvs = init_ControllerStruct();_
-	* _controller_init(cvs);_
-* In the loop function of your project:
-	* Write a new _controller_inputs_ function to get the same result as the one of _controller_inputs.c_, but adapted to your robot real inputs (sensores...).
-	* Call the _controller_loop_ function: _controller_loop(cvs);_
-	* Write a new _controller_outputs_ function, similar to _controller_outputs.c_, to command your actuators.
-* In the ending function of your project (optional): _free_ControllerStruct(cvs);_
+* You must import the controller files to your real robot controller and adapt the files located in the _StandaloneC/src/project/interface_controller_ folder to create the corresponding interface with the real robot.
+* Here are the instructions to do this if you use the Robotran controller template (with _ControllerStruct_):
+	* If you designed a controller in simulation in the __controller_files__ folder, you only need the files located in this folder. Add them to your real robot controller. 
+	* On top of that, you must define a structure instance of _ControllerStruct_ (depending on the controller name you wrote in _simu_variables.m_ or _simu_variables.txt_), e.g. _ControllerStruct *cvs;_.
+	* In the initialization part of your project, add these lines: 
+		* _cvs = init_ControllerStruct();_
+		* _controller_init(cvs);_
+	* In the loop function of your project:
+		* Write a new _controller_inputs_ function to get the same result as the one of _controller_inputs.c_, but adapted to your robot real inputs (sensors...).
+		* Call the _controller_loop_ function: _controller_loop(cvs);_
+		* Write a new _controller_outputs_ function, similar to _controller_outputs.c_, to command your actuators.
+	* In the ending function of your project (optional): _free_ControllerStruct(cvs);_

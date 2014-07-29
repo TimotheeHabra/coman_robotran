@@ -69,21 +69,25 @@ end
 
 % --- Files and directories definitions ---
 
-common_dir = fullfile(mbspath,'MBsysLab','mbs_simulink','mbs_sourceC');
-user_dir = fullfile(mbsprjpath,prjname,'StandaloneC','src','project','user_files');
+common_dir     = fullfile(mbspath,'MBsysLab','mbs_simulink','mbs_sourceC');
+user_dir       = fullfile(mbsprjpath,prjname,'StandaloneC','src','project','user_files');
 simulation_dir = fullfile(mbsprjpath,prjname,'StandaloneC','src','project','simulation_files');
 controller_dir = fullfile(mbsprjpath,prjname,'StandaloneC','src','project','controller_files');
-symbolic_dir = fullfile(mbsprjpath,prjname,'symbolicR');
+interface_dir  = fullfile(mbsprjpath,prjname,'StandaloneC','src','project','interface_controller');
+symbolic_dir   = fullfile(mbsprjpath,prjname,'symbolicR');
 
 simu_dir_h_files = dir( strcat(simulation_dir,'/*.h') );
 ctrl_dir_h_files = dir( strcat(controller_dir,'/*.h') );
+int_dir_h_files  = dir( strcat(interface_dir, '/*.h') );
 simu_dir_c_files = dir( strcat(simulation_dir,'/*.c') );
 ctrl_dir_c_files = dir( strcat(controller_dir,'/*.c') );
+int_dir_c_files  = dir( strcat(interface_dir, '/*.c') );
 
 simulation_headers = struct([]);
 controller_headers = struct([]);
-simulation_files = struct([]);
-controller_files = struct([]);
+simulation_files   = struct([]);
+controller_files   = struct([]);
+interface_files    = struct([]);
 
 for m = 1:length(simu_dir_h_files)
     simulation_headers{m} = simu_dir_h_files(m).name;
@@ -93,12 +97,20 @@ for m = 1:length(ctrl_dir_h_files)
     controller_headers{m} = ctrl_dir_h_files(m).name;
 end
 
+for m = 1:length(int_dir_h_files)
+    interface_headers{m} = int_dir_h_files(m).name;
+end
+
 for m = 1:length(simu_dir_c_files)
     simulation_files{m} = simu_dir_c_files(m).name;
 end
 
 for m = 1:length(ctrl_dir_c_files)
     controller_files{m} = ctrl_dir_c_files(m).name;
+end
+
+for m = 1:length(int_dir_c_files)
+    interface_files{m} = int_dir_c_files(m).name;
 end
 
 project_files = {...
@@ -174,6 +186,10 @@ else
     for i=1:length(simulation_headers),    
         compile_all = need_to_compile_all(fullfile(simulation_dir,simulation_headers{i}),prjname);
     end
+    
+    for i=1:length(interface_headers),    
+        compile_all = need_to_compile_all(fullfile(interface_dir,interface_headers{i}),prjname);
+    end
 
     for i=1:length(user_headers),    
         compile_all = need_to_compile_all(fullfile(user_dir,user_headers{i}),prjname);
@@ -202,17 +218,19 @@ files_compiled = s.files_compiled;
 % --- Compiling ---
 
 files_compiled = compile_folder( common_dir,     project_files,    OS_type, files_compiled, ...
-    debug, define, symbolic_dir, common_dir, controller_dir, simulation_dir, user_dir, 0);
+    debug, define, symbolic_dir, common_dir, controller_dir, simulation_dir, interface_dir, user_dir, 0);
 files_compiled = compile_folder( symbolic_dir,   symbolic_files,   OS_type, files_compiled, ...
-    debug, define, symbolic_dir, common_dir, controller_dir, simulation_dir, user_dir, 0);
+    debug, define, symbolic_dir, common_dir, controller_dir, simulation_dir, interface_dir, user_dir, 0);
 files_compiled = compile_folder( common_dir,     tool_files,       OS_type, files_compiled, ...
-    debug, define, symbolic_dir, common_dir, controller_dir, simulation_dir, user_dir, 0);
+    debug, define, symbolic_dir, common_dir, controller_dir, simulation_dir, interface_dir, user_dir, 0);
 files_compiled = compile_folder( controller_dir, controller_files, OS_type, files_compiled, ...
-    debug, define, symbolic_dir, common_dir, controller_dir, simulation_dir, user_dir, compile_ctrl);
+    debug, define, symbolic_dir, common_dir, controller_dir, simulation_dir, interface_dir, user_dir, compile_ctrl);
 files_compiled = compile_folder( simulation_dir, simulation_files, OS_type, files_compiled, ...
-    debug, define, symbolic_dir, common_dir, controller_dir, simulation_dir, user_dir, 0);
+    debug, define, symbolic_dir, common_dir, controller_dir, simulation_dir, interface_dir, user_dir, 0);
+files_compiled = compile_folder( interface_dir, interface_files, OS_type, files_compiled, ...
+    debug, define, symbolic_dir, common_dir, controller_dir, simulation_dir, interface_dir, user_dir, 0);
 compile_folder( user_dir,       user_files,       OS_type, files_compiled, ...
-    debug, define, symbolic_dir, common_dir, controller_dir, simulation_dir, user_dir, 0);
+    debug, define, symbolic_dir, common_dir, controller_dir, simulation_dir, interface_dir, user_dir, 0);
 
 % --- Linking ---
 disp('MBS>> Linking dirdynared...');
@@ -385,7 +403,7 @@ end
 
 end
 
-function [files_compiled] = compile_folder(dir, files, OS_type, files_compiled, debug, define, symbolic_dir, common_dir, controller_dir, simulation_dir, user_dir, compile_ctrl)
+function [files_compiled] = compile_folder(dir, files, OS_type, files_compiled, debug, define, symbolic_dir, common_dir, controller_dir, simulation_dir, interface_dir, user_dir, compile_ctrl)
 
     for i=1:length(files),
         c_file_name = fullfile(dir,files{i});
@@ -395,21 +413,21 @@ function [files_compiled] = compile_folder(dir, files, OS_type, files_compiled, 
             if(OS_type == 2) % Linux
                 if debug
                     eval(['mex -g CFLAGS="-std=c99 -D_GNU_SOURCE  -fexceptions -fPIC -fno-omit-frame-pointer -pthread" -c -D' ...
-                        define ' -I''' symbolic_dir ''' -I''' common_dir ''' -I''' controller_dir ''' -I''' simulation_dir ...
+                        define ' -I''' symbolic_dir ''' -I''' common_dir ''' -I''' controller_dir ''' -I''' simulation_dir ''' -I''' interface_dir ...
                         ''' -I''' user_dir ''' -outdir ''object_files'' ''' fullfile(dir,files{i}) '''']);
                 else
                     eval(['mex CFLAGS="-std=c99 -D_GNU_SOURCE  -fexceptions -fPIC -fno-omit-frame-pointer -pthread" -c -D' ...
-                        define ' -I''' symbolic_dir ''' -I''' common_dir ''' -I''' controller_dir ''' -I''' simulation_dir ...
+                        define ' -I''' symbolic_dir ''' -I''' common_dir ''' -I''' controller_dir ''' -I''' simulation_dir ''' -I''' interface_dir ...
                         ''' -I''' user_dir ''' -outdir ''object_files'' ''' fullfile(dir,files{i}) '''']);
                 end
             else % Mac OS or Windows
                 if debug
                     eval(['mex -g -c -D' define ' -I''' symbolic_dir ''' -I''' common_dir ...
-                        ''' -I''' controller_dir ''' -I''' simulation_dir ''' -I''' user_dir ...
+                        ''' -I''' controller_dir ''' -I''' simulation_dir ''' -I''' interface_dir ''' -I''' user_dir ...
                         ''' -outdir ''object_files'' ''' fullfile(dir,files{i}) '''']);
                 else
                     eval(['mex -c -D' define ' -I''' symbolic_dir ''' -I''' common_dir ...
-                        ''' -I''' controller_dir ''' -I''' simulation_dir ''' -I''' user_dir ...
+                        ''' -I''' controller_dir ''' -I''' simulation_dir ''' -I''' interface_dir ''' -I''' user_dir ...
                         ''' -outdir ''object_files'' ''' fullfile(dir,files{i}) '''']);
                 end
             end
