@@ -30,9 +30,7 @@ void simu_controller_loop(MBSdataStruct *MBSdata)
     {
         uvs->last_t_ctrl = tsim;
         
-        controller_inputs(MBSdata);   // interface: inputs
-        controller_loop(cvs);         // controller
-        controller_outputs(MBSdata);  // interface: outputs
+        controller_loop_interface(MBSdata);
     }
 
     // simulation outputs for simulink (useless for the Standalone version)

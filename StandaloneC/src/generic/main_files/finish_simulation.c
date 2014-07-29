@@ -120,6 +120,9 @@ void finish_simulation(Loop_arguments *loop_arguments)
     freeLocalDataStruct(loop_arguments->lds,MBSdata);
     #endif
 
+    // controller
+    controller_close_interface(MBSdata);
+
     // MBSdata_xml
     freeMBSdata_xml(MBSdata);
 

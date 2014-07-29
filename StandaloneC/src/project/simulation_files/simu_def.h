@@ -22,6 +22,8 @@
 #include "ControllersStruct.h"
 #include "nrutil.h"
 
+#include "controller_io.h"
+
 
 // ---- Constants & Macros ---- //
 
@@ -337,17 +339,10 @@ void stop_simu(MBSdataStruct *MBSdata);
 void user_finalization(MBSdataStruct *MBSdata);
 #endif
 
-// controller
-#ifdef __cplusplus
-extern "C" {
-#endif
-	void controller_init(ControllerStruct *cvs);
-	void controller_loop(ControllerStruct *cvs);
-	void controller_inputs(MBSdataStruct *MBSdata);
-	void controller_outputs(MBSdataStruct *MBSdata);
-#ifdef __cplusplus
-}
-#endif
+// controller interface
+void controller_init_interface(MBSdataStruct *MBSdata);
+void controller_loop_interface(MBSdataStruct *MBSdata);
+void controller_close_interface(MBSdataStruct *MBSdata);
 
 // useful functions
 double limit_function(double value, double this_min, double this_max);
@@ -366,7 +361,7 @@ double z_left_foot(double x, double y);
 double z_right_foot(double x, double y);
 
 // impedance controller
-void impedance_controller(MBSdataStruct *MBSdata);
+void impedance_controller(MBSdataStruct *MBSdata, Ctrl_Outputs *ovs);
 void get_IC_gains(int id_coman, double position_PID[3], double torque_PID[3]);
 
 // initialization 

@@ -29,11 +29,8 @@ int user_initialization(MBSdataStruct *MBSdata, LocalDataStruct *lds)
 	// init actuator models
 	init_actuator_model(MBSdata);
 
-	// inputs of the controller
-	controller_inputs(MBSdata);
-	
 	// controller initialization
-    controller_init(cvs);
+    controller_init_interface(MBSdata);
 
     #ifdef STANDALONE
     return 0;

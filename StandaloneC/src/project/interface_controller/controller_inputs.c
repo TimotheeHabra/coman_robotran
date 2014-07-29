@@ -11,13 +11,11 @@
 /*
  * Assigns the inputs of the controller
  */
-void controller_inputs(MBSdataStruct *MBSdata)
+void controller_inputs(MBSdataStruct *MBSdata, Ctrl_Inputs *ivs)
 {
     UserIOStruct     *uvs;
-    ControllerStruct *cvs;
-    ControllerInputs *ivs;
 
-	MBSsensorStruct S_MidWaist;
+    MBSsensorStruct S_MidWaist;
 
 	int i, i_mot;
 
@@ -32,27 +30,27 @@ void controller_inputs(MBSdataStruct *MBSdata)
         R_HIP_SAG, //  4. RIGHT_HIP_PITCH
         L_HIP_SAG, //  5. LEFT_HIP_PITCH
         
-        R_HIP_LAT, //  6. RIGHT_HIP_ROLL
-        R_HIP_YAW, //  7. RIGHT_HIP_YAW
+        R_HIP_LAT,  //  6. RIGHT_HIP_ROLL
+        R_HIP_YAW,  //  7. RIGHT_HIP_YAW
         R_KNEE_SAG, //  8. RIGHT_KNEE_PITCH
-        R_ANK_SAG, //  9. RIGHT_FOOT_PITCH
-        R_ANK_LAT, // 10. RIGHT_FOOT_ROLL
+        R_ANK_SAG,  //  9. RIGHT_FOOT_PITCH
+        R_ANK_LAT,  // 10. RIGHT_FOOT_ROLL
         
-        L_HIP_LAT, // 11. LEFT_HIP_ROLL
-        L_HIP_YAW, // 12. LEFT_HIP_YAW
+        L_HIP_LAT,  // 11. LEFT_HIP_ROLL
+        L_HIP_YAW,  // 12. LEFT_HIP_YAW
         L_KNEE_SAG, // 13. LEFT_KNEE_PITCH
-        L_ANK_SAG, // 14. LEFT_FOOT_PITCH
-        L_ANK_LAT, // 15. LEFT_FOOT_ROLL
+        L_ANK_SAG,  // 14. LEFT_FOOT_PITCH
+        L_ANK_LAT,  // 15. LEFT_FOOT_ROLL
         
         R_SH_SAG, // 16. RIGHT_SHOULDER_PITCH
         R_SH_LAT, // 17. RIGHT_SHOULDER_ROLL
         R_SH_YAW, // 18. RIGHT_SHOULDER_YAW
-        R_ELB, // 19. RIGHT_ELBOW_PITCH
+        R_ELB,    // 19. RIGHT_ELBOW_PITCH
         
         L_SH_SAG, // 20. LEFT_SHOULDER_PITCH
         L_SH_LAT, // 21. LEFT_SHOULDER_ROLL
         L_SH_YAW, // 22. LEFT_SHOULDER_YAW
-        L_ELB, // 23. LEFT_ELBOW_PITCH
+        L_ELB,    // 23. LEFT_ELBOW_PITCH
 
         #ifdef LONG_ARMS
         R_FORE_ARM_PLATE, // 24- RIGHT_FORE_ARM_PLATE
@@ -67,8 +65,6 @@ void controller_inputs(MBSdataStruct *MBSdata)
 
 
     uvs = MBSdata->user_IO;
-    cvs = uvs->cvs;
-    ivs = cvs->Inputs;
     
 
     // -- Time -- //
@@ -99,7 +95,7 @@ void controller_inputs(MBSdataStruct *MBSdata)
     // -- Joint positions, velocities and torques -- //
     
     for(i=0; i<COMAN_NB_JOINT_ACTUATED; i++)
-    {
+	{
         robotran_id = robotran_id_table[i];
 
         i_mot = uvs->real2actuated[robotran_id];
@@ -109,10 +105,10 @@ void controller_inputs(MBSdataStruct *MBSdata)
         ivs->qd_mot[i] = MBSdata->uxd[i_mot]; // velocity [rad/s]
         
         // absolute joints (position - velocity - torques) -> after the springs
-        ivs->q[i]  = MBSdata->q[robotran_id];   // position [rad]
-        ivs->qd[i] = MBSdata->qd[robotran_id];  // velocity [rad/s]
-        ivs->Qq[i] = MBSdata->Qq[robotran_id];  // torque   [Nm]
-    }
+		ivs->q[i]  = MBSdata->q[robotran_id];   // position [rad]
+		ivs->qd[i] = MBSdata->qd[robotran_id];  // velocity [rad/s]
+		ivs->Qq[i] = MBSdata->Qq[robotran_id];  // torque   [Nm]
+	}
     
     // -- IMU -- //
     
@@ -130,7 +126,7 @@ void controller_inputs(MBSdataStruct *MBSdata)
     ivs->IMU_Orientation[6] = S_MidWaist.R[3][1];
     ivs->IMU_Orientation[7] = S_MidWaist.R[3][2];
     ivs->IMU_Orientation[8] = S_MidWaist.R[3][3];
-    
+
     // IMU absolute velocity and acceleration
     for (i=0; i<3; i++)
     {
@@ -139,8 +135,8 @@ void controller_inputs(MBSdataStruct *MBSdata)
     }
     
     free_sensor(&S_MidWaist);
-    
-    
+
+
 	// -- IMU yaw info: not available on the real CoMan -- //
     
     // rotation matrix

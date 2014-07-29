@@ -14,15 +14,13 @@
  * Impedance controller is used to get the voltage sent to the motors.
  * Currently, this impedance controller is different from the one implemented on the real CoMan.
  */
-void impedance_controller(MBSdataStruct *MBSdata) 
+void impedance_controller(MBSdataStruct *MBSdata, Ctrl_Outputs *ovs) 
 {
     // ---- Varibales declaration ---- //
     
     // user variables
     UserIOStruct *uvs;
     ControllerStruct *cvs;
-
-    ControllerOutputs *ovs;
 
     int robotran_id;
     
@@ -94,8 +92,6 @@ void impedance_controller(MBSdataStruct *MBSdata)
     tsim = MBSdata->tsim;
     last_tsim_int_tau = uvs->last_tsim_int_tau;
     delta_tsim = tsim - last_tsim_int_tau;
-
-    ovs = cvs->Outputs;
     
     for(i=0; i<COMAN_NB_JOINT_ACTUATED; i++) {
 
