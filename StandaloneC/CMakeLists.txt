@@ -589,11 +589,6 @@ endif (WIN32)
 
 ## ---- COMAN VERSIONS SYNCHRONIZATION ---- ##
 
-# remove previous files (.mbs, .mbsdata and symbolicR)
-file(REMOVE ${PROJECT_SOURCE_DIR}/src/project/Model_standalone.mbsdata)
-file(REMOVE ${PROJECT_SOURCE_DIR}/../dataR/${ROBOTRAN_ROJECT_NAME}.mbs)
-file(REMOVE_RECURSE  ${PROJECT_SOURCE_DIR}/../symbolicR)
-
 if (FLAG_3D_MODEL)
 	set(MODEL_STANDALONE "Model_standalone_3D")
 else (FLAG_3D_MODEL)
