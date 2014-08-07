@@ -48,7 +48,7 @@
 // right leg
 #define R_HIP_SAG 7
 #define R_HIP_LAT 8
-#define R_HIP_YAW 9
+#define R_HIP_TRANS 9
 #define R_KNEE_SAG 10
 #define R_ANK_LAT 11
 #define R_ANK_SAG 12
@@ -57,7 +57,7 @@
 // left leg
 #define L_HIP_SAG 14
 #define L_HIP_LAT 15
-#define L_HIP_YAW 16
+#define L_HIP_TRANS 16
 #define L_KNEE_SAG 17
 #define L_ANK_LAT 18
 #define L_ANK_SAG 19
@@ -66,18 +66,18 @@
 // waist
 #define WAIST_LAT 21
 #define WAIST_SAG 22
-#define WAIST_YAW 23
+#define WAIST_TRANS 23
 
 // right arm
 #define R_SH_SAG 24
 #define R_SH_LAT 25
-#define R_SH_YAW 26
+#define R_SH_TRANS 26
 #define R_ELB 27
 
 // left arm
 #define L_SH_SAG 28
 #define L_SH_LAT 29
-#define L_SH_YAW 30
+#define L_SH_TRANS 30
 #define L_ELB 31
 
 
@@ -96,7 +96,7 @@
 // right leg
 #define R_HIP_SAG 7
 #define R_HIP_LAT 8
-#define R_HIP_YAW 9
+#define R_HIP_TRANS 9
 #define R_KNEE_SAG 10
 #define R_ANK_LAT 11
 #define R_ANK_SAG 12
@@ -104,7 +104,7 @@
 // right leg
 #define L_HIP_SAG 13
 #define L_HIP_LAT 14
-#define L_HIP_YAW 15
+#define L_HIP_TRANS 15
 #define L_KNEE_SAG 16
 #define L_ANK_LAT 17
 #define L_ANK_SAG 18
@@ -112,12 +112,12 @@
 // waist
 #define WAIST_LAT 19
 #define WAIST_SAG 20
-#define WAIST_YAW 21
+#define WAIST_TRANS 21
 
 // right arm
 #define R_SH_SAG 22
 #define R_SH_LAT 23
-#define R_SH_YAW 24
+#define R_SH_TRANS 24
 #define R_ELB 25
 #define R_FORE_ARM_PLATE 26
 #define R_WRJ1 27
@@ -126,7 +126,7 @@
 // left arm
 #define L_SH_SAG 29
 #define L_SH_LAT 30
-#define L_SH_YAW 31
+#define L_SH_TRANS 31
 #define L_ELB 32
 #define L_FORE_ARM_PLATE 33
 #define L_WRJ1 34
@@ -145,7 +145,7 @@
 // right leg
 #define R_HIP_SAG 7
 #define R_HIP_LAT 8
-#define R_HIP_YAW 9
+#define R_HIP_TRANS 9
 #define R_KNEE_SAG 10
 #define R_ANK_LAT 11
 #define R_ANK_SAG 12
@@ -153,7 +153,7 @@
 // left leg
 #define L_HIP_SAG 13
 #define L_HIP_LAT 14
-#define L_HIP_YAW 15
+#define L_HIP_TRANS 15
 #define L_KNEE_SAG 16
 #define L_ANK_LAT 17
 #define L_ANK_SAG 18
@@ -161,18 +161,18 @@
 // waist
 #define WAIST_LAT 19
 #define WAIST_SAG 20
-#define WAIST_YAW 21
+#define WAIST_TRANS 21
 
 // right arm
 #define R_SH_SAG 22
 #define R_SH_LAT 23
-#define R_SH_YAW 24
+#define R_SH_TRANS 24
 #define R_ELB 25
 
 // left arm
 #define L_SH_SAG 26
 #define L_SH_LAT 27
-#define L_SH_YAW 28
+#define L_SH_TRANS 28
 #define L_ELB 29
 
 #endif
@@ -186,7 +186,7 @@
 // right leg
 #define R_HIP_SAG_CTRL_MOT 4
 #define R_HIP_LAT_CTRL_MOT 6
-#define R_HIP_YAW_CTRL_MOT 7
+#define R_HIP_TRANS_CTRL_MOT 7
 #define R_KNEE_SAG_CTRL_MOT 8
 #define R_ANK_LAT_CTRL_MOT 10
 #define R_ANK_SAG_CTRL_MOT 9
@@ -194,7 +194,7 @@
 // left leg
 #define L_HIP_SAG_CTRL_MOT 5
 #define L_HIP_LAT_CTRL_MOT 11
-#define L_HIP_YAW_CTRL_MOT 12
+#define L_HIP_TRANS_CTRL_MOT 12
 #define L_KNEE_SAG_CTRL_MOT 13
 #define L_ANK_LAT_CTRL_MOT 15
 #define L_ANK_SAG_CTRL_MOT 14
@@ -202,18 +202,18 @@
 // waist
 #define WAIST_LAT_CTRL_MOT 3
 #define WAIST_SAG_CTRL_MOT 2
-#define WAIST_YAW_CTRL_MOT 1
+#define WAIST_TRANS_CTRL_MOT 1
 
 // right arm
 #define R_SH_SAG_CTRL_MOT 16
 #define R_SH_LAT_CTRL_MOT 17
-#define R_SH_YAW_CTRL_MOT 18
+#define R_SH_TRANS_CTRL_MOT 18
 #define R_ELB_CTRL_MOT 19
 
 // left arm
 #define L_SH_SAG_CTRL_MOT 20
 #define L_SH_LAT_CTRL_MOT 21
-#define L_SH_YAW_CTRL_MOT 22
+#define L_SH_TRANS_CTRL_MOT 22
 #define L_ELB_CTRL_MOT 23
 
 
@@ -296,13 +296,13 @@
 
 // number of joints of the model
 #ifdef COMP_FEET
-#define COMAN_NB_JOINT_TOTAL 31  
-#else    
+#define COMAN_NB_JOINT_TOTAL 31
+#else
 
 #ifdef LONG_ARMS
-#define COMAN_NB_JOINT_TOTAL 35  
+#define COMAN_NB_JOINT_TOTAL 35
 #else
-#define COMAN_NB_JOINT_TOTAL 29  
+#define COMAN_NB_JOINT_TOTAL 29
 #endif
 
 #endif
@@ -352,7 +352,7 @@ void init_actuator_model(MBSdataStruct *MBSdata);
 
 // GCM (Ground Contact Model)
 double get_ground_height(double x, double y, double tsim, MBSdataStruct *MBSdata);
-void ground_mesh_model(double PxF[4], double RxF[4][4], 
+void ground_mesh_model(double PxF[4], double RxF[4][4],
 					   double VxF[4], double OMxF[4],
 					   MBSdataStruct *MBSdata, double tsim,
 					   int ixF, double *dxF, double *SWr);
@@ -364,7 +364,7 @@ double z_right_foot(double x, double y);
 void impedance_controller(MBSdataStruct *MBSdata, Ctrl_Outputs *ovs);
 void get_IC_gains(int id_coman, double position_PID[3], double torque_PID[3]);
 
-// initialization 
+// initialization
 void opti_parameters_init_simu(MBSdataStruct *MBSdata);
 
 // random number

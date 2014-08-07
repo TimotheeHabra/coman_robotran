@@ -16,7 +16,7 @@ void get_ref(ControllerStruct *cvs)
     // ---- Variables ---- //
 
     ControllerOutputs *ovs;
-    
+
     int i;
 
     double q_ref[COMAN_NB_JOINT_ACTUATED];
@@ -27,43 +27,43 @@ void get_ref(ControllerStruct *cvs)
     ovs = cvs->Outputs;
 
     // ---- Position reference ---- //
-    
+
     for(i=0; i<COMAN_NB_JOINT_ACTUATED; i++)
     {
         q_ref[i]  = 0.0;
     }
 
     // right arm
-    q_ref[RIGHT_SHOULDER_PITCH] = cvs->q_ref_r_sh_sag;
-    q_ref[RIGHT_SHOULDER_ROLL]  = cvs->q_ref_r_sh_lat;
-    q_ref[RIGHT_SHOULDER_YAW]   = cvs->q_ref_r_sh_yaw;
-    q_ref[RIGHT_ELBOW_PITCH]    = cvs->q_ref_r_elb;
+    q_ref[R_SHOULDER_PITCH] = cvs->q_ref_r_sh_sag;
+    q_ref[R_SHOULDER_ROLL]  = cvs->q_ref_r_sh_lat;
+    q_ref[R_SHOULDER_YAW]   = cvs->q_ref_r_sh_yaw;
+    q_ref[R_ELBOW_PITCH]    = cvs->q_ref_r_elb;
 
     // left arm
-    q_ref[LEFT_SHOULDER_PITCH] = cvs->q_ref_l_sh_sag;
-    q_ref[LEFT_SHOULDER_ROLL]  = cvs->q_ref_l_sh_lat;
-    q_ref[LEFT_SHOULDER_YAW]   = cvs->q_ref_l_sh_yaw;
-    q_ref[LEFT_ELBOW_PITCH]    = cvs->q_ref_l_elb;
+    q_ref[L_SHOULDER_PITCH] = cvs->q_ref_l_sh_sag;
+    q_ref[L_SHOULDER_ROLL]  = cvs->q_ref_l_sh_lat;
+    q_ref[L_SHOULDER_YAW]   = cvs->q_ref_l_sh_yaw;
+    q_ref[L_ELBOW_PITCH]    = cvs->q_ref_l_elb;
 
 
     // ---- Velocity reference ---- //
-    
+
     for(i=0; i<COMAN_NB_JOINT_ACTUATED; i++)
     {
         qd_ref[i] = 0.0;
     }
 
-    
+
     // ---- Torque reference ---- //
-    
+
     for(i=0; i<COMAN_NB_JOINT_ACTUATED; i++)
     {
         Qq_ref[i] = 0.0;
     }
-    
-    
+
+
     // ---- References sent to the controller with limitations ---- //
-    
+
     for(i=0; i<COMAN_NB_JOINT_ACTUATED; i++)
     {
         ovs->q_ref[i]  = limit_angle(q_ref[i]);

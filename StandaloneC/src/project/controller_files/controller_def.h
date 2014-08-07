@@ -36,48 +36,48 @@ enum{R_LEG, L_LEG};
 
 
 // waist
-#define TORSO_YAW   0
-#define TORSO_PITCH 1
-#define TORSO_ROLL  2
+#define TRUNK_YAW   0
+#define TRUNK_PITCH 1
+#define TRUNK_ROLL  2
 
 // hips pitch
-#define RIGHT_HIP_PITCH 3
-#define LEFT_HIP_PITCH  4
+#define R_HIP_PITCH 3
+#define L_HIP_PITCH  4
 
 // right leg
-#define RIGHT_HIP_ROLL   5
-#define RIGHT_HIP_YAW    6
-#define RIGHT_KNEE_PITCH 7
-#define RIGHT_FOOT_PITCH 8
-#define RIGHT_FOOT_ROLL  9
+#define R_HIP_ROLL   5
+#define R_HIP_YAW    6
+#define R_KNEE_PITCH 7
+#define R_FOOT_PITCH 8
+#define R_FOOT_ROLL  9
 
 // left leg
-#define LEFT_HIP_ROLL   10
-#define LEFT_HIP_YAW    11
-#define LEFT_KNEE_PITCH 12
-#define LEFT_FOOT_PITCH 13
-#define LEFT_FOOT_ROLL  14
+#define L_HIP_ROLL   10
+#define L_HIP_YAW    11
+#define L_KNEE_PITCH 12
+#define L_FOOT_PITCH 13
+#define L_FOOT_ROLL  14
 
 // right arm
-#define RIGHT_SHOULDER_PITCH 15
-#define RIGHT_SHOULDER_ROLL  16
-#define RIGHT_SHOULDER_YAW   17
-#define RIGHT_ELBOW_PITCH    18
+#define R_SHOULDER_PITCH 15
+#define R_SHOULDER_ROLL  16
+#define R_SHOULDER_YAW   17
+#define R_ELBOW_PITCH    18
 
 // left arm
-#define LEFT_SHOULDER_PITCH 19
-#define LEFT_SHOULDER_ROLL  20
-#define LEFT_SHOULDER_YAW   21
-#define LEFT_ELBOW_PITCH    22
+#define L_SHOULDER_PITCH 19
+#define L_SHOULDER_ROLL  20
+#define L_SHOULDER_YAW   21
+#define L_ELBOW_PITCH    22
 
 #ifdef LONG_ARMS
-#define RIGHT_FORE_ARM_PLATE 23
-#define RIGHT_WRJ1 24
-#define RIGHT_WRJ2 25
+#define R_FORE_ARM_PLATE 23
+#define R_WRJ1 24
+#define R_WRJ2 25
 
-#define LEFT_FORE_ARM_PLATE 26
-#define LEFT_WRJ1 27
-#define LEFT_WRJ2 28
+#define L_FORE_ARM_PLATE 26
+#define L_WRJ1 27
+#define L_WRJ2 28
 #endif
 
 

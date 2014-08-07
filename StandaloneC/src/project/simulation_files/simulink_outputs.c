@@ -25,33 +25,33 @@ void simulink_outputs(MBSdataStruct *MBSdata)
 
 	int robotran_id;
     int robotran_id_table[] = {
-        WAIST_YAW, //  1. TORSO_YAW
+        WAIST_TRANS, //  1. TORSO_YAW
         WAIST_SAG, //  2. TORSO_PITCH
         WAIST_LAT, //  3. TORSO_ROLL
-        
+
         R_HIP_SAG, //  4. RIGHT_HIP_PITCH
         L_HIP_SAG, //  5. LEFT_HIP_PITCH
-        
+
         R_HIP_LAT, //  6. RIGHT_HIP_ROLL
-        R_HIP_YAW, //  7. RIGHT_HIP_YAW
+        R_HIP_TRANS, //  7. RIGHT_HIP_YAW
         R_KNEE_SAG, //  8. RIGHT_KNEE_PITCH
         R_ANK_SAG, //  9. RIGHT_FOOT_PITCH
         R_ANK_LAT, // 10. RIGHT_FOOT_ROLL
-        
+
         L_HIP_LAT, // 11. LEFT_HIP_ROLL
-        L_HIP_YAW, // 12. LEFT_HIP_YAW
+        L_HIP_TRANS, // 12. LEFT_HIP_YAW
         L_KNEE_SAG, // 13. LEFT_KNEE_PITCH
         L_ANK_SAG, // 14. LEFT_FOOT_PITCH
         L_ANK_LAT, // 15. LEFT_FOOT_ROLL
-        
+
         R_SH_SAG, // 16. RIGHT_SHOULDER_PITCH
         R_SH_LAT, // 17. RIGHT_SHOULDER_ROLL
-        R_SH_YAW, // 18. RIGHT_SHOULDER_YAW
+        R_SH_TRANS, // 18. RIGHT_SHOULDER_YAW
         R_ELB, // 19. RIGHT_ELBOW_PITCH
-        
+
         L_SH_SAG, // 20. LEFT_SHOULDER_PITCH
         L_SH_LAT, // 21. LEFT_SHOULDER_ROLL
-        L_SH_YAW, // 22. LEFT_SHOULDER_YAW
+        L_SH_TRANS, // 22. LEFT_SHOULDER_YAW
         L_ELB, // 23. LEFT_ELBOW_PITCH
 
         #ifdef LONG_ARMS
@@ -84,8 +84,8 @@ void simulink_outputs(MBSdataStruct *MBSdata)
         uvs->Qq_ref[i+1] = ovs->Qq_ref[i];
         uvs->imp_ctrl_index[i+1] = ovs->imp_ctrl_index[i];
 	}
-	
-    
+
+
     /*
      * The user can define its own outputs via this field
      */
