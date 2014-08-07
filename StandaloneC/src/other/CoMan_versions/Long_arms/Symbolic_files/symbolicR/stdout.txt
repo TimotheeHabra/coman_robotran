@@ -1,6 +1,6 @@
 
 ##############################################################
-#	file9b.gen 14/07/2014 11:56:54    messages
+#	file9b.gen 06/08/2014 17:27:53    messages
 ##############################################################
  ------------------------------- 
   ROBOTRAN - Symbolic Generator 
@@ -8,16 +8,16 @@
   Pr. Paul FISETTE - 1990..1994 
   Dr. Tony POSTIAU - 2000..2004 
  ------------------------------- 
-Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file9b.gen
-Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+Symbolic generation file : /usr/local/robotran/users/habra/upload/file9b.gen
+Project : /usr/local/robotran/users/habra/upload/coman_robotran.mbs
 F 6 : Sensors Kinematical Informations (sens) 
 Symbolic Equations Generation...Done
 Equations list processing... 
 Selecting usefull equations 
 Building result equations list... 
 Removing useless equations... 
-2985 useless equations removed 
-2985 Equations removed from memory 
+3145 useless equations removed 
+3145 Equations removed from memory 
 Substitution of variables with a single occurence 
 Counting operations ... 
 Building hierarchical structure... 
@@ -25,15 +25,15 @@ Equations list processing...Done
 Printing Equations... 
 Printing Equations...Done 
 Deallocating Memory...  
-9917 Equations removed from memory 
-Removing 152758 expressions... 
+10284 Equations removed from memory 
+Removing 181963 expressions... 
 0 expressions remaining in memory 
 
 --
 Done
 
 ##############################################################
-#	file3.gen 14/07/2014 11:56:54    messages
+#	file3.gen 06/08/2014 17:27:53    messages
 ##############################################################
  ------------------------------- 
   ROBOTRAN - Symbolic Generator 
@@ -41,20 +41,20 @@ Done
   Pr. Paul FISETTE - 1990..1994 
   Dr. Tony POSTIAU - 2000..2004 
  ------------------------------- 
-Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file3.gen
-Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+Symbolic generation file : /usr/local/robotran/users/habra/upload/file3.gen
+Project : /usr/local/robotran/users/habra/upload/coman_robotran.mbs
 F 8 : Constraints Vector (h) and Jacobian Matrix (Jac) 
 Symbolic Equations Generation Aborted !!
 Deallocating Memory...  
 64 Equations removed from memory 
-Removing 1028 expressions... 
+Removing 1262 expressions... 
 0 expressions remaining in memory 
 
 --
 Done
 
 ##############################################################
-#	file7.gen 14/07/2014 11:56:54    messages
+#	file7.gen 06/08/2014 17:27:53    messages
 ##############################################################
  ------------------------------- 
   ROBOTRAN - Symbolic Generator 
@@ -62,16 +62,16 @@ Done
   Pr. Paul FISETTE - 1990..1994 
   Dr. Tony POSTIAU - 2000..2004 
  ------------------------------- 
-Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file7.gen
-Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+Symbolic generation file : /usr/local/robotran/users/habra/upload/file7.gen
+Project : /usr/local/robotran/users/habra/upload/coman_robotran.mbs
 F 2 : Inverse Dynamics : RNEA
 Symbolic Equations Generation...Done
 Equations list processing... 
 Selecting usefull equations 
 Building result equations list... 
 Removing useless equations... 
-89 useless equations removed 
-89 Equations removed from memory 
+17 useless equations removed 
+17 Equations removed from memory 
 Substitution of variables with a single occurence 
 Counting operations ... 
 Building hierarchical structure... 
@@ -79,15 +79,15 @@ Equations list processing...Done
 Printing Equations... 
 Printing Equations...Done 
 Deallocating Memory...  
-751 Equations removed from memory 
-Removing 12470 expressions... 
+965 Equations removed from memory 
+Removing 14953 expressions... 
 0 expressions remaining in memory 
 
 --
 Done
 
 ##############################################################
-#	file4.gen 14/07/2014 11:56:54    messages
+#	file4.gen 06/08/2014 17:27:53    messages
 ##############################################################
  ------------------------------- 
   ROBOTRAN - Symbolic Generator 
@@ -95,20 +95,20 @@ Done
   Pr. Paul FISETTE - 1990..1994 
   Dr. Tony POSTIAU - 2000..2004 
  ------------------------------- 
-Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file4.gen
-Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+Symbolic generation file : /usr/local/robotran/users/habra/upload/file4.gen
+Project : /usr/local/robotran/users/habra/upload/coman_robotran.mbs
 F18 : Constraints Quadratic Velocity Terms (Jdqd)
 Symbolic Equations Generation Aborted !!
 Deallocating Memory...  
 64 Equations removed from memory 
-Removing 1028 expressions... 
+Removing 1262 expressions... 
 0 expressions remaining in memory 
 
 --
 Done
 
 ##############################################################
-#	file1b.gen 14/07/2014 11:56:56    messages
+#	file1b.gen 06/08/2014 17:27:55    messages
 ##############################################################
  ------------------------------- 
   ROBOTRAN - Symbolic Generator 
@@ -116,16 +116,16 @@ Done
   Pr. Paul FISETTE - 1990..1994 
   Dr. Tony POSTIAU - 2000..2004 
  ------------------------------- 
-Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file1b.gen
-Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+Symbolic generation file : /usr/local/robotran/users/habra/upload/file1b.gen
+Project : /usr/local/robotran/users/habra/upload/coman_robotran.mbs
 F 6 : Sensors Kinematical Informations (sens) 
 Symbolic Equations Generation...Done
 Equations list processing... 
 Selecting usefull equations 
 Building result equations list... 
 Removing useless equations... 
-2985 useless equations removed 
-2985 Equations removed from memory 
+3145 useless equations removed 
+3145 Equations removed from memory 
 Substitution of variables with a single occurence 
 Counting operations ... 
 Building hierarchical structure... 
@@ -133,15 +133,15 @@ Equations list processing...Done
 Printing Equations... 
 Printing Equations...Done 
 Deallocating Memory...  
-9917 Equations removed from memory 
-Removing 152758 expressions... 
+10284 Equations removed from memory 
+Removing 181963 expressions... 
 0 expressions remaining in memory 
 
 --
 Done
 
 ##############################################################
-#	file10.gen 14/07/2014 11:56:56    messages
+#	file10.gen 06/08/2014 17:27:55    messages
 ##############################################################
  ------------------------------- 
   ROBOTRAN - Symbolic Generator 
@@ -149,20 +149,20 @@ Done
   Pr. Paul FISETTE - 1990..1994 
   Dr. Tony POSTIAU - 2000..2004 
  ------------------------------- 
-Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file10.gen
-Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+Symbolic generation file : /usr/local/robotran/users/habra/upload/file10.gen
+Project : /usr/local/robotran/users/habra/upload/coman_robotran.mbs
 F 7 : Point to point Link Forces (frc,trq,Flnk) 
 Symbolic Equations Generation Aborted !!
 Deallocating Memory...  
 64 Equations removed from memory 
-Removing 1028 expressions... 
+Removing 1262 expressions... 
 0 expressions remaining in memory 
 
 --
 Done
 
 ##############################################################
-#	file0.gen 14/07/2014 11:56:56    messages
+#	file0.gen 06/08/2014 17:27:56    messages
 ##############################################################
  ------------------------------- 
   ROBOTRAN - Symbolic Generator 
@@ -170,8 +170,8 @@ Done
   Pr. Paul FISETTE - 1990..1994 
   Dr. Tony POSTIAU - 2000..2004 
  ------------------------------- 
-Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file0.gen
-Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+Symbolic generation file : /usr/local/robotran/users/habra/upload/file0.gen
+Project : /usr/local/robotran/users/habra/upload/coman_robotran.mbs
 F 1 : Direct Dynamics (Semi-Explicit formulation) : RNEA
 Generating the forward kinematics equations 
 Generating the backward dynamics equations 
@@ -180,8 +180,8 @@ Equations list processing...
 Selecting usefull equations 
 Building result equations list... 
 Removing useless equations... 
-404 useless equations removed 
-404 Equations removed from memory 
+342 useless equations removed 
+342 Equations removed from memory 
 Substitution of variables with a single occurence 
 Counting operations ... 
 Building hierarchical structure... 
@@ -189,15 +189,15 @@ Equations list processing...Done
 Printing Equations... 
 Printing Equations...Done 
 Deallocating Memory...  
-4322 Equations removed from memory 
-Removing 75008 expressions... 
+4977 Equations removed from memory 
+Removing 112414 expressions... 
 0 expressions remaining in memory 
 
 --
 Done
 
 ##############################################################
-#	file6.gen 14/07/2014 11:56:56    messages
+#	file6.gen 06/08/2014 17:27:56    messages
 ##############################################################
  ------------------------------- 
   ROBOTRAN - Symbolic Generator 
@@ -205,20 +205,20 @@ Done
   Pr. Paul FISETTE - 1990..1994 
   Dr. Tony POSTIAU - 2000..2004 
  ------------------------------- 
-Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file6.gen
-Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+Symbolic generation file : /usr/local/robotran/users/habra/upload/file6.gen
+Project : /usr/local/robotran/users/habra/upload/coman_robotran.mbs
 F27 : Point to point Link3D Forces (frc,trq,Flink3D) 
 Symbolic Equations Generation Aborted !!
 Deallocating Memory...  
 64 Equations removed from memory 
-Removing 1028 expressions... 
+Removing 1262 expressions... 
 0 expressions remaining in memory 
 
 --
 Done
 
 ##############################################################
-#	file11.gen 14/07/2014 11:56:56    messages
+#	file11.gen 06/08/2014 17:27:56    messages
 ##############################################################
  ------------------------------- 
   ROBOTRAN - Symbolic Generator 
@@ -226,20 +226,20 @@ Done
   Pr. Paul FISETTE - 1990..1994 
   Dr. Tony POSTIAU - 2000..2004 
  ------------------------------- 
-Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file11.gen
-Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+Symbolic generation file : /usr/local/robotran/users/habra/upload/file11.gen
+Project : /usr/local/robotran/users/habra/upload/coman_robotran.mbs
 F 8 : Constraints Vector (h) and Jacobian Matrix (Jac) 
 Symbolic Equations Generation Aborted !!
 Deallocating Memory...  
 64 Equations removed from memory 
-Removing 1028 expressions... 
+Removing 1262 expressions... 
 0 expressions remaining in memory 
 
 --
 Done
 
 ##############################################################
-#	file9.gen 14/07/2014 11:56:57    messages
+#	file9.gen 06/08/2014 17:27:57    messages
 ##############################################################
  ------------------------------- 
   ROBOTRAN - Symbolic Generator 
@@ -247,16 +247,16 @@ Done
   Pr. Paul FISETTE - 1990..1994 
   Dr. Tony POSTIAU - 2000..2004 
  ------------------------------- 
-Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file9.gen
-Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+Symbolic generation file : /usr/local/robotran/users/habra/upload/file9.gen
+Project : /usr/local/robotran/users/habra/upload/coman_robotran.mbs
 F 6 : Sensors Kinematical Informations (sens) 
 Symbolic Equations Generation...Done
 Equations list processing... 
 Selecting usefull equations 
 Building result equations list... 
 Removing useless equations... 
-3407 useless equations removed 
-3407 Equations removed from memory 
+3699 useless equations removed 
+3699 Equations removed from memory 
 Substitution of variables with a single occurence 
 Counting operations ... 
 Building hierarchical structure... 
@@ -264,15 +264,15 @@ Equations list processing...Done
 Printing Equations... 
 Printing Equations...Done 
 Deallocating Memory...  
-4107 Equations removed from memory 
-Removing 63683 expressions... 
+4287 Equations removed from memory 
+Removing 73380 expressions... 
 0 expressions remaining in memory 
 
 --
 Done
 
 ##############################################################
-#	file15.gen 14/07/2014 11:56:57    messages
+#	file15.gen 06/08/2014 17:27:57    messages
 ##############################################################
  ------------------------------- 
   ROBOTRAN - Symbolic Generator 
@@ -280,16 +280,16 @@ Done
   Pr. Paul FISETTE - 1990..1994 
   Dr. Tony POSTIAU - 2000..2004 
  ------------------------------- 
-Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file15.gen
-Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+Symbolic generation file : /usr/local/robotran/users/habra/upload/file15.gen
+Project : /usr/local/robotran/users/habra/upload/coman_robotran.mbs
 F 2 : Inverse Dynamics : RNEA
 Symbolic Equations Generation...Done
 Equations list processing... 
 Selecting usefull equations 
 Building result equations list... 
 Removing useless equations... 
-89 useless equations removed 
-89 Equations removed from memory 
+17 useless equations removed 
+17 Equations removed from memory 
 Substitution of variables with a single occurence 
 Counting operations ... 
 Building hierarchical structure... 
@@ -297,15 +297,15 @@ Equations list processing...Done
 Printing Equations... 
 Printing Equations...Done 
 Deallocating Memory...  
-751 Equations removed from memory 
-Removing 12470 expressions... 
+965 Equations removed from memory 
+Removing 14953 expressions... 
 0 expressions remaining in memory 
 
 --
 Done
 
 ##############################################################
-#	file5.gen 14/07/2014 11:56:57    messages
+#	file5.gen 06/08/2014 17:27:57    messages
 ##############################################################
  ------------------------------- 
   ROBOTRAN - Symbolic Generator 
@@ -313,16 +313,16 @@ Done
   Pr. Paul FISETTE - 1990..1994 
   Dr. Tony POSTIAU - 2000..2004 
  ------------------------------- 
-Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file5.gen
-Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+Symbolic generation file : /usr/local/robotran/users/habra/upload/file5.gen
+Project : /usr/local/robotran/users/habra/upload/coman_robotran.mbs
 F19 : External Forces
 Symbolic Equations Generation...Done
 Equations list processing... 
 Selecting usefull equations 
 Building result equations list... 
 Removing useless equations... 
-1002 useless equations removed 
-1002 Equations removed from memory 
+1162 useless equations removed 
+1162 Equations removed from memory 
 Substitution of variables with a single occurence 
 Counting operations ... 
 Building hierarchical structure... 
@@ -330,15 +330,15 @@ Equations list processing...Done
 Printing Equations... 
 Printing Equations...Done 
 Deallocating Memory...  
-1192 Equations removed from memory 
-Removing 22305 expressions... 
+1294 Equations removed from memory 
+Removing 27444 expressions... 
 0 expressions remaining in memory 
 
 --
 Done
 
 ##############################################################
-#	file2.gen 14/07/2014 11:56:57    messages
+#	file2.gen 06/08/2014 17:27:57    messages
 ##############################################################
  ------------------------------- 
   ROBOTRAN - Symbolic Generator 
@@ -346,20 +346,20 @@ Done
   Pr. Paul FISETTE - 1990..1994 
   Dr. Tony POSTIAU - 2000..2004 
  ------------------------------- 
-Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file2.gen
-Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+Symbolic generation file : /usr/local/robotran/users/habra/upload/file2.gen
+Project : /usr/local/robotran/users/habra/upload/coman_robotran.mbs
 F 7 : Point to point Link Forces (frc,trq,Flnk) 
 Symbolic Equations Generation Aborted !!
 Deallocating Memory...  
 64 Equations removed from memory 
-Removing 1028 expressions... 
+Removing 1262 expressions... 
 0 expressions remaining in memory 
 
 --
 Done
 
 ##############################################################
-#	file12.gen 14/07/2014 11:56:57    messages
+#	file12.gen 06/08/2014 17:27:57    messages
 ##############################################################
  ------------------------------- 
   ROBOTRAN - Symbolic Generator 
@@ -367,20 +367,20 @@ Done
   Pr. Paul FISETTE - 1990..1994 
   Dr. Tony POSTIAU - 2000..2004 
  ------------------------------- 
-Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file12.gen
-Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+Symbolic generation file : /usr/local/robotran/users/habra/upload/file12.gen
+Project : /usr/local/robotran/users/habra/upload/coman_robotran.mbs
 F18 : Constraints Quadratic Velocity Terms (Jdqd)
 Symbolic Equations Generation Aborted !!
 Deallocating Memory...  
 64 Equations removed from memory 
-Removing 1028 expressions... 
+Removing 1262 expressions... 
 0 expressions remaining in memory 
 
 --
 Done
 
 ##############################################################
-#	file8.gen 14/07/2014 11:56:58    messages
+#	file8.gen 06/08/2014 17:27:58    messages
 ##############################################################
  ------------------------------- 
   ROBOTRAN - Symbolic Generator 
@@ -388,8 +388,8 @@ Done
   Pr. Paul FISETTE - 1990..1994 
   Dr. Tony POSTIAU - 2000..2004 
  ------------------------------- 
-Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file8.gen
-Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+Symbolic generation file : /usr/local/robotran/users/habra/upload/file8.gen
+Project : /usr/local/robotran/users/habra/upload/coman_robotran.mbs
 F 1 : Direct Dynamics (Semi-Explicit formulation) : RNEA
 Generating the forward kinematics equations 
 Generating the backward dynamics equations 
@@ -398,8 +398,8 @@ Equations list processing...
 Selecting usefull equations 
 Building result equations list... 
 Removing useless equations... 
-404 useless equations removed 
-404 Equations removed from memory 
+342 useless equations removed 
+342 Equations removed from memory 
 Substitution of variables with a single occurence 
 Counting operations ... 
 Building hierarchical structure... 
@@ -407,15 +407,15 @@ Equations list processing...Done
 Printing Equations... 
 Printing Equations...Done 
 Deallocating Memory...  
-4322 Equations removed from memory 
-Removing 75008 expressions... 
+4977 Equations removed from memory 
+Removing 112414 expressions... 
 0 expressions remaining in memory 
 
 --
 Done
 
 ##############################################################
-#	file1.gen 14/07/2014 11:56:58    messages
+#	file1.gen 06/08/2014 17:27:58    messages
 ##############################################################
  ------------------------------- 
   ROBOTRAN - Symbolic Generator 
@@ -423,16 +423,16 @@ Done
   Pr. Paul FISETTE - 1990..1994 
   Dr. Tony POSTIAU - 2000..2004 
  ------------------------------- 
-Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file1.gen
-Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+Symbolic generation file : /usr/local/robotran/users/habra/upload/file1.gen
+Project : /usr/local/robotran/users/habra/upload/coman_robotran.mbs
 F 6 : Sensors Kinematical Informations (sens) 
 Symbolic Equations Generation...Done
 Equations list processing... 
 Selecting usefull equations 
 Building result equations list... 
 Removing useless equations... 
-3407 useless equations removed 
-3407 Equations removed from memory 
+3699 useless equations removed 
+3699 Equations removed from memory 
 Substitution of variables with a single occurence 
 Counting operations ... 
 Building hierarchical structure... 
@@ -440,15 +440,15 @@ Equations list processing...Done
 Printing Equations... 
 Printing Equations...Done 
 Deallocating Memory...  
-4107 Equations removed from memory 
-Removing 63683 expressions... 
+4287 Equations removed from memory 
+Removing 73380 expressions... 
 0 expressions remaining in memory 
 
 --
 Done
 
 ##############################################################
-#	file13.gen 14/07/2014 11:56:59    messages
+#	file13.gen 06/08/2014 17:27:59    messages
 ##############################################################
  ------------------------------- 
   ROBOTRAN - Symbolic Generator 
@@ -456,16 +456,16 @@ Done
   Pr. Paul FISETTE - 1990..1994 
   Dr. Tony POSTIAU - 2000..2004 
  ------------------------------- 
-Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file13.gen
-Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+Symbolic generation file : /usr/local/robotran/users/habra/upload/file13.gen
+Project : /usr/local/robotran/users/habra/upload/coman_robotran.mbs
 F19 : External Forces
 Symbolic Equations Generation...Done
 Equations list processing... 
 Selecting usefull equations 
 Building result equations list... 
 Removing useless equations... 
-1002 useless equations removed 
-1002 Equations removed from memory 
+1162 useless equations removed 
+1162 Equations removed from memory 
 Substitution of variables with a single occurence 
 Counting operations ... 
 Building hierarchical structure... 
@@ -473,15 +473,15 @@ Equations list processing...Done
 Printing Equations... 
 Printing Equations...Done 
 Deallocating Memory...  
-1192 Equations removed from memory 
-Removing 22305 expressions... 
+1294 Equations removed from memory 
+Removing 27444 expressions... 
 0 expressions remaining in memory 
 
 --
 Done
 
 ##############################################################
-#	file14.gen 14/07/2014 11:56:59    messages
+#	file14.gen 06/08/2014 17:27:59    messages
 ##############################################################
  ------------------------------- 
   ROBOTRAN - Symbolic Generator 
@@ -489,13 +489,13 @@ Done
   Pr. Paul FISETTE - 1990..1994 
   Dr. Tony POSTIAU - 2000..2004 
  ------------------------------- 
-Symbolic generation file : /usr/local/robotran/users/vandernoot/upload/file14.gen
-Project : /usr/local/robotran/users/vandernoot/upload/coman_robotran.mbs
+Symbolic generation file : /usr/local/robotran/users/habra/upload/file14.gen
+Project : /usr/local/robotran/users/habra/upload/coman_robotran.mbs
 F27 : Point to point Link3D Forces (frc,trq,Flink3D) 
 Symbolic Equations Generation Aborted !!
 Deallocating Memory...  
 64 Equations removed from memory 
-Removing 1028 expressions... 
+Removing 1262 expressions... 
 0 expressions remaining in memory 
 
 --

@@ -2582,9 +2582,12 @@
         </coordinates>
       </com>
       <inertia>
-        <Ixx>0.001</Ixx>
-        <Iyy>0.001</Iyy>
-        <Izz>0.001</Izz>
+        <Ixx>7.8337456E-4</Ixx>
+        <Ixy>1.9035768E-4</Ixy>
+        <Ixz>-3.0037676E-6</Ixz>
+        <Iyy>6.3399921E-4</Iyy>
+        <Iyz>4.3840774E-6</Iyz>
+        <Izz>0.001008054</Izz>
       </inertia>
       <point>
         <pointname>Point_0</pointname>
@@ -2704,9 +2707,12 @@
         </coordinates>
       </com>
       <inertia>
-        <Ixx>0.001</Ixx>
-        <Iyy>0.001</Iyy>
-        <Izz>0.001</Izz>
+        <Ixx>4.5812904E-4</Ixx>
+        <Ixy>-2.4111086E-7</Ixy>
+        <Ixz>9.2521185E-6</Ixz>
+        <Iyy>4.3089204E-4</Iyy>
+        <Iyz>-4.721695E-7</Iyz>
+        <Izz>3.4174855E-4</Izz>
       </inertia>
       <point>
         <pointname>Point_0</pointname>
@@ -2835,9 +2841,12 @@
         </coordinates>
       </com>
       <inertia>
-        <Ixx>0.001</Ixx>
-        <Iyy>0.001</Iyy>
-        <Izz>0.001</Izz>
+        <Ixx>0.0030934574</Ixx>
+        <Ixy>6.6702837E-5</Ixy>
+        <Ixz>3.0222291E-4</Ixz>
+        <Iyy>0.0029181573</Iyy>
+        <Iyz>-5.2663661E-4</Iyz>
+        <Izz>8.0830389E-4</Izz>
       </inertia>
       <point>
         <pointname>Point_0</pointname>
@@ -2966,9 +2975,12 @@
         </coordinates>
       </com>
       <inertia>
-        <Ixx>0.001</Ixx>
-        <Iyy>0.001</Iyy>
-        <Izz>0.001</Izz>
+        <Ixx>2.2599075E-4</Ixx>
+        <Ixy>-2.637647E-7</Ixy>
+        <Ixz>-9.8007285E-7</Ixz>
+        <Iyy>2.7781302E-4</Iyy>
+        <Iyz>-2.0435288E-6</Iyz>
+        <Izz>2.1878992E-4</Izz>
       </inertia>
       <point>
         <pointname>Point_0</pointname>
@@ -3656,9 +3668,12 @@
         </coordinates>
       </com>
       <inertia>
-        <Ixx>0.001</Ixx>
-        <Iyy>0.001</Iyy>
-        <Izz>0.001</Izz>
+        <Ixx>7.8337456E-4</Ixx>
+        <Ixy>-1.9035768E-4</Ixy>
+        <Ixz>-3.0037676E-6</Ixz>
+        <Iyy>6.3399921E-4</Iyy>
+        <Iyz>-4.3840774E-6</Iyz>
+        <Izz>0.001008054</Izz>
       </inertia>
       <point>
         <pointname>Point_0</pointname>
@@ -3778,9 +3793,12 @@
         </coordinates>
       </com>
       <inertia>
-        <Ixx>0.001</Ixx>
-        <Iyy>0.001</Iyy>
-        <Izz>0.001</Izz>
+        <Ixx>4.5812904E-4</Ixx>
+        <Ixy>2.4111086E-7</Ixy>
+        <Ixz>9.2521185E-6</Ixz>
+        <Iyy>4.3089204E-4</Iyy>
+        <Iyz>4.721695E-7</Iyz>
+        <Izz>3.4174855E-4</Izz>
       </inertia>
       <point>
         <pointname>Point_0</pointname>
@@ -3909,9 +3927,12 @@
         </coordinates>
       </com>
       <inertia>
-        <Ixx>0.001</Ixx>
-        <Iyy>0.001</Iyy>
-        <Izz>0.001</Izz>
+        <Ixx>0.0030934574</Ixx>
+        <Ixy>-6.6702837E-5</Ixy>
+        <Ixz>3.0222291E-4</Ixz>
+        <Iyy>0.0029181573</Iyy>
+        <Iyz>5.2663661E-4</Iyz>
+        <Izz>8.0830389E-4</Izz>
       </inertia>
       <point>
         <pointname>Point_0</pointname>
@@ -4040,9 +4061,12 @@
         </coordinates>
       </com>
       <inertia>
-        <Ixx>0.001</Ixx>
-        <Iyy>0.001</Iyy>
-        <Izz>0.001</Izz>
+        <Ixx>2.2599075E-4</Ixx>
+        <Ixy>2.637647E-7</Ixy>
+        <Ixz>-9.8007285E-6</Ixz>
+        <Iyy>2.7781302E-4</Iyy>
+        <Iyz>2.0435288E-6</Iyz>
+        <Izz>2.1878992E-4</Izz>
       </inertia>
       <point>
         <pointname>Point_0</pointname>
