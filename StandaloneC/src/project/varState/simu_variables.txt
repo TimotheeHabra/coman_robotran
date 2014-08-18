@@ -47,7 +47,7 @@ Actuator_Jdrives   double   1
 Actuator_Ddrives   double   1 
 Actuator_VTgain    double   1
 actuated2real      int      29
-real2actuated      int      29
+real2actuated      int      35
 
 % Joint limits
 joint_limits_min   double   35

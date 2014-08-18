@@ -259,6 +259,8 @@
 #define RFOOT_FSENS_ID 1
 #define LFOOT_FSENS_ID 2
 #define TORSO_PERT_FSENS_ID 3
+#define RHAND_FSENS_ID 5
+#define LHAND_FSENS_ID 6
 
 #else
 
