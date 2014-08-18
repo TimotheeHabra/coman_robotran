@@ -135,11 +135,11 @@ Copy the _j3dcore-ogl.dll_ in C:/Program\ Files/Java/jdk1.7.0_51/jre/bin (or sim
 
 You must modify the environment variable called _Path_ to add the location of the _jvm.dll_ file (usually in 'C:Program\ Files/Java/jdk1.7.0_51/jre/bin/server').
 Locate this file (jvm.dll) and copy its location. 
-This is the path to access the _jvm.dll_ file. You must add it to the _Path_ environment variable. Here is the procedure (sorry for the inconvenience, but I only have the French Windows version):
+This is the path to access the _jvm.dll_ file. You must add it to the _Path_ environment variable. Here is the procedure:
 
-Go to _Panneau de configuration/Tous les Panneaux de configuration/Systemes_ and click on _Modifier les Parametres_. 
-In _Parametres systemes avances_, click on _Variables d'environnement..._
-In _Variables systeme_, click on the _Path_ variable, then _Modifier..._
+Go to _Control Panel/All Control Panels/Systems_ and click on _Modify Settings_. 
+In _Advanced System Settings_, click on _Environment Variables..._
+In _System Variables_, click on the _Path_ variable, then _Modify..._
 At the end of the second field, put a ';' and paste the location of your _jvm.dll_ file.
 
 
