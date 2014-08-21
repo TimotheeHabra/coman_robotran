@@ -39,11 +39,11 @@ Install [Libxml2](http://xmlsoft.org/) to read the _xml_ files used to initializ
 
 ### SDL 2.0: Graphs and interactions with the simulator (in real-time) ###
 
-Download [SDL 2.0](http://www.libsdl.org/). For instance, you can use this [link](http://www.libsdl.org/download-2.0.php) and download _SDL2-2.0.2.tar.gz_.
+Download [SDL 2.0](http://www.libsdl.org/). For instance, you can use this [link](http://www.libsdl.org/download-2.0.php) and download _SDL2-2.0.x.tar.gz_.
 
 Install it with [CMake](http://www.cmake.org/).
 
-* _cd SDL2-2.0.2_
+* _cd SDL2-2.0.x_
 * _mkdir build_
 * _cd build_
 * _cmake .._
@@ -52,7 +52,7 @@ Install it with [CMake](http://www.cmake.org/).
 
 Alternative: install it with the following lines:
 
-* _cd SDL2-2.0.2_
+* _cd SDL2-2.0.x_
 * _./configure_
 * _make_
 * _sudo make install_
@@ -63,11 +63,11 @@ Install [freetype](http://www.freetype.org/) (possibly with package _libfreetype
 
 Later, if you get the following error: " _fatal error: GL/gl.h: No such file or directory_ ", you might need to run this command: " _sudo apt-get install freeglut3-dev_ ".
 
-Download _SDL2_ttf_. For instance, you can use this [link](https://www.libsdl.org/projects/SDL_ttf/) and download _SDL2_ttf-2.0.12.tar.gz_.
+Download _SDL2_ttf_. For instance, you can use this [link](https://www.libsdl.org/projects/SDL_ttf/) and download _SDL2_ttf-2.0.xx.tar.gz_.
 
 Install _SDL2_ttf_.
 
-* _cd SDL2_ttf-2.0.12_
+* _cd SDL2_ttf-2.0.xx_
 * ./configure
 * _make_
 * _sudo make install_
@@ -75,15 +75,15 @@ Install _SDL2_ttf_.
 
 ### Java for the real-time visualization ###
 
-Download _Java SE Development Kit 7_. For instance, follow this [link](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) and download _jdk-7u51-linux-x64.tar.gz_.
+Download _Java SE Development Kit 7_. For instance, follow this [link](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) and download _jdk-7uxx-linux-x64.tar.gz_.
 
 Copy the include folder containing _jni.h_ into _usr/lib/jvm/java-7-openjdk-amd64_ (or equivalent) -> download [Open JDK](http://openjdk.java.net/) if not installed yet.
 
-* _sudo cp -r jdk1.7.0_45/include/ /usr/lib/jvm/java-7-openjdk-amd64/_
+* _sudo cp -r jdk1.7.0_xx/include/ /usr/lib/jvm/java-7-openjdk-amd64/_
 
 Copy the _lib_ folder into _usr/lib/jvm/java-7-openjdk-amd64/jre_ (or equivalent).
 
-* _sudo cp -r jdk1.7.0_45/jre/lib/ /usr/lib/jvm/java-7-openjdk-amd64/jre/_
+* _sudo cp -r jdk1.7.0_xx/jre/lib/ /usr/lib/jvm/java-7-openjdk-amd64/jre/_
 
 Download _Java 3D_. For instance, you can use this [link](https://java3d.java.net/binary-builds.html) and download _j3d-1_5_2-linux-amd64.zip_.
 
@@ -112,7 +112,7 @@ Some useful links for the 32-bit version and the corresponding files to download
 
 Download CMake [here](http://www.cmake.org/cmake/resources/software.html).
 
-Run the _cmake-2.8.12.2-win32-x86.exe_ executable (it also works for 64-bit machines).
+Run the _cmake-2.8.xx.x-win32-x86.exe_ executable (it also works for 64-bit machines).
 
 
 ### Libxml and SDL 2.0 ###
@@ -123,17 +123,17 @@ For the 32-bit ones, replace these files with the corresponding 32-bit ones (see
 
 ### Java for the real-time visualization ###
 
-Download _Java SE Development Kit 7_ and install it. For instance, use this [link](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) and download _jdk-7u51-windows-x64.exe_.
+Download _Java SE Development Kit 7_ and install it. For instance, use this [link](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) and download _jdk-7uxx-windows-x64.exe_.
 
-Download _Java Virtual Machine_. You can use this [link](http://java.com/fr/download/index.jsp).
+Download _Java Virtual Machine_ (if not already done during the _Java SE Development Kit 7_ installation process). You can use this [link](http://java.com/fr/download/index.jsp).
 
 Download and install _Java 3D_. For instance, use this [link](https://java3d.java.net/binary-builds.html) and download _j3d-1_5_2-windows-amd64.exe_.
 
-_j3dcore-ogl.dll_ should be installed (usually located in _C:/Program\ Files/Java/jdk1.7.0_51/jre/bin_). 
+_j3dcore-ogl.dll_ should be installed (usually located in _C:/Program Files/Java/jdk1.7.0_xx/jre/bin_). 
 If it is not the case, you can find it with this [link](https://java3d.java.net/binary-builds.html) if you download _j3d-1_5_2-windows-amd64.zip_ (or equivalent).
-Copy the _j3dcore-ogl.dll_ in C:/Program\ Files/Java/jdk1.7.0_51/jre/bin (or similar).
+Copy the _j3dcore-ogl.dll_ in C:/Program Files/Java/jdk1.7.0_xx/jre/bin (or similar).
 
-You must modify the environment variable called _Path_ to add the location of the _jvm.dll_ file (usually in 'C:Program\ Files/Java/jdk1.7.0_51/jre/bin/server').
+You must modify the environment variable called _Path_ to add the location of the _jvm.dll_ file (usually in 'C:Program Files/Java/jdk1.7.0_xx/jre/bin/server').
 Locate this file (jvm.dll) and copy its location. 
 This is the path to access the _jvm.dll_ file. You must add it to the _Path_ environment variable. Here is the procedure:
 
@@ -248,10 +248,12 @@ No change with regard to the [Simulink instructions](workR/Simulink/README.md).
 
 The _build folder_ will be created by CMake anywhere on your computer: you define its location (it can even be located inside the _project folder_). However, it is better to avoid placing this folder in places where there is a space in the path. You will compile and execute your project from the build folder. However, the files used by the build folder are the ones located in the source folder. The build folder has only links to the source files (it does not make any copy). Consequently, modifying the source code from an IDE project created with CMake in the build folder will directly impact the files located in the source folder.
 
-You can use CMake with a Unix terminal (Linux and Mac OS) or with a graphical interface (Windows, Linux and Mac OS).
+__Important__: _CMake_ needs to find the external libraries. The paths to these libraries are defined in the files located in the _StandaloneC/src/other/conf_ folder. Some possible paths are already provided but you might have to increment these files to add your own paths. Read the comments after CMake launch to know which files should be modified if needed (more information available below, in the _External Libraries_ section).
+
+You can use CMake with a terminal or with a graphical interface.
 
 
-### Using a Unix Terminal (Linux and Mac OS) ###
+### Using a Terminal ###
 
 Examples of Unix Terminal lines are provided. In this example, we decided to place the _build folder_ at the root of the _StandaloneC_ folder.
 
@@ -278,7 +280,7 @@ According to the flags defined with _ccmake_, some external libraries are also r
 At the end, a Makefile project is generated.
 
 
-### Using a graphical interface (Windows, Linux and Mac OS) ###
+### Using a graphical interface ###
 
 Launch CMake
 
@@ -291,7 +293,7 @@ On Windows, using [Visual Studio Express](http://www.visualstudio.com/en-us/prod
 
 All configuration flags are presented. You can activate or deactivate some of them according to your need (see the subsection _CMake Flags_ for more information).
 
-Once this configuration is done, click on the _Configure_ button again. Dependencies (external libraries...) found are then indicated. If all dependencies required are found, just press the _Generate_ button. This will create your IDE (or Makefile) project inside the build folder you defined. Otherwise, refer to the subsection _External Libraries_ (see below).
+Once this configuration is done, click on the _Configure_ button again. Dependencies (external libraries...) found are then indicated (red color does not necessary mean that it is wrong). If all dependencies required are found, just press the _Generate_ button. This will create your IDE (or Makefile) project inside the build folder you defined. Otherwise, refer to the subsection _External Libraries_ (see below).
 
 According to the flags defined with _ccmake_, some external libraries are required to compile the project
 
