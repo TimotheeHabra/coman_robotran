@@ -107,4 +107,10 @@
 // initial viewpoint when the simulation starts                             
 #define START_VIEWPOINT 0
 
+
+// -- Save vectors configuration -- //
+
+// number of stored values (in addition to the time, automatically saved) defined in 'save_vectors_config.c'
+#define NB_OUTPUT_VEC 6 
+ 
 #endif

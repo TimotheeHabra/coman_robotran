@@ -7,8 +7,7 @@
 #define __WRITE_FILES_H_INCLUDED__
 
 #include "MBSdataStruct.h"
-
-#define NB_OUTPUT_VEC 6
+#include "info_project.h"
 
 // -- Structures -- //
 

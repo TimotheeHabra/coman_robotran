@@ -53,17 +53,20 @@ void update_save_vectors(Save_vectors *save_vectors, MBSdataStruct *MBSdata)
     #ifdef WRITE_FILES
 
     // -- TO MODIFY -- //
-	/*
-	 * You can assign values for the debugging vectors located in StandaloneC/src/other/save_vector/vectors.
+    /*
+     * You can assign values for the debugging vectors located in StandaloneC/src/other/save_vector/vectors.
      * To do this, fill out_vec with the variable (or something else...) to save in a .txt files 
      * to be analyzed in post-process by this simulator, Matlab or any other program.
-	 * 
-	 * example:
-	 *    out_vec[0][kount] = MBSdata->q[1];
-	 *
-	 * The fisrt index must be in the [0 ; 5] interval (0 corresponding to output_vec_1.txt)
-	 * The second index is always 'kount'
-	 */
+     * 
+     * example:
+     *    out_vec[0][kount] = MBSdata->q[1];
+     *
+     * The fisrt index must be in the [0 ; NB_OUTPUT_VEC-1] interval (0 corresponding to output_vec_1.txt)
+     * The second index is always 'kount'
+     *
+     * The number NB_OUTPUT_VEC of stored values (in addition to the time, automatically saved)
+     * can be modified in the file StandaloneC/src/project/project_files/info_project.h
+     */
 
     for(i=0; i<NB_OUTPUT_VEC; i++)
     {
