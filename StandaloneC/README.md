@@ -133,7 +133,7 @@ _j3dcore-ogl.dll_ should be installed (usually located in _C:/Program Files/Java
 If it is not the case, you can find it with this [link](https://java3d.java.net/binary-builds.html) if you download _j3d-1_5_2-windows-amd64.zip_ (or equivalent).
 Copy the _j3dcore-ogl.dll_ in C:/Program Files/Java/jdk1.7.0_xx/jre/bin (or similar).
 
-You must modify the environment variable called _Path_ to add the location of the _jvm.dll_ file (usually in 'C:Program Files/Java/jdk1.7.0_xx/jre/bin/server').
+You must modify the environment variable called _Path_ to add the location of the _jvm.dll_ file (usually in 'C:/Program Files/Java/jdk1.7.0_xx/jre/bin/server').
 Locate this file (jvm.dll) and copy its location. 
 This is the path to access the _jvm.dll_ file. You must add it to the _Path_ environment variable. Here is the procedure:
 
