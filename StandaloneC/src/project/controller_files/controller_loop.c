@@ -18,7 +18,7 @@ void controller_loop(ControllerStruct *cvs)
 {
 	// hardcoded arm references only for the Simulink version 
 	// (real-time interactions for the Standalone version)
-	#ifndef STANDALONE
+	#if !defined(STANDALONE) || !defined(SDL)
 	arm_pos_ref(cvs);
 	#endif
 

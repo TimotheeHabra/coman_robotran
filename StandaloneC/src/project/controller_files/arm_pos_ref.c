@@ -9,25 +9,31 @@
 //
 //---------------------------
 
-#ifndef STANDALONE
+#if !defined(STANDALONE) || !defined(SDL)
 
 #include "controller_def.h"
 
 // shoulder sagittal (pitch)
 #define MIN_SH_SAG  ( -60.0 * DEG_TO_RAD )
 #define MAX_SH_SAG  (  10.0 * DEG_TO_RAD )
+#define DIFF_SH_SAG (MAX_SH_SAG - MIN_SH_SAG)
 
 // shoulder lateral (roll)
 #define MIN_SH_LAT  ( -100.0 * DEG_TO_RAD )
 #define MAX_SH_LAT  (  20.0  * DEG_TO_RAD )
+#define DIFF_SH_LAT (MAX_SH_LAT - MIN_SH_LAT)
 
 // shoulder yaw
 #define MIN_SH_YAW  ( -10.0 * DEG_TO_RAD )
 #define MAX_SH_YAW  (  40.0 * DEG_TO_RAD )
+#define DIFF_SH_YAW (MAX_SH_YAW - MIN_SH_YAW)
 
 // elbow
 #define MIN_ELB  ( -60.0 * DEG_TO_RAD )
 #define MAX_ELB  (   0.0 * DEG_TO_RAD )
+#define DIFF_ELB (MAX_ELB - MIN_ELB)
+
+#if !defined(STANDALONE)
 
 // time
 #define TIME_1 2.0
@@ -159,5 +165,39 @@ void arm_pos_ref(ControllerStruct *cvs)
 	cvs->q_ref_r_elb    = 0.0;
 	#endif
 }
+
+
+#elif !defined(SDL)
+void arm_pos_ref(ControllerStruct *cvs)
+{
+    // left arm position reference [rad]
+    cvs->q_ref_l_sh_sag =  MIN_SH_SAG + 0.5 * DIFF_SH_SAG;
+    cvs->q_ref_l_sh_lat = -MAX_SH_LAT + 0.5 * DIFF_SH_LAT;
+    cvs->q_ref_l_sh_yaw = -MAX_SH_YAW + 0.5 * DIFF_SH_YAW;
+    cvs->q_ref_l_elb    =  MIN_ELB    + 0.5 * DIFF_ELB;
+
+    // right arm position reference [rad]
+    cvs->q_ref_r_sh_sag = MIN_SH_SAG + 0.5 * DIFF_SH_SAG;
+    cvs->q_ref_r_sh_lat = MAX_SH_LAT - 0.5 * DIFF_SH_LAT;
+    cvs->q_ref_r_sh_yaw = MAX_SH_YAW - 0.5 * DIFF_SH_YAW;
+    cvs->q_ref_r_elb    = MIN_ELB    + 0.5 * DIFF_ELB;
+
+    // correction for the long arms case
+    #ifdef LONG_ARMS
+
+    // frame change
+    cvs->q_ref_l_sh_lat -= PI_2;
+    cvs->q_ref_r_sh_lat += PI_2;
+
+    // adapt to arms morphology
+    cvs->q_ref_l_sh_yaw = 0.0;
+    cvs->q_ref_l_elb    = 0.0;
+    cvs->q_ref_r_sh_yaw = 0.0;
+    cvs->q_ref_r_elb    = 0.0;
+    #endif
+
+}
+
+#endif
 
 #endif
