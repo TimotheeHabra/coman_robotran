@@ -35,6 +35,7 @@ simu_vars_none = {
     'Actuator_Ddrives','double',1
     'Actuator_VTgain','double',1
     'actuated2real','int',29
+    'real2actuated','int',35
     'joint_limits_min','double',35
     'joint_limits_max','double',35
     'waist_relative_ground','double',1

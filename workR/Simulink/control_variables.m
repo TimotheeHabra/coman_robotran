@@ -29,12 +29,15 @@ controller_1_vars = {
     'q','double',29
     'qd','double',29
     'Qq','double',29
+    'q_mot','double',29
+    'qd_mot','double',29
     'F_Rfoot','double',3
     'F_Lfoot','double',3
     'T_Rfoot','double',3
     'T_Lfoot','double',3
     'IMU_Orientation','double',9
     'IMU_Angular_Rate','double',3
+    'IMU_Acceleration','double',3
 };
 
 

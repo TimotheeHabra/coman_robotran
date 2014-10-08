@@ -1,8 +1,8 @@
 //---------------------------
 // Nicolas Van der Noot
 //
-// Creation : 24-Jan-2014
-// Last update : Mon Jul 21 17:32:31 2014
+// Creation : 19-Sep-2013
+// Last update : 08-Oct-2014
 //---------------------------
 
 #include <stdlib.h>
@@ -10,9 +10,9 @@
 #include "ControllersStruct.h"
 
 
-// ---- Controllers initialization ---- //
- 
-// ControllerInputs
+// ---- Controlleres initialization ---- //
+
+// ControllerInputsStruc
 ControllerInputs * init_ControllerInputs(void)
 {
     ControllerInputs *cvs;
@@ -86,7 +86,7 @@ ControllerInputs * init_ControllerInputs(void)
     return cvs;
 }
 
-// ControllerOutputs
+// ControllerOutputsStruc
 ControllerOutputs * init_ControllerOutputs(void)
 {
     ControllerOutputs *cvs;
@@ -118,7 +118,7 @@ ControllerOutputs * init_ControllerOutputs(void)
     return cvs;
 }
 
-// ControllerStruct
+// ControllerStructStruc
 ControllerStruct * init_ControllerStruct(void)
 {
     ControllerStruct *cvs;

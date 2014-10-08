@@ -2,7 +2,7 @@
 // Nicolas Van der Noot
 //
 // Creation : 19-Sep-2013
-// Last update : Mon Jul 21 17:32:31 2014
+// Last update : 08-Oct-2014
 //---------------------------
 
 #ifndef ControllerStruct_h
