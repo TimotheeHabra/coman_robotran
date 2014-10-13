@@ -10,13 +10,13 @@ clear all;
 close all;
 
 % compile all files (1) or not (0)
-compile_all = 0;
+compile_all = 1;
     
 % project name
 prjname = 'coman_robotran';
     
 % debug (1 to debug, 0 otherwise)
-debug = 0;
+debug = 1;
 
 % compiler flags (except for the first one,  add -D before each flag) 
 %    If you use the 'Short feet' version, you must add the flag 'SHORT_FEET' (-DSHORT_FEET)

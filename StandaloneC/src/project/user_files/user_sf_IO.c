@@ -4,11 +4,11 @@
   *	
   *  Project:	coman_robotran
   * 
-  *  Generation date: 08-Oct-2014 15:51:03
+  *  Generation date: 13-Oct-2014 23:44:14
   * 
   *  (c) Universite catholique de Louvain
-  *      Dï¿½partement de Mï¿½canique 
-  *      Unitï¿½ de Production Mï¿½canique et Machines 
+  *      Département de Mécanique 
+  *      Unité de Production Mécanique et Machines 
   *      2, Place du Levant 
   *      1348 Louvain-la-Neuve 
   *  http://www.robotran.be// 
