@@ -23,7 +23,7 @@ debug = 1;
 %    If you use the 'Compliant feet' version, you must add the flag 'COMP_FEET' (-DCOMP_FEET)
 %    If you use other versions, you must remove the flags 'SHORT_FEET' and 'COMP_FEET'
 %    If you use the long arms version, you must add the flag 'LONG_ARMS' (-DLONG_ARMS), only available with the 'SHORT_FEET' flag (-DSHORT_FEET)
-define = 'DIRDYNARED -DSTOP_SIMU -DGCM_MT -DSHORT_FEET -DLONG_ARMS';
+define = 'DIRDYNARED -DSTOP_SIMU -DGCM_MT';
 
 
 %% Gen user_sf_IO.c & user_sf_IO.h if needed
