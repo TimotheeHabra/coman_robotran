@@ -10,7 +10,7 @@
 % This file should be executed on the workR repertory of the project !
 % -------------------------------------------------------------------------
 
-function mbs_make_sf(compile_all, prjname, debug, define)
+function mbs_make_sf(compile_all, prjname, debug, define, all_project_dir)
  
 % --- Initialization ---
 
@@ -29,19 +29,12 @@ warning('off','MATLAB:mex:GccVersion_link');
 %     Other   : 4 (Solaris...)
 if(strcmp(computer,'PCWIN') || strcmp(computer,'PCWIN64'))
     OS_type = 1;
+    disp('MBS>> Running MEX-file creation on Windows...');
 elseif(strcmp(computer,'GLNX86') || strcmp(computer,'GLNXA64'))
     OS_type = 2;
+    disp('MBS>> Running MEX-file creation on GNU Linux 64-bit...');
 elseif(strcmp(computer,'MACI') || strcmp(computer,'MACI64'))
     OS_type = 3;
-else
-    OS_type = 4;
-end
-
-if(OS_type == 1)
-    disp('MBS>> Running MEX-file creation on Windows...');
-elseif(OS_type == 2)
-    disp('MBS>> Running MEX-file creation on GNU Linux 64-bit...');
-elseif(OS_type == 3)
     disp('MBS>> Running MEX-file creation on MacOS X 64-bit...');
 else
     disp('MBS>> ERROR - Unsupported OS !!');
@@ -67,44 +60,11 @@ if exist(fname,'file') == 3 && ~overwrite % if there is already a 'fname' MEX-fi
     end
 end
 
-% --- Files and directories definitions ---
+% --- Files and directories definitions (generic and symbolic) ---
 
-% project
-simulation_dir = fullfile(mbsprjpath,prjname,'StandaloneC','src','project','simulation_files');
-controller_dir = fullfile(mbsprjpath,prjname,'StandaloneC','src','project','controller_files');
-interface_dir  = fullfile(mbsprjpath,prjname,'StandaloneC','src','project','interface_controller');
-rob_int_dir    = fullfile(mbsprjpath,prjname,'StandaloneC','src','project','interface_controller','Robotran_controller');
-
-simu_dir_c_files    = dir( strcat(simulation_dir,'/*.c') );
-ctrl_dir_c_files    = dir( strcat(controller_dir,'/*.c') );
-int_dir_c_files     = dir( strcat(interface_dir, '/*.c') );
-rob_int_dir_c_files = dir( strcat(rob_int_dir,   '/*.c') );
-
-simulation_files   = struct([]);
-controller_files   = struct([]);
-interface_files    = struct([]);
-rob_int_files      = struct([]);
-
-for m = 1:length(simu_dir_c_files)
-    simulation_files{m} = simu_dir_c_files(m).name;
-end
-
-for m = 1:length(ctrl_dir_c_files)
-    controller_files{m} = ctrl_dir_c_files(m).name;
-end
-
-for m = 1:length(int_dir_c_files)
-    interface_files{m} = int_dir_c_files(m).name;
-end
-
-for m = 1:length(rob_int_dir_c_files)
-    rob_int_files{m} = rob_int_dir_c_files(m).name;
-end
-
-% generic
-common_dir     = fullfile(mbspath,'MBsysLab','mbs_simulink','mbs_sourceC');
-user_dir       = fullfile(mbsprjpath,prjname,'StandaloneC','src','project','user_files');
-symbolic_dir   = fullfile(mbsprjpath,prjname,'symbolicR');
+% generic and symbolic directories
+common_dir   = fullfile(mbspath,'MBsysLab','mbs_simulink','mbs_sourceC');
+symbolic_dir = fullfile(mbsprjpath,prjname,'symbolicR');
 
 project_files = {...
     'LocalDataStruct.c'...
@@ -132,21 +92,6 @@ tool_files = {...
     'svdcmp.c'...
 };
 
-user_files = {...
-    'user_compute_output.c'...
-    'user_cons_hJ.c'...
-    'user_cons_jdqd.c'...
-    'user_Derivative.c'...
-    'user_DrivenJoints.c'...
-    'user_ExtForces.c'...
-    'user_initialization.c'...
-    'user_JointForces.c'...
-    'user_Link3Dforces.c'...
-    'user_Linkforces.c'...
-    'user_sf_IO.c'...
-    'UserModelStruct.c'...
-};
-
 symbolic_files = {...
     ['mbs_cons_hJ_' prjname '.c']...
     ['mbs_cons_jdqd_' prjname '.c']...
@@ -159,8 +104,8 @@ symbolic_files = {...
 };
 
 % all directories
-all_dir = {simulation_dir, controller_dir, interface_dir, rob_int_dir, common_dir, symbolic_dir, user_dir};
-all_dir_length = length(all_dir);
+all_generic_dir = {common_dir, symbolic_dir};
+all_dir         = {all_project_dir, all_generic_dir};
     
 % Checks if global compilation is needed
 compile_ctrl = 0;
@@ -168,26 +113,34 @@ compile_ctrl = 0;
 if compile_all
     new_save_compile();
 else
-    for k = 1:all_dir_length
-        cur_dir     = all_dir{k};
-        cur_h_files = dir( strcat(cur_dir,'/*.h') );
+    for j = 1:2
+        all_type_dir = all_dir{j};
 
-        cur_headers = struct([]);
+        for k = 1:length(all_type_dir)
+            cur_dir     = all_type_dir{k};
+            cur_h_files = dir( strcat(cur_dir,'/*.h') );
 
-        for m = 1:length(cur_h_files)
-            cur_headers{m} = cur_h_files(m).name;
-        end
+            cur_headers = struct([]);
 
-        for m = 1:length(cur_headers)
-            if ~compile_all
-                if ~strcmp('controller_def.h',cur_headers{m})
-                    compile_all = need_to_compile_all(fullfile(cur_dir,cur_headers{m}),prjname);
-                else
-                    compile_ctrl = need_to_compile_ctrl(fullfile(cur_dir,cur_headers{m}),prjname);
+            for m = 1:length(cur_h_files)
+                cur_headers{m} = cur_h_files(m).name;
+            end
+
+            for m = 1:length(cur_headers)
+                if ~compile_all
+                    if ~strcmp('controller_def.h',cur_headers{m})
+                        compile_all = need_to_compile_all(fullfile(cur_dir,cur_headers{m}),prjname);
+                    else
+                        compile_ctrl = need_to_compile_ctrl(fullfile(cur_dir,cur_headers{m}),prjname);
+                    end
                 end
             end
         end
     end
+end
+
+if compile_all
+    compile_ctrl = 0;
 end
 
 if compile_all && exist('object_files','dir'),
@@ -208,18 +161,33 @@ files_compiled = s.files_compiled;
 % --- Compiling ---
 
 % project
-files_compiled = compile_folder( simulation_dir, simulation_files, OS_type, files_compiled, debug, define, all_dir, all_dir_length, 0);
-files_compiled = compile_folder( controller_dir, controller_files, OS_type, files_compiled, debug, define, all_dir, all_dir_length, compile_ctrl);
-files_compiled = compile_folder( interface_dir,  interface_files,  OS_type, files_compiled, debug, define, all_dir, all_dir_length, 0);
-files_compiled = compile_folder( rob_int_dir,    rob_int_files,    OS_type, files_compiled, debug, define, all_dir, all_dir_length, 0);
+controller_dir = fullfile(mbsprjpath,prjname,'StandaloneC','src','project','controller_files');
+
+for k = 1:length(all_project_dir)
+    
+    cur_c_files = dir( strcat(all_project_dir{k},'/*.c') );
+    
+    cur_files = struct([]);
+    
+    for m = 1:length(cur_c_files)
+        cur_files{m} = cur_c_files(m).name;
+    end
+    
+    if strcmp(all_project_dir{k}, controller_dir)
+        flag_ctrl = compile_ctrl;
+    else
+        flag_ctrl = 0;
+    end
+    
+    files_compiled = compile_folder( all_project_dir{k}, cur_files, OS_type, files_compiled, debug, define, all_dir, flag_ctrl);
+end
 
 % generic
-files_compiled = compile_folder( common_dir,     project_files,    OS_type, files_compiled, debug, define, all_dir, all_dir_length, 0);
-files_compiled = compile_folder( common_dir,     tool_files,       OS_type, files_compiled, debug, define, all_dir, all_dir_length, 0);
-files_compiled = compile_folder( user_dir,       user_files,       OS_type, files_compiled, debug, define, all_dir, all_dir_length, 0);
-                 compile_folder( symbolic_dir,   symbolic_files,   OS_type, files_compiled, debug, define, all_dir, all_dir_length, 0);
+files_compiled = compile_folder( common_dir  , project_files , OS_type, files_compiled, debug, define, all_dir, 0);
+files_compiled = compile_folder( common_dir  , tool_files    , OS_type, files_compiled, debug, define, all_dir, 0);
+                 compile_folder( symbolic_dir, symbolic_files, OS_type, files_compiled, debug, define, all_dir, 0);
 
-
+                 
 % --- Linking ---
 disp('MBS>> Linking dirdynared...');
 
@@ -392,12 +360,15 @@ end
 end
 
 % compiles the files of a folder
-function [files_compiled] = compile_folder(dir, files, OS_type, files_compiled, debug, define, all_dir, all_dir_length, compile_ctrl)
+function [files_compiled] = compile_folder(dir, files, OS_type, files_compiled, debug, define, all_dir, compile_ctrl)
 
     header_include = '';
     
-    for i = 1:all_dir_length
-        header_include = strcat(header_include, ' -I"', all_dir{i}, '"');
+    for i = 1:2
+        all_type_dir = all_dir{i};
+        for j = 1:length(all_type_dir)
+            header_include = strcat(header_include, ' -I"', all_type_dir{j}, '"');
+        end
     end
      
     eval_arg = 'mex';

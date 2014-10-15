@@ -10,13 +10,13 @@ clear all;
 close all;
 
 % compile all files (1) or not (0)
-compile_all = 1;
+compile_all = 0;
     
 % project name
 prjname = 'coman_robotran';
     
 % debug (1 to debug, 0 otherwise)
-debug = 1;
+debug = 0;
 
 % compiler flags (except for the first one,  add -D before each flag) 
 %    If you use the 'Short feet' version, you must add the flag 'SHORT_FEET' (-DSHORT_FEET)
@@ -115,8 +115,19 @@ if genUserIO || genCont
     compile_all = 1;
 end
 
+% project directories (generic & symbolic directories (with associated files) set in 'make_generate/mbs_make_sf.m')
+mbspathdef;
+
+simulation_dir = fullfile(mbsprjpath,prjname,'StandaloneC','src','project','simulation_files');
+controller_dir = fullfile(mbsprjpath,prjname,'StandaloneC','src','project','controller_files');
+interface_dir  = fullfile(mbsprjpath,prjname,'StandaloneC','src','project','interface_controller');
+rob_int_dir    = fullfile(mbsprjpath,prjname,'StandaloneC','src','project','interface_controller','Robotran_controller');
+user_dir       = fullfile(mbsprjpath,prjname,'StandaloneC','src','project','user_files');
+
+all_project_dir = {simulation_dir, controller_dir, interface_dir, rob_int_dir, user_dir};
+
 addpath('make_generate/');
-mbs_make_sf(compile_all, prjname, debug, define);
+mbs_make_sf(compile_all, prjname, debug, define, all_project_dir);
 rmpath('make_generate/');
 
 %% Loading project
