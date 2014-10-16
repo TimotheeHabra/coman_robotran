@@ -62,4 +62,14 @@ All these versions are stored in _StandaloneC/src/other/CoMan_versions_. These a
 Consequently, this Git version does not save these files outside the _CoMan_versions_ folder. To get them back, you must copy-paste them to their correct location, or run CMake.
 For the Simulink version, you must also modify the flags at the beginning of the matlab file ' _compile_c_files.m_ ', located in _workR/Simulink_.
 
+The Robotran [SDL](http://www.libsdl.org/) features (SDL interactions with joystick and keyboard, real-time plot visualization) are also availbale with libcoman. For more information, consult the [README.md](StandaloneC/src/libcoman_ctrl/README.md) located in the [libcoman_ctrl](StandaloneC/src/libcoman_ctrl) folder.
+
+The current state of the controller allows position or torque tracking for all the joints. The references are updated in the [get_ref.c](StandaloneC/src/project/controller_files/get_ref.c) file. For instance, torque references need to be updated in _ovs->Qq_ref[i]_ and are activated with this line: _ovs->imp_ctrl_index[i] = QQ_REF_TRACKING;_. The joint index _i_ depends on a list presented int the [controller_def.h](StandaloneC/src/project/controller_files/controller_def.h) file.
+
+Positions and torques low-level controller is implemented in the [impedance_controller.c](StandaloneC/src/project/simulation_files/impedance_controller.c) file. While its purpose is to reproduce the low-level controller on the real COMAN, the gains and rules are not exactly the same. Consequently, this file could be improved. At the end, the voltage _uvs->Voltage[i]_ sent to each motor _i_ is computed and converted in a controller reference called _uvs->Control[i]_ (with torque units) in the [controller_outputs.c](StandaloneC/src/project/interface_controller/controller_outputs.c) file.
+
+Joints models are then integrated (with _uvs->Control[i]_) in the [user_Derivative.c](StandaloneC/src/project/user_files/user_Derivative.c) file, producing joint torques in the [user_JointForces.c](StandaloneC/src/project/user_files/user_JointForces.c) file. The joint torques _MBSdata->Qq[i]_ are the ones Robotran is using to compute the dynamical equations. Their indexes _i_ are not the same as the ones of _ovs->imp_ctrl_index[i]'_: they correspond to the list available in the [simu_def.h](StandaloneC/src/project/simulation_files/simu_def.h) file.
+
+The files in the [controller_files](StandaloneC/src/project/controller_files) folder do not have access to all the data from Robotran. This is done on purpose, so that the controller only has inputs available on the real COMAN. Then, transferring the controller to the real hardware is straightforward. These inputs are defined in the [controller_inputs.c](StandaloneC/src/project/interface_controller/controller_inputs.c) file.
+
 [![ScreenShot](Documentation/media/coman_robotran.png)](https://www.youtube.com/watch?v=U3EtptopR0c)
