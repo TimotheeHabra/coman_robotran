@@ -36,4 +36,6 @@ int write_out_files(Save_vectors* save_vectors, const char generic_fileout[50]);
 
 #endif
 
+void printMbsData(MBSdataStruct *MBSdata);
+
 #endif
