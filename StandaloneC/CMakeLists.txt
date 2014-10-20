@@ -213,6 +213,42 @@ endif (FLAG_GENERATE_VARSTATE)
 message(STATUS "CMake generator: ${CMAKE_GENERATOR}")
  
 
+
+## ---- AUTOMATIC GENERATION  ('user_all_id.h' and 'UserModelStruct.h/.c')  ---- ##
+## change for mds_user
+
+	# UserModelStruct.h/.c
+	set(USER_MODELS_H ${PROJECT_SOURCE_DIR}/src/project/user_files/UserModelStruct.h)
+	set(USER_MODELS_C ${PROJECT_SOURCE_DIR}/src/project/user_files/UserModelStruct.c)
+	set(USER_ALL_ID_H ${PROJECT_SOURCE_DIR}/src/project/user_files/user_all_id.h)
+
+	# input .mbs file
+	file(GLOB MBS_FILE "${PROJECT_SOURCE_DIR}/../dataR/*.mbs")
+	
+	# checking files
+	set(CHECK_USER_MODELS ${CMAKE_CURRENT_BINARY_DIR}/src/project/user_files/update_check/user_models_check.txt) # these files are actually not created.
+	set(CHECK_USER_ALL_ID ${CMAKE_CURRENT_BINARY_DIR}/src/project/user_files/update_check/user_all_id_check.txt) # can't use .c/.h as they are deleted at 'clean'
+
+	# re-generate user_models.h/.c
+	add_custom_command (
+	  OUTPUT ${CHECK_USER_MODELS}
+	  COMMAND Gen_mds_user user_models
+	  DEPENDS ${MBS_FILE}
+	)
+	
+	# re-generate user_all_id.h/.c
+	add_custom_command (
+	  OUTPUT ${CHECK_USER_ALL_ID}
+	  COMMAND Gen_mds_user user_all_id
+	  DEPENDS ${MBS_FILE}
+	)
+	
+	# check if re-generation needed
+	add_custom_target(CheckGeneration_2 ALL 
+		DEPENDS ${CHECK_USER_ALL_ID} ${CHECK_USER_MODELS})
+
+
+
 ## ---- PROHIBITED LIST ---- ##
 
 # Project name in Robotran
@@ -606,3 +642,6 @@ file(COPY ${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSION}/${MODE
 # add locations of other CMakeLists.txt
 add_subdirectory (src/)
 add_subdirectory (src/other/varState/)
+
+## change for user_models
+add_subdirectory (src/other/user_models/)

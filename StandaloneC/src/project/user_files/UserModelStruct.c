@@ -1,30 +1,47 @@
-/*===========================================================================*
-  *
-  *  UserModelStruct.c
-  *	
-  *  (c) Universite catholique de Louvain
-  *      Département de Mécanique 
-  *      Unité de Production Mécanique et Machines 
-  *      2, Place du Levant 
-  *      1348 Louvain-la-Neuve 
-  *  http://www.robotran.be// 
-  *  
- /*===========================================================================*/
+//---------------------------
+// C-code automatically generated from Gen_mds_user project
+//
+//
+// Last update : Mon Oct 20 16:27:37 2014
+//---------------------------
 
-#include "MBSdataStruct.h"
 
-#include "lut.h"
 
-#ifndef STANDALONE
-UserModelStruct * loadUserModel(mxArray *usm_ptr)
-#else
-UserModelStruct * loadUserModel()
-#endif
+
+#include "UserModelStruct.h"
+
+// ============================================================ //
+
+
+UserModelStruct* init_UserModelStruct() 
 {
-	return NULL;
+    UserModelStruct* ums;
+    ums = (UserModelStruct*)malloc(sizeof(UserModelStruct));
+    ums->Actuator.Motor = get_int_vec(46+1);
+    ums->Actuator.Motor[0] = 46+1;
+ 
+    return ums;
 }
 
-void freeUserModel(UserModelStruct *ums)
+void free_UserModelStruct(UserModelStruct* ums) 
+{
+    free_int_vec(ums->Actuator.Motor);
+    free(ums);
+}
+
+ void load_UserModelStruct(MDS_gen_strct* gen, UserModelStruct* ums) 
 {
 
+    int ind;
+    int ind_state_value = 0;
+
+    for(ind=0; ind<gen->user_models->user_model_list[0]->parameter_list[0]->n_value; ind++)
+    {
+        ums->Actuator.Motor[ind] = ind_state_value;
+        ind_state_value++;
+    }
+ 
 }
+
+// ============================================================ //
+ 

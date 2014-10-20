@@ -21,6 +21,8 @@
 #include <sys/timeb.h>
 #endif
 
+#define MBS_FILE PROJECT_ABS_PATH"/../dataR/"PROJECT_NAME_MBS
+
 /*
  * Simulation initialization
  */
@@ -58,16 +60,19 @@ Loop_arguments* init_simulation(void)
 
     // -- Variables initialization -- //
 
-	// xml file with the model inputs (initial positions, inertia matrices, degrees of freedom...)
-	filein = PROJECT_ABS_PATH"/src/project/Model_standalone.mbsdata";
-
 	// MBSDataStruct initialization
-	MBSdata = loadMBSdata_xml(filein);
+	MBSdata = loadMBSdata_xml(MBS_FILE);
 
 	if(MBSdata == NULL)
 	{
-	    printf("error while loading MBSdata from file %s\n", filein);
+        printf("error while loading MBSdata \n");
 	}
+	#ifdef PRINT_REPORT
+	else
+	{
+        printf("MBSdata successfully loaded \n");
+	}
+	#endif
 
     // LocalDataStruct initialization
 
