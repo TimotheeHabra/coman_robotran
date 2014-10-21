@@ -64,6 +64,8 @@ Loop_arguments* init_simulation(void)
 	// MBSDataStruct initialization
 	MBSdata = loadMBSdata_xml(filein);
 
+    printMbsData(MBSdata);
+
 	if(MBSdata == NULL)
 	{
 	    printf("error while loading MBSdata from file %s\n", filein);

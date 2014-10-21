@@ -192,12 +192,12 @@ void printMbsData(MBSdataStruct *MBSdata)
     //In
     printf("In = [\n");
     for(i = 1;  i <= MBSdata->nbody; i++){
-        printf("%f \t", MBSdata->In[1][i]);
-        printf("%f \t", MBSdata->In[2][i]);
-        printf("%f \t", MBSdata->In[3][i]);
-        printf("%f \t", MBSdata->In[4][i]);
-        printf("%f \t", MBSdata->In[5][i]);
-        printf("%f \n", MBSdata->In[6][i]);
+        printf("%.10f \t", MBSdata->In[1][i]);
+        printf("%.10f \t", MBSdata->In[2][i]);
+        printf("%.10f \t", MBSdata->In[3][i]);
+        printf("%.10f \t", MBSdata->In[4][i]);
+        printf("%.10f \t", MBSdata->In[5][i]);
+        printf("%.10f \n", MBSdata->In[6][i]);
     }
     printf("] \n\n");
 
