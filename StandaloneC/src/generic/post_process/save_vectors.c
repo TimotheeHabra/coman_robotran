@@ -359,6 +359,14 @@ void printMbsData(MBSdataStruct *MBSdata)
     }
     printf("] \n\n");
 
+    //xfidpt
+    printf("xfidpt = [\n");
+    for(i = 1;  i <= MBSdata->Nxfrc; i++){
+        printf("%d \t", MBSdata->xfidpt[i]);
+        if((i%5)==0) printf("\n");
+    }
+    printf("] \n\n");
+
 }
 
 
