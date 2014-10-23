@@ -91,10 +91,10 @@ option (FLAG_ADAPTIVE_TIME_STEP
 # Long arms      : CoMan with long arms ans hands
 # SkyWalker      : Rigid rounded feet hung with two ropes
 
-set(COMAN_VERSION "Basic_version")
+#set(COMAN_VERSION "Basic_version")
 #<set(COMAN_VERSION "Short_feet")
 #set(COMAN_VERSION "Compliant_feet")
-#set(COMAN_VERSION "Long_arms")
+set(COMAN_VERSION "Long_arms")
 #set(COMAN_VERSION "SkyWalker")
 
 
