@@ -91,13 +91,11 @@ option (FLAG_ADAPTIVE_TIME_STEP
 # Long arms      : CoMan with long arms ans hands
 # SkyWalker      : Rigid rounded feet hung with two ropes
 
-#set(COMAN_VERSION "Basic_version")
+set(COMAN_VERSION "Basic_version")
 #<set(COMAN_VERSION "Short_feet")
 #set(COMAN_VERSION "Compliant_feet")
-set(COMAN_VERSION "Long_arms")
+#set(COMAN_VERSION "Long_arms")
 #set(COMAN_VERSION "SkyWalker")
-
-
 
 ## ---- FLAGS DEPENDENCIES ----  ##
 
@@ -168,6 +166,18 @@ if (FLAG_RELEASE_VERSION)
 else (FLAG_RELEASE_VERSION)
 	set(CMAKE_BUILD_TYPE Debug)
 endif (FLAG_RELEASE_VERSION)
+
+## ---- COMAN VERSIONS SYNCHRONIZATION ---- ##
+
+if (FLAG_3D_MODEL)
+        set(MODEL_STANDALONE "Model_standalone_3D")
+else (FLAG_3D_MODEL)
+        set(MODEL_STANDALONE "Model_standalone_2D")
+endif (FLAG_3D_MODEL)
+
+file(COPY ${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSION}/Symbolic_files/ DESTINATION ${PROJECT_SOURCE_DIR}/..)
+file(COPY ${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSION}/${MODEL_STANDALONE}/dataR/ DESTINATION ${PROJECT_SOURCE_DIR}/../dataR)
+file(COPY ${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSION}/${MODEL_STANDALONE}/ DESTINATION ${PROJECT_SOURCE_DIR}/src/project)
 		
 
 ## ---- AUTOMATIC GENERATION  ('ControllersStruct.h/.c' and 'user_sf_IO.h/.c')  ---- ##
@@ -252,7 +262,7 @@ message(STATUS "CMake generator: ${CMAKE_GENERATOR}")
 ## ---- PROHIBITED LIST ---- ##
 
 # Project name in Robotran
-file(GLOB_RECURSE ROBOTRAN_ROJECT_NAME "${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSION}/dataR/*.mbs")
+file(GLOB_RECURSE ROBOTRAN_ROJECT_NAME "${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSION}/${MODEL_STANDALONE}/dataR/*.mbs")
 get_filename_component(ROBOTRAN_ROJECT_NAME ${ROBOTRAN_ROJECT_NAME} NAME_WE)
 
 message(STATUS "Robotran project name: ${ROBOTRAN_ROJECT_NAME}")
@@ -630,20 +640,6 @@ if (WIN32)
 	file(COPY ${PROJECT_SOURCE_DIR}/src/other/win64_include_lib/dll/ DESTINATION ${CMAKE_BINARY_DIR}/Debug)
 	file(COPY ${PROJECT_SOURCE_DIR}/src/other/win64_include_lib/dll/ DESTINATION ${CMAKE_BINARY_DIR}/Release)
 endif (WIN32)
-
-
-
-## ---- COMAN VERSIONS SYNCHRONIZATION ---- ##
-
-if (FLAG_3D_MODEL)
-	set(MODEL_STANDALONE "Model_standalone_3D")
-else (FLAG_3D_MODEL)
-	set(MODEL_STANDALONE "Model_standalone_2D")
-endif (FLAG_3D_MODEL)
-
-file(COPY ${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSION}/Symbolic_files/ DESTINATION ${PROJECT_SOURCE_DIR}/..)
-file(COPY ${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSION}/dataR/ DESTINATION ${PROJECT_SOURCE_DIR}/../dataR)
-file(COPY ${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSION}/${MODEL_STANDALONE}/ DESTINATION ${PROJECT_SOURCE_DIR}/src/project)
 
 
 
