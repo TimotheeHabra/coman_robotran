@@ -2,7 +2,7 @@
 // C-code automatically generated from Gen_mds_user project
 //
 //
-// Last update : Mon Oct 20 16:27:37 2014
+// Last update : Thu Oct 23 11:42:04 2014
 //---------------------------
 
 
@@ -17,8 +17,8 @@ UserModelStruct* init_UserModelStruct()
 {
     UserModelStruct* ums;
     ums = (UserModelStruct*)malloc(sizeof(UserModelStruct));
-    ums->Actuator.Motor = get_int_vec(46+1);
-    ums->Actuator.Motor[0] = 46+1;
+    ums->Actuator.Motor = get_int_vec(58+1);
+    ums->Actuator.Motor[0] = 58+1;
  
     return ums;
 }
