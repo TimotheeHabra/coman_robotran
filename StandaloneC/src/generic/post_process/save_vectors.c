@@ -16,6 +16,8 @@ Save_vectors* init_save_vectors(int nstep, int njoint)
 
     save_vectors = (Save_vectors*) malloc(sizeof(Save_vectors));
 
+    if(save_vectors==NULL) printf("error \n");
+
     save_vectors->t = get_double_vec(nstep);
 
     save_vectors->qq = get_double_tab(njoint, nstep);
@@ -358,6 +360,15 @@ void printMbsData(MBSdataStruct *MBSdata)
         printf("%f \n", MBSdata->SWr[i][9]);
     }
     printf("] \n\n");
+
+    //xfidpt
+    printf("xfidpt = [\n");
+    for(i = 1;  i <= MBSdata->Nxfrc; i++){
+        printf("%d \t", MBSdata->xfidpt[i]);
+        if((i%5)==0) printf("\n");
+    }
+    printf("] \n\n");
+
 
 }
 
