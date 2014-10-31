@@ -47,8 +47,6 @@ Loop_arguments* init_simulation(void)
 	Save_vectors *save_vectors;
 	#endif
 
-	const char *filein;
-
 	struct timeval seed_time;
 
 
