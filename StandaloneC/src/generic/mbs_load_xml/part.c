@@ -1,9 +1,11 @@
 #include "part.h"
 
+#include <gsl/gsl_linalg.h>
+
 //----------------------------------------------------------------
 //                  Main function                                 
 //---------------------------------------------------------------
-#include <gsl/gsl_linalg.h>
+
 int rank_double_tab(double** matrix_in, int x, int y)
 {
     int i,j,n,m;
@@ -105,6 +107,10 @@ void PART_lutot(double** a, int nl, int nc, int rowperm, int* irk, int* ierr, in
 
 		//printf("\n ilmax = %d\n", ilmax);
 		p = 0.0;
+		il = -1;  //initialization (To Be Checked)
+		ic = -1;  //initialization (To Be Checked)
+
+
 		for(j=iter; j<nc; j++)
 		{
 			//printf("\n iter = %d\n", iter);
