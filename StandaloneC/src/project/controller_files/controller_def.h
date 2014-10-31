@@ -71,13 +71,13 @@ enum{R_LEG, L_LEG};
 #define L_ELBOW_PITCH    22
 
 #ifdef LONG_ARMS
-#define R_FORE_ARM_PLATE 23
-#define R_WRJ1 24
-#define R_WRJ2 25
+#define R_FORE_ARM_PLATE_MOT 23
+#define R_WRJ1_MOT 24
+#define R_WRJ2_MOT 25
 
-#define L_FORE_ARM_PLATE 26
-#define L_WRJ1 27
-#define L_WRJ2 28
+#define L_FORE_ARM_PLATE_MOT 26
+#define L_WRJ1_MOT 27
+#define L_WRJ2_MOT 28
 #endif
 
 
