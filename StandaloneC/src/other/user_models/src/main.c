@@ -44,7 +44,7 @@ void print_empty_file(char *fileout)
 void generate_user_models()
 {
 	// variables declaration
-    char *fileoutC, *fileoutH; //*fileoutCheck;
+    char *fileoutC, *fileoutH, *fileoutCheck;
 
     struct stat mbs_stat, outC_stat, outH_stat;
 
@@ -53,13 +53,14 @@ void generate_user_models()
 	// files initialization
 	fileoutC     = PROJECT_ABS_PATH"/src/project/user_files/UserModelStruct.c";
 	fileoutH     = PROJECT_ABS_PATH"/src/project/user_files/UserModelStruct.h";
+	fileoutCheck = PROJECT_ABS_PATH"/../dataR/copy_check";
 
 	// print check empty file
 	//print_empty_file(fileoutCheck);
 
-    if (stat(MBS_FILE, &mbs_stat))
+    if (stat(fileoutCheck, &mbs_stat))
     {
-        printf("Problem: could not read the creation date of %s !\n", MBS_FILE);
+        printf("Problem: could not read the creation date of %s !\n", fileoutCheck);
         return;
     }
 
@@ -90,7 +91,7 @@ void generate_user_models()
 void generate_user_all_id()
 {
 	// variables declaration
-    char *fileoutH; //, *fileoutCheck;
+    char *fileoutH, *fileoutCheck;
 
     struct stat mbs_stat, outH_stat;
 
@@ -99,14 +100,14 @@ void generate_user_all_id()
 
 	// files initialization
 	fileoutH     = PROJECT_ABS_PATH"/src/project/user_files/user_all_id.h";
-	//fileoutCheck = PROJECT_ABS_PATH"/src/project/user_files/update_check/user_all_id_check.txt";
+	fileoutCheck = PROJECT_ABS_PATH"/../dataR/copy_check";
 
 	// print check empty file
 	//print_empty_file(fileoutCheck);
 
-    if (stat(MBS_FILE, &mbs_stat))
+    if (stat(fileoutCheck, &mbs_stat))
 	{
-        printf("Problem: could not read the creation date of %s !\n", MBS_FILE);
+        printf("Problem: could not read the creation date of %s !\n", fileoutCheck);
 		return;
 	}
 

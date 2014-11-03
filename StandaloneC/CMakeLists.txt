@@ -92,7 +92,7 @@ option (FLAG_ADAPTIVE_TIME_STEP
 # SkyWalker      : Rigid rounded feet hung with two ropes
 
 #set(COMAN_VERSION "Basic_version")
-#<set(COMAN_VERSION "Short_feet")
+#set(COMAN_VERSION "Short_feet")
 #set(COMAN_VERSION "Compliant_feet")
 set(COMAN_VERSION "Long_arms")
 #set(COMAN_VERSION "SkyWalker")
@@ -175,10 +175,19 @@ else (FLAG_3D_MODEL)
         set(MODEL_STANDALONE "Model_standalone_2D")
 endif (FLAG_3D_MODEL)
 
-file(COPY ${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSION}/Symbolic_files/ DESTINATION ${PROJECT_SOURCE_DIR}/..)
-file(COPY ${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSION}/${MODEL_STANDALONE}/dataR/ DESTINATION ${PROJECT_SOURCE_DIR}/../dataR)
-file(COPY ${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSION}/${MODEL_STANDALONE}/ DESTINATION ${PROJECT_SOURCE_DIR}/src/project)
-		
+# if different mbs, synchronize version
+file(GLOB MBS_SRC "${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSION}/${MODEL_STANDALONE}/dataR/*.mbs") 
+file(READ ${MBS_SRC} STRING1)
+
+file(GLOB MBS_DST "${PROJECT_SOURCE_DIR}/../dataR/*.mbs") 
+file(READ ${MBS_DST} STRING2)
+
+if(NOT (STRING1 STREQUAL STRING2))
+	file(WRITE ${PROJECT_SOURCE_DIR}/../dataR/copy_check "this file is used to check if the mbs has changed")
+	file(COPY ${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSION}/Symbolic_files/ DESTINATION ${PROJECT_SOURCE_DIR}/..)
+	file(COPY ${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSION}/${MODEL_STANDALONE}/dataR/ DESTINATION ${PROJECT_SOURCE_DIR}/../dataR)
+	file(COPY ${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSION}/${MODEL_STANDALONE}/ DESTINATION ${PROJECT_SOURCE_DIR}/src/project)
+endif(NOT (STRING1 STREQUAL STRING2))	
 
 ## ---- AUTOMATIC GENERATION  ('ControllersStruct.h/.c' and 'user_sf_IO.h/.c')  ---- ##
 
