@@ -44,9 +44,6 @@ MBSdataStruct* MDS_create_MBSdataStruct(MDS_gen_strct* mds_gen_strct)
 	s->nqlocked = mds_gen_strct->bodytree->n_qlocked;
     s->nqdriven = mds_gen_strct->bodytree->n_qdriven;
     s->nqa      = mds_gen_strct->bodytree->n_qa;
-
-    mds_gen_strct->cuts = init_MDS_cuts_strct(); // debug (to be corrected)
-    mds_gen_strct->links = init_MDS_links_strct(); // debug (to be corrected)
     
 	s->Nloopc   = mds_gen_strct->cuts->n_rod + 3 * mds_gen_strct->cuts->n_ball + 6 * mds_gen_strct->cuts->n_solid;
     s->Nuserc   = 0; 

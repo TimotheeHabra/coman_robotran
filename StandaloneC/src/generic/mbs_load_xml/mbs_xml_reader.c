@@ -2035,8 +2035,8 @@ MDS_gen_strct* init_MDS_gen_strct(void)
 
 	mds_gen_strct->base = NULL;
 	mds_gen_strct->bodytree = NULL;
-	mds_gen_strct->cuts = NULL; 
-	mds_gen_strct->links = NULL; 
+    mds_gen_strct->cuts = init_MDS_cuts_strct();
+    mds_gen_strct->links = init_MDS_links_strct();
 	mds_gen_strct->user_models = NULL; 
 
 	mds_gen_strct->n_point = 0;
