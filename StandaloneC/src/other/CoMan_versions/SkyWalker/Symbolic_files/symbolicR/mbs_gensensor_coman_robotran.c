@@ -11,7 +11,7 @@
 //	1348 Louvain-la-Neuve 
 //	http://www.robotran.be// 
 //
-//	==> Generation Date : Wed Apr 30 10:12:04 2014
+//	==> Generation Date : Tue Nov  4 14:52:29 2014
 //
 //	==> Project name : coman_robotran
 //	==> using XML input file 
@@ -21,7 +21,7 @@
 //	==> Function : F 6 : Sensors Kinematical Informations (sens) 
 //	==> Flops complexity : 9398
 //
-//	==> Generation Time :  0.180 seconds
+//	==> Generation Time :  0.170 seconds
 //	==> Post-Processing :  0.160 seconds
 //
 //-------------------------------------------------------------

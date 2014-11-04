@@ -11,7 +11,7 @@
 //	1348 Louvain-la-Neuve 
 //	http://www.robotran.be// 
 //
-//	==> Generation Date : Wed Apr 30 10:12:05 2014
+//	==> Generation Date : Tue Nov  4 14:52:29 2014
 //
 //	==> Project name : coman_robotran
 //	==> using XML input file 
@@ -21,8 +21,8 @@
 //	==> Function : F18 : Constraints Quadratic Velocity Terms (Jdqd)
 //	==> Flops complexity : 453
 //
-//	==> Generation Time :  0.020 seconds
-//	==> Post-Processing :  0.000 seconds
+//	==> Generation Time :  0.010 seconds
+//	==> Post-Processing :  0.010 seconds
 //
 //-------------------------------------------------------------
 //

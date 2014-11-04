@@ -11,7 +11,7 @@
 %	1348 Louvain-la-Neuve 
 %	http://www.robotran.be// 
 %
-%	==> Generation Date : Wed Apr 30 10:12:04 2014
+%	==> Generation Date : Tue Nov  4 14:52:28 2014
 %
 %	==> Project name : coman_robotran
 %	==> using XML input file 

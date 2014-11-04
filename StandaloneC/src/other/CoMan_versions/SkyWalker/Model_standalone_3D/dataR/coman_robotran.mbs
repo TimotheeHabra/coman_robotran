@@ -426,7 +426,7 @@
       <joint>
         <jointname>FJ_R1</jointname>
         <type>R1</type>
-        <nature>dependent</nature>
+        <nature>independent</nature>
         <graphics>
           <x2D>
             <position>
@@ -440,7 +440,7 @@
       <joint>
         <jointname>FJ_R2</jointname>
         <type>R2</type>
-        <nature>dependent</nature>
+        <nature>independent</nature>
         <graphics>
           <x2D>
             <position>
@@ -454,7 +454,7 @@
       <joint>
         <jointname>FJ_R3</jointname>
         <type>R3</type>
-        <nature>dependent</nature>
+        <nature>independent</nature>
         <graphics>
           <x2D>
             <position>
@@ -4027,7 +4027,7 @@
       <joint>
         <jointname>Rope_2_R2</jointname>
         <type>R2</type>
-        <nature>dependent</nature>
+        <nature>independent</nature>
         <graphics>
           <x2D>
             <position>
@@ -4323,4 +4323,5 @@
     </lights>
   </x3D>
 </mbsDescR7>
+
 

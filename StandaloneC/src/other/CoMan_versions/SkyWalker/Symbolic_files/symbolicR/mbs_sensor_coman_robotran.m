@@ -11,7 +11,7 @@
 %	1348 Louvain-la-Neuve 
 %	http://www.robotran.be// 
 %
-%	==> Generation Date : Wed Apr 30 10:12:02 2014
+%	==> Generation Date : Tue Nov  4 14:52:27 2014
 %
 %	==> Project name : coman_robotran
 %	==> using XML input file 
@@ -22,7 +22,7 @@
 %	==> Flops complexity : 29600
 %
 %	==> Generation Time :  0.440 seconds
-%	==> Post-Processing :  0.730 seconds
+%	==> Post-Processing :  0.740 seconds
 %
 %-------------------------------------------------------------
 %
