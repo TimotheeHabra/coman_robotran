@@ -68,7 +68,7 @@ MBSdataStruct* MDS_create_MBSdataStruct(MDS_gen_strct* mds_gen_strct)
 	s->Nux = mds_gen_strct->n_state_value;
 
 
-//	geometric ans dynamic data
+//	geometric and dynamic data
 
 	//pt
 
