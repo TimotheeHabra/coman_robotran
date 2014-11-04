@@ -244,7 +244,7 @@ void freeLocalDataStruct(LocalDataStruct *lds, MBSdataStruct *s)
 		free_mbs_ivector(lds->ind_mJv);
 		free_mbs_vector(lds->mJv_h);
 //		free_mbs_matrix(lds->mJv_h,nqv);
-		free_mbs_ivector(lds->iquc);
+        //free_mbs_ivector(lds->iquc); already free below
 		free_mbs_matrix(lds->Juct,nquc);
 //		free_mbs_matrix(lds->Juc,Ncons);
 		free_mbs_matrix(lds->Bvuc,nqv);
