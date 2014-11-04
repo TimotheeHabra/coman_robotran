@@ -1238,7 +1238,7 @@ void MDS_structurer(MDS_gen_strct* mds_gen_strct)
 
 	mds_gen_strct->state_list = (MDS_parameter_strct**) malloc(mds_gen_strct->n_point * sizeof(MDS_parameter_strct*));
 
-	for(i=0; i>mds_gen_strct->base->n_base_point; i++)
+    for(i=0; i<mds_gen_strct->base->n_base_point; i++)
 	{
 		mds_gen_strct->point_list[ind_point] = mds_gen_strct->base->base_point_list[i];
 		if(mds_gen_strct->base->base_point_list[i]->sensor != NULL)
