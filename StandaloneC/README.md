@@ -36,6 +36,11 @@ Install [Libxml2](http://xmlsoft.org/) to read the _xml_ files used to initializ
 
 * _sudo apt-get install libxml2-dev_
 
+### GSL: numerical library ###
+
+Install [GSL](http://www.gnu.org/software/gsl/) to perform numerical computations for coordinate partitioning.
+
+* _sudo apt-get install libgsl0ldbl_
 
 ### SDL 2.0: Graphs and interactions with the simulator (in real-time) ###
 
@@ -106,6 +111,7 @@ Some useful links for the 32-bit version and the corresponding files to download
 * [libxml](http://www.xmlsoft.org/downloads.html): libxml2.dll, libxml include folder, libxml2 object file library, also use this [link](http://gnuwin32.sourceforge.net/packages/libiconv.htm) to get iconv.h, iconv object file library
 * [SDL 2.0](http://www.libsdl.org/download-2.0.php): SDL2.dll, SDL include folder, SDL2 object file library, SDL2test object file library, SDL2main object file library
 * [SDL2_ttf](http://www.libsdl.org/projects/SDL_ttf/): libfreetype-6.dll, SDL2_ttf.dll, zlib1.dll, SDL_ttf.h, SDL2ttf object file library
+* [GSL](http://gnuwin32.sourceforge.net/packages/gsl.htm): see _src/other/win64_include_lib_ for more details.
 
 
 ### CMake: create the project ###
@@ -115,7 +121,7 @@ Download CMake [here](http://www.cmake.org/cmake/resources/software.html).
 Run the _cmake-2.8.xx.x-win32-x86.exe_ executable (it also works for 64-bit machines).
 
 
-### Libxml and SDL 2.0 ###
+### Libxml, GSL and SDL 2.0 ###
 
 All the needed files are already located in src/other/win64_include_lib/ for the 64-bit machines (so, you do not have to install them).
 For the 32-bit ones, replace these files with the corresponding 32-bit ones (see above).
