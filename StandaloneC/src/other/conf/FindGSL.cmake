@@ -21,39 +21,39 @@
 ## www.mip.informatik.uni-kiel.de
 ## --------------------------------
 ##
+## Included in robotran standalone by Aubain Verle and Timothee Habra Sept 14.
+## Some changes to account for different include dirs.
 
 
 ## ---- WINDOWS ---- ##
 
 IF(WIN32)
 
-SET(GSL_MINGW_PREFIX 
-	"c:/msys/local" 
+# possible paths for: 'gsl_.h'
+SET(TRIAL_PATHS_INC
+  ${PROJECT_SOURCE_DIR}/src/other/win64_include_lib/include/gsl   #/gsl
 )
 
-SET(GSL_MSVC_PREFIX 
-	"$ENV{LIB_DIR}"
+# possible paths for: 'GSL.lib'
+SET(TRIAL_PATHS_LIB_GSL
+  ${PROJECT_SOURCE_DIR}/src/other/win64_include_lib/lib
 )
 
-FIND_LIBRARY(GSL_LIB gsl PATHS
-${GSL_MINGW_PREFIX}/lib
-${GSL_MSVC_PREFIX}/lib
-)
-#MSVC version of the lib is just called 'cblas'
-FIND_LIBRARY(GSLCBLAS_LIB gslcblas cblas PATHS ${GSL_MINGW_PREFIX}/lib ${GSL_MSVC_PREFIX}/lib)
-FIND_PATH(GSL_INCLUDE_DIR gsl/gsl_blas.h ${GSL_MINGW_PREFIX}/include ${GSL_MSVC_PREFIX}/include)
+FIND_PATH(GSL_INCLUDE_DIR gsl_version.h ${TRIAL_PATHS_INC})
 
-IF (GSL_LIB AND GSLCBLAS_LIB)
-	SET (GSL_LIBRARIES ${GSL_LIB} ${GSLCBLAS_LIB})
-ENDIF (GSL_LIB AND GSLCBLAS_LIB)
+FIND_LIBRARY(GSL_LIBRARIES_GSL gsl.lib ${TRIAL_PATHS_LIB_GSL})
+FIND_LIBRARY(GSL_LIBRARIES_GSLCBLAS cblas.lib ${TRIAL_PATHS_LIB_GSL})
 
+IF (GSL_LIBRARIES_GSL AND GSL_LIBRARIES_GSLCBLAS)
+	SET(GSL_LIBRARIES ${GSL_LIBRARIES_GSL} ${GSL_LIBRARIES_GSLCBLAS})
+ENDIF (GSL_LIBRARIES_GSL AND GSL_LIBRARIES_GSLCBLAS)
 
 ## ---------------- ##
 
 
 ELSE(WIN32)
 
-## ---- LINUX OR MAC OS ---- ##
+## ---- LINUX ---- ##
 
 IF(UNIX)
 
