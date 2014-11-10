@@ -86,6 +86,10 @@ add_executable (${Executable} ${SOURCE_FILES})
 
 target_link_libraries (${Executable} ${LIBXML2_LIBRARIES})
 
+if (WIN32)
+	file(COPY ${PROJECT_SOURCE_DIR}/../win64_include_lib/dll/libxml2.dll DESTINATION ${CMAKE_BINARY_DIR}/src/other/user_models/Debug)
+endif (WIN32)
+
 # math external library (for Unix): linkage
 if (UNIX)
 	target_link_libraries (${Executable} m)
