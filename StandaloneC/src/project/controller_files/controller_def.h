@@ -140,7 +140,7 @@ double limit_value(double value, double this_min, double this_max);
 void get_ref(ControllerStruct *cvs);
 
 // get the position references for the arms
-#ifndef STANDALONE
+#if !defined(STANDALONE) || !defined(SDL)
 void arm_pos_ref(ControllerStruct *cvs);
 #endif
 
