@@ -180,20 +180,24 @@ file(GLOB MBS_SRC "${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSIO
 file(READ ${MBS_SRC} STRING1)
 
 file(GLOB MBS_DST "${PROJECT_SOURCE_DIR}/../dataR/*.mbs")
-if(EXISTS MBS_DST) 
+if(EXISTS ${MBS_DST})
 	file(READ ${MBS_DST} STRING2)
-else(EXISTS MBS_DST) 
+else(EXISTS ${MBS_DST})
 	set(STRING2 " ")
-endif(EXISTS MBS_DST) 
+endif(EXISTS ${MBS_DST})
 
-if(NOT (STRING1 STREQUAL STRING2)) # if different mbs, synchronize version
+if(NOT("${STRING1} " STREQUAL "${STRING2} ")) # if different mbs, synchronize version
+        message(STATUS "Changing the .mbs : copying ${COMAN_VERSION} mbs")
+
 	file(WRITE ${PROJECT_SOURCE_DIR}/../dataR/copy_check "this file is used to check if the mbs has changed")
 
         file(REMOVE_RECURSE ${PROJECT_SOURCE_DIR}/../symbolicR)  #otherwise some files are not overwriten
 	file(COPY ${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSION}/Symbolic_files/ DESTINATION ${PROJECT_SOURCE_DIR}/..)
 
-	file(COPY ${PROJECT_SOURCE_DIR}/src/other/CoMan_versions/${COMAN_VERSION}/${MODEL_STANDALONE}/dataR/ DESTINATION ${PROJECT_SOURCE_DIR}/../dataR)
-endif(NOT (STRING1 STREQUAL STRING2))	
+        file(REMOVE ${MBS_DST})  #otherwise some files are not overwriten
+        file(COPY ${MBS_SRC} DESTINATION ${PROJECT_SOURCE_DIR}/../dataR)
+
+endif(NOT("${STRING1} " STREQUAL "${STRING2} "))
 
 ## ---- AUTOMATIC GENERATION  ('ControllersStruct.h/.c' and 'user_sf_IO.h/.c')  ---- ##
 
